@@ -1,0 +1,27 @@
+{
+  "startSceneId": "intro",
+  "initialState": {
+    "traits": {
+      "courage": 0,
+      "wisdom": 0,
+      "empathy": 0,
+      "compassion": 0,
+      "curiosity": 0
+    },
+    "relationships": {
+      "fox": 0,
+      "keeper": 0
+    }
+  },
+  "scenes": [
+    "intro",
+    "forest_clearing",
+    "fox_dialogue",
+    "fox_wisdom",
+    "chest_scene",
+    "ancient_gate",
+    "village_gate",
+    "ending_glory",
+    "ending_quiet"
+  ]
+}

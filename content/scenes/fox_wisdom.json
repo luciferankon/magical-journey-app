@@ -1,0 +1,24 @@
+{
+  "id": "fox_wisdom",
+  "text": "\"Glory means crossing the Ancient Gate,\" the fox says. \"You will face the Keeper, who tests the worthy. Few return. Those who do are changed — greater, or broken.\" It tilts its head. \"Home means the village road. Safe. Small. The chest's gift will follow you there if you choose it.\" The amber eyes hold no judgement.",
+  "choices": [
+    {
+      "id": "choose_glory_after_wisdom",
+      "text": "\"I'll face the Gate.\"",
+      "consequences": [
+        { "type": "set_flag", "flag": "chose_glory" },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+      ],
+      "next": "ancient_gate"
+    },
+    {
+      "id": "choose_home_after_wisdom",
+      "text": "\"I'll go home.\"",
+      "consequences": [
+        { "type": "set_flag", "flag": "chose_home" },
+        { "type": "trait_delta", "trait": "compassion", "delta": 1 }
+      ],
+      "next": "village_gate"
+    }
+  ]
+}
