@@ -1,0 +1,48 @@
+{
+  "id": "fox_dialogue",
+  "text": "The fox dips its head. \"You carry the smell of a seeker,\" it says. Its voice is the sound of wind in dry leaves. \"There are two paths from this wood. One leads to glory — and great cost. The other leads home — and quiet forgetting. Which do you serve?\"",
+  "choices": [
+    {
+      "id": "choose_glory",
+      "text": "\"I serve glory. Show me the way forward.\"",
+      "gate": { "type": "trait_gte", "trait": "courage", "value": 1 },
+      "consequences": [
+        { "type": "set_flag", "flag": "chose_glory" },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "relationship_delta", "character": "fox", "delta": 1 }
+      ],
+      "next": "ancient_gate"
+    },
+    {
+      "id": "choose_home",
+      "text": "\"I serve home. I have people waiting.\"",
+      "consequences": [
+        { "type": "set_flag", "flag": "chose_home" },
+        { "type": "trait_delta", "trait": "compassion", "delta": 2 }
+      ],
+      "next": "village_gate"
+    },
+    {
+      "id": "ask_fox_more",
+      "text": "\"Tell me more before I choose.\"",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+      ],
+      "next": "fox_wisdom"
+    },
+    {
+      "id": "ally_with_fox",
+      "text": "\"I serve whatever you serve — I trust you.\"",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "fox",
+        "value": 3
+      },
+      "consequences": [
+        { "type": "set_flag", "flag": "allied_with_fox" },
+        { "type": "relationship_delta", "character": "fox", "delta": 2 }
+      ],
+      "next": "ancient_gate"
+    }
+  ]
+}
