@@ -1,0 +1,23 @@
+{
+  "landing": {
+    "title": "Aethermoor Academy",
+    "tagline": "Magic is not learned. It is remembered.",
+    "continueLabel": "Continue Journey",
+    "newGameLabel": "New Game",
+    "beginLabel": "Begin Your Story",
+    "footer": "Aethermoor · Chapter I"
+  },
+
+  "loading": {
+    "flavourLines": [
+      "Consulting the ley-line records…",
+      "Lighting the enchanted lanterns…",
+      "Brewing something warm…",
+      "Calibrating the Resonance Trial…",
+      "Searching the restricted wing…",
+      "Tracing the thread back to its origin…",
+      "The ivy is beginning to glow…",
+      "Waiting for the fog to clear…"
+    ]
+  }
+}

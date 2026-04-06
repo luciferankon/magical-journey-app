@@ -1,0 +1,33 @@
+{
+  "id": "s02_first_meeting",
+  "text": "The entrance courtyard is chaos in the best possible sense — students and trunks and familiars and someone's enchanted lamp, which appears to have gotten confused and is now hovering eight feet off the ground, attracting a small audience.\n\nYou're trying to find the registration line when you collide with someone, and the someone turns out to be two people at once.\n\nThe first is a girl with a notebook pressed to her chest and an apologetic expression already forming before you've even made eye contact. \"Sorry — I'm so sorry, completely my fault, I was reading the dormitory map and—\" She stops herself, laughs a little. She has dark eyes and the kind of voice that sounds like it's used to being careful. Her Aqualyn scarf is slightly crooked. \"Sera,\" she says, and offers her hand. \"Sera Voss.\"\n\nThe second is a boy who didn't apologize because he didn't bump into you — he stepped aside at exactly the right moment, which somehow managed to look deliberate. He's watching you with the attentiveness of someone assessing a competitor rather than meeting a peer. Ignis piping on his collar. \"Caden Miral,\" he says. \"You almost walked into me.\"\n\nBoth of them are looking at you. Sera is still smiling. Caden is still assessing. The registration line is somewhere to your left and none of this is how you planned to start.",
+  "choices": [
+    {
+      "id": "turn_to_sera",
+      "text": "Turn to Sera — she looks nervous too.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "sera_trust", "delta": 2 },
+        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+      ],
+      "next": "s03_sorting_ceremony"
+    },
+    {
+      "id": "face_caden",
+      "text": "Face Caden — match his confidence.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 2 },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+      ],
+      "next": "s03_sorting_ceremony"
+    },
+    {
+      "id": "ignore_both",
+      "text": "Ignore both — take in the school first.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+        { "type": "trait_delta", "trait": "empathy", "delta": -1 }
+      ],
+      "next": "s03_sorting_ceremony"
+    }
+  ]
+}

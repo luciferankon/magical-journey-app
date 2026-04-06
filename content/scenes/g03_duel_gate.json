@@ -1,0 +1,42 @@
+{
+  "id": "g03_duel_gate",
+  "text": "The practice hall at midnight is not technically permitted. Lira arranged it anyway.\n\nYou and Caden face each other across fifteen feet of polished stone. He's rolled up his sleeves. He isn't smiling — this is not the grinning performance from the courtyard. This is the real Caden: focused, serious, giving you the full weight of his attention the way you'd give it to something that might actually challenge you.\n\n\"Nothing permanent,\" he says. \"First to yield or drop the thread.\"\n\nYou nod. Lira watches from the gallery, one elbow on the railing, expression unreadable.\n\nThe threads come up. Yours and his. His is clean Ignis, confident and direct. You have everything you've learned so far and the last several hours of wanting very badly not to fail.",
+  "choices": [
+    {
+      "id": "duel_victory",
+      "text": "You hold your own. When his thread finally wavers, you're still standing.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "trait": "courage", "value": 5 },
+          { "type": "flag_set", "flag": "class_success" }
+        ]
+      },
+      "consequences": [
+        { "type": "set_flag", "flag": "dueled_caden" },
+        { "type": "trait_delta", "trait": "courage", "delta": 2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": -8 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 }
+      ],
+      "next": "s08_chapter_crisis"
+    },
+    {
+      "id": "duel_defeat",
+      "text": "The thread drops. His didn't. It was close — he knows it was close — but it wasn't enough.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "trait_lte", "trait": "courage", "value": 4 },
+          { "type": "flag_unset", "flag": "class_success" }
+        ]
+      },
+      "consequences": [
+        { "type": "set_flag", "flag": "dueled_caden" },
+        { "type": "trait_delta", "trait": "courage", "delta": -1 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 3 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 }
+      ],
+      "next": "s08_chapter_crisis"
+    }
+  ]
+}

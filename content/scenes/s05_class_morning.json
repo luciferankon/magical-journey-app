@@ -1,0 +1,27 @@
+{
+  "id": "s05_class_morning",
+  "text": "Elemental Casting runs from eight to ten in the Hall of First Weaving — a long room with high clerestory windows and a polished floor where you can see, if you know what to look for, the scorch marks and water stains of a hundred years of first attempts.\n\nProfessor Aldric teaches the way old stone holds heat: slowly, thoroughly, and with the clear expectation that you are paying attention because he will not say anything twice. He spent the first twenty minutes on theory — thread frequencies, attunement resonance, the three principles of controlled Weaving — before he said the word everyone had been waiting for.\n\n\"Demonstration.\"\n\nCaden Miral went first. Of course he did. He stepped forward, raised one hand, and drew a clean Ember Thread in under four seconds — a tight flame, controlled, textbook form. Aldric made a note. A few people applauded. Caden stepped back with the expression of someone who had expected exactly that outcome.\n\nNow Aldric is looking at you.\n\n\"Your turn,\" he says. It doesn't sound like an invitation.",
+  "choices": [
+    {
+      "id": "focus_attempt",
+      "text": "Focus hard — attempt it properly, whatever the cost.",
+      "consequences": [],
+      "next": "g01_class_courage_gate"
+    },
+    {
+      "id": "observe_first",
+      "text": "Ask to go last — watch the others first.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": -1 }
+      ],
+      "next": "s06_corridor_incident"
+    },
+    {
+      "id": "improvise",
+      "text": "Improvise — find your own approach to it.",
+      "consequences": [],
+      "next": "g02_class_cunning_gate"
+    }
+  ]
+}

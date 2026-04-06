@@ -1,0 +1,161 @@
+{
+  "name": {
+    "prompt": "What is your name?",
+    "placeholder": "Enter your name",
+    "hint": "This is how Aethermoor will know you.",
+    "submitLabel": "Continue"
+  },
+
+  "backgrounds": {
+    "prompt": "Where do you come from?",
+    "hint": "Your background shapes how others read you — not who you are.",
+    "options": [
+      {
+        "id": "scholarship",
+        "label": "Scholarship",
+        "description": "You earned this place. Every grade, every letter, every late night — all of it was yours. Nobody handed you anything.",
+        "flavour": "You arrived already knowing what it costs to prove yourself.",
+        "consequences": [
+          { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+          { "type": "trait_delta", "trait": "ambition", "delta": 1 }
+        ]
+      },
+      {
+        "id": "legacy",
+        "label": "Legacy",
+        "description": "Someone in your family walked these halls before you. The name carries weight — some of it helpful, some of it heavy.",
+        "flavour": "You carry their expectations. You've decided what to do with that.",
+        "consequences": [
+          { "type": "trait_delta", "trait": "courage", "delta": 1 },
+          { "type": "trait_delta", "trait": "ambition", "delta": 1 }
+        ]
+      },
+      {
+        "id": "outsider",
+        "label": "Outsider",
+        "description": "You come from somewhere they've never heard of, or something that doesn't fit the usual story. You've been reading the room your whole life.",
+        "flavour": "You notice what others overlook. That was always going to matter.",
+        "consequences": [
+          { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+          { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        ]
+      }
+    ]
+  },
+
+  "originQuestions": [
+    {
+      "id": "origin_q1",
+      "prompt": "Before Aethermoor, what defined you most?",
+      "options": [
+        {
+          "id": "q1_driven",
+          "text": "I pushed myself to be the best at everything that mattered.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "ambition", "delta": 1 },
+            { "type": "trait_delta", "trait": "courage", "delta": 1 }
+          ]
+        },
+        {
+          "id": "q1_curious",
+          "text": "I spent hours on things nobody asked me to study.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+            { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+          ]
+        },
+        {
+          "id": "q1_connector",
+          "text": "I was the person others came to when something went wrong.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "empathy", "delta": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "origin_q2",
+      "prompt": "When you face something you don't understand, you usually:",
+      "options": [
+        {
+          "id": "q2_act",
+          "text": "Act first. Understand it afterward.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "courage", "delta": 2 }
+          ]
+        },
+        {
+          "id": "q2_observe",
+          "text": "Watch until you've seen enough to move safely.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+            { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+          ]
+        },
+        {
+          "id": "q2_ask",
+          "text": "Find someone who's been through it and ask.",
+          "consequences": [
+            { "type": "trait_delta", "trait": "empathy", "delta": 1 },
+            { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "houseSelection": {
+    "prompt": "The Orb of Resonance is warm under your palm. Something stirs.",
+    "hint": "Your dominant thread will define your Order — and how Aethermoor sees you.",
+    "options": [
+      {
+        "id": "ignis",
+        "house": "ignis",
+        "label": "The Ember Thread",
+        "description": "Fire and courage. You act, and the world reshapes itself around the action. Ignis students are the ones who go first — not because they're unafraid, but because fear has never been enough to stop them.",
+        "flavour": "Ignis. The Order of fire and will.",
+        "accentClass": "border-ignis bg-ignis-deep text-ignis-text",
+        "glowClass": "text-ignis-glow",
+        "consequences": [
+          { "type": "trait_delta", "trait": "courage", "delta": 2 }
+        ]
+      },
+      {
+        "id": "aqualyn",
+        "house": "aqualyn",
+        "label": "The Tide Thread",
+        "description": "Water and empathy. You feel what others feel, and that has never been a weakness. Aqualyn students understand that the strongest thing in any room is the one that can move around every obstacle.",
+        "flavour": "Aqualyn. The Order of water and resonance.",
+        "accentClass": "border-aqualyn bg-aqualyn-deep text-aqualyn-text",
+        "glowClass": "text-aqualyn-glow",
+        "consequences": [
+          { "type": "trait_delta", "trait": "empathy", "delta": 2 }
+        ]
+      },
+      {
+        "id": "terram",
+        "house": "terram",
+        "label": "The Stone Thread",
+        "description": "Earth and wisdom. You take your time. You have never regretted it. Terram students know that the most durable structures are the ones that were built properly from the foundation up.",
+        "flavour": "Terram. The Order of stone and patience.",
+        "accentClass": "border-terram bg-terram-deep text-terram-text",
+        "glowClass": "text-terram-glow",
+        "consequences": [
+          { "type": "trait_delta", "trait": "wisdom", "delta": 2 }
+        ]
+      },
+      {
+        "id": "ventus",
+        "house": "ventus",
+        "label": "The Wind Thread",
+        "description": "Air and cunning. You see the shape of things before they arrive. Ventus students move through the world like wind through a room — present everywhere, visible only when they choose to be.",
+        "flavour": "Ventus. The Order of wind and perception.",
+        "accentClass": "border-ventus bg-ventus-deep text-ventus-text",
+        "glowClass": "text-ventus-glow",
+        "consequences": [
+          { "type": "trait_delta", "trait": "cunning", "delta": 2 }
+        ]
+      }
+    ]
+  }
+}

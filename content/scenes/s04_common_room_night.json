@@ -1,0 +1,33 @@
+{
+  "id": "s04_common_room_night",
+  "text": "The common room smells like your Order — you notice it before you notice anything else. A particular quality of warmth or coolness, an edge in the air that feels like yours now in a way it wasn't this morning.\n\nIt's late enough that most of the older students have retreated to their rooms. The first-years cluster in nervous constellations near the fireplace or the windows, comparing notes, performing confidence.\n\nThree people catch your attention.\n\nSera Voss is in the window seat with a book open in her lap, but she's not reading — she's watching the dark outside with the focused look of someone processing something too large for words. She told you her name this afternoon and made it sound like a question.\n\nTomás Reeve has claimed a corner chair with the quiet authority of someone who always finds the structural load-bearing spot in a room. He's reading something with dense margins and seems entirely at ease. He noticed you come in. He's decided to let you decide what to do with that.\n\nAnd then there's Lira Thane — a third-year, you think, silver piping on dark grey, leaning in the doorway to the upper corridor with a glass of something warm and the particular stillness of someone who is not waiting and not bored and is watching the new students with an interest she has carefully made look like none.",
+  "choices": [
+    {
+      "id": "talk_to_sera",
+      "text": "Go to Sera — she looks like she could use the company.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "sera_trust", "delta": 2 },
+        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+      ],
+      "next": "s05_class_morning"
+    },
+    {
+      "id": "approach_tomas",
+      "text": "Sit near Tomás — you want to know what he's reading.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+      ],
+      "next": "s05_class_morning"
+    },
+    {
+      "id": "introduce_to_lira",
+      "text": "Introduce yourself to Lira — seniors know things.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 },
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "s05_class_morning"
+    }
+  ]
+}

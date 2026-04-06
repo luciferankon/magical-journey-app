@@ -1,0 +1,51 @@
+{
+  "id": "ending_gate",
+  "text": "The night settles around Aethermoor Academy like a held breath finally let go.\n\nThe student is taken to the healing rooms. Teachers arrive — first one, then four, then more. The courtyard fills with people asking questions and is cleared of everyone who might answer them. You stand at the edge of it and know what you know and wait to see what it means.",
+  "choices": [
+    {
+      "id": "to_ending_a",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "flag_set", "flag": "crisis_intervened" },
+          {
+            "type": "or",
+            "conditions": [
+              { "type": "trait_gte", "trait": "courage", "value": 6 },
+              { "type": "relationship_gte", "character": "tomas_bond", "value": 4 }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "ending_a_marked"
+    },
+    {
+      "id": "to_ending_c",
+      "text": "Continue.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "flag_set", "flag": "crisis_fled" },
+          {
+            "type": "and",
+            "conditions": [
+              { "type": "flag_unset", "flag": "crisis_intervened" },
+              { "type": "trait_lte", "trait": "courage", "value": 3 },
+              { "type": "relationship_lte", "character": "tomas_bond", "value": 2 }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "ending_c_fracture"
+    },
+    {
+      "id": "to_ending_b",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "ending_b_watcher"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "g02_class_cunning_gate",
+  "text": "You don't follow Caden's approach. Why would you? You watched him succeed; you already know what success looks like through that method, and you don't have his grip on it yet.\n\nInstead, you try something that isn't in the morning's notes — you come at the thread sideways, through the secondary resonance point, the one Aldric mentioned in passing and moved past quickly as if it was too advanced to linger on. You've been thinking about it since.\n\nAldric's expression doesn't change. This could mean anything.",
+  "choices": [
+    {
+      "id": "improvisation_works",
+      "text": "The unconventional approach lands — unorthodox, but the flame comes, bright and unexpected.",
+      "gate": { "type": "trait_gte", "trait": "cunning", "value": 4 },
+      "consequences": [
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": 1 },
+        { "type": "trait_delta", "trait": "cunning", "delta": 2 },
+        { "type": "set_flag", "flag": "class_success" }
+      ],
+      "next": "s06_corridor_incident"
+    },
+    {
+      "id": "improvisation_collapses",
+      "text": "The approach collapses halfway through. The thread frays. A small, embarrassing pop of light.",
+      "gate": { "type": "trait_lte", "trait": "cunning", "value": 3 },
+      "consequences": [
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": -1 },
+        { "type": "trait_delta", "trait": "cunning", "delta": -1 }
+      ],
+      "next": "s06_corridor_incident"
+    }
+  ]
+}
