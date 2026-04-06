@@ -1,0 +1,23 @@
+{
+  "id": "c01_fracture_morning_choice",
+  "text": "Lira waits. She is good at waiting — there's no impatience in her, no performance of patience either. Just genuine stillness, which is somehow harder to be near than urgency. Whatever you decide, she will work with it. That's the thing about leverage: it doesn't need to press.",
+  "choices": [
+    {
+      "id": "c01_choice_a",
+      "text": "Listen to what she's offering.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "lira_influence", "value": 1 },
+        { "type": "trait_delta", "key": "cunning", "value": 1 }
+      ],
+      "next": "s10_archive_discovery"
+    },
+    {
+      "id": "c01_choice_b",
+      "text": "Tell her you need time to think.",
+      "consequences": [
+        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+      ],
+      "next": "s10_archive_discovery"
+    }
+  ]
+}

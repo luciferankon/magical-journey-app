@@ -1,0 +1,14 @@
+{
+  "id": "s13_lira_conversation",
+  "text": "You find Lira, or she finds you. You'll think later that the distinction doesn't quite hold — she's the kind of person around whom chance tends to resolve in her favour, and you're the kind of situation she's been navigating for two years.\n\nShe picks a bench in the east garden, empty at this hour. The ivy above it has gone dark — the phosphorescence only shows at night, but the vines still carry the faint smell of the charge, something mineral and almost sweet.\n\n\"I'm not going to pretend I don't know what you've been looking into,\" she says, first. No performance of discovery — she's skipping that part. \"The archive. Eska. The incident list.\" She looks at her hands. \"I want to tell you some things. Not everything, because I can't. But enough.\"\n\nShe explains: the Fracture isn't new, isn't stable, is spreading in ways that the Orders are not equipped to acknowledge. There are people — a small group, operating above any individual school — who have been managing this for decades. Assessment, identification, structured support. She was recruited at sixteen by someone she trusted, and she made her choice, and she has not regretted it in any way she can honestly name.\n\nShe doesn't say the Conclave. She doesn't say Ines Reeve.\n\n\"There is someone arriving this week,\" she says, \"who will want to speak with you. I think you should let that conversation happen.\" A pause. \"I think it might matter. For you specifically.\"\n\nThe disorientation is not that she's lying. It's that she isn't.",
+  "choices": [
+    {
+      "id": "s13_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "lira_influence", "value": 1 }
+      ],
+      "next": "c03_lira_response"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "s09a_marked_morning",
+  "text": "Breakfast is the quietest it has been all term. Not silence — there is noise, there is always noise — but the particular hush of people choosing their words more carefully than usual. You feel it before you can name it: the shift in how eyes land on you and then move away.\n\nProfessor Aldric intercepts you near the east corridor, before you reach the hall. He doesn't stop walking. You fall into step beside him because there is no other reasonable choice.\n\n\"What you did last night,\" he says, \"required a kind of attention that most students spend years trying to cultivate.\" He pauses. The morning light through the high windows catches the stone dust on his sleeve. \"I want you to understand that I'm telling you this because it's true, not because it will be easy.\"\n\nHe leaves before you can answer.\n\nCaden is sitting at the far end of the Ignis table when you enter the hall. He doesn't wave you over. He watches you take your seat, and when your eyes meet, he gives a small nod — not approving, exactly. Something more complicated. Recognition, maybe.\n\nLira's seat is empty. It has been empty since before you arrived. Nobody mentions it.\n\nThe note is still in your pocket. You haven't read it again, but you know every word of it by now. The weight of it is not the paper. It's the fact that someone thought you were worth writing to.",
+  "choices": [
+    {
+      "id": "s09a_continue",
+      "text": "Continue into the morning.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "aldric_regard", "value": 1 },
+        { "type": "trait_delta", "key": "ambition", "value": 1 }
+      ],
+      "next": "s10_archive_discovery"
+    }
+  ]
+}

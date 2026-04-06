@@ -1,0 +1,11 @@
+{
+  "id": "s11_eska_visit",
+  "text": "The healing rooms smell like antiseptic and old stone — a combination that shouldn't be calming but somehow is, as if the building itself has been absorbing centuries of people getting better in spite of themselves.\n\nEska Varn is in the third bed from the window. She's conscious. Stable. Sitting up against the headboard with her knees drawn to her chest, which makes her look younger than she is — first-year young, which she is, but there's a difference between being sixteen and looking like you're trying to take up less space in the world.\n\nShe recognises you the moment you come through the door. You see it happen — the recognition, and then the careful blankness that follows it. She's been told something. Or told to say nothing. The difference matters but you can't determine it from the doorway.\n\n\"I just wanted to see how you were,\" you say.\n\nShe nods. Her eyes don't leave your face.",
+  "choices": [
+    {
+      "id": "s11_continue",
+      "text": "Continue.",
+      "next": "g06_eska_trust_gate"
+    }
+  ]
+}

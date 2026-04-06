@@ -1,0 +1,16 @@
+{
+  "id": "s17b_with_aldric",
+  "text": "Aldric's office smells like mineral dust and old paper. He opens the door before you knock — he heard your footsteps in the corridor, or he was expecting someone, or both. He gestures to the chair across from his desk without preamble.\n\nYou tell him everything. He listens without interrupting, which is harder to do than it looks. When you finish, he's quiet for a moment.\n\n\"She's been here before,\" he says. \"Different rotation, different name on the notice board. Same function.\" He leans back. \"The Conclave — they don't use that word in polite company, but that's what it is — has been operating inside Aethermoor's structure for at least fifteen years. I know because twelve years ago, I was offered a place in it.\"\n\nHe says it without drama.\n\n\"I was a second-year teacher. I didn't think the arrangement was right. I still don't.\" He picks up a pen and sets it down. \"But I have no current evidence, and my position is complicated, and I will not act on old principle without current documentation.\"\n\nHe looks at you directly.\n\n\"What I can tell you is this: Solis responds to institutional pressure. Real documentation. The archive records you found — that is documentation.\" A pause. \"Bring them into the room. Not as a threat. As a foundation.\"",
+  "choices": [
+    {
+      "id": "s17b_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "aldric_regard", "value": 2 },
+        { "type": "trait_delta", "key": "wisdom", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s18_solis_formal_meeting"
+    }
+  ]
+}

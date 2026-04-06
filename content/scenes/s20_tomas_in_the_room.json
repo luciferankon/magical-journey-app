@@ -1,0 +1,11 @@
+{
+  "id": "s20_tomas_in_the_room",
+  "text": "The door opens.\n\nTomás is standing in it. He's dressed like he's been waiting somewhere cold — coat still on, hands at his sides. How he got here depends on what happened last night: if you told him everything, he arranged this; if you went in alone, he followed you through the building and waited outside until he heard the shape of what was being said.\n\nEither way, he's here now.\n\nHe steps inside. The door swings closed behind him with a soft click. He looks at Solis the way you look at something you've been trying to find for a long time: with focus rather than hostility. He hasn't decided yet whether to be angry.\n\n\"Tell me where my sister is,\" he says.\n\nThree words and a name. He doesn't shout them. Doesn't need to.\n\nSolis looks at him. Then she looks at you.\n\nThe weight of it settles across the room like a change in air pressure. This is the moment where loyalty and strategy come apart — where what you want to do and what might be tactically wise sit on opposite sides of a very small space. You have about three seconds before it decides itself.",
+  "choices": [
+    {
+      "id": "s20_continue",
+      "text": "Continue.",
+      "next": "c06_tomas_moment"
+    }
+  ]
+}

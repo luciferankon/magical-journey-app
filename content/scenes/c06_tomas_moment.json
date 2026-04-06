@@ -1,0 +1,53 @@
+{
+  "id": "c06_tomas_moment",
+  "text": "Solis is watching you both. Tomás is watching Solis. The room is making a specific kind of silence — not empty, but dense. Whatever you do in the next moment, you do it knowing that both of them will remember it.",
+  "choices": [
+    {
+      "id": "c06_choice_a",
+      "text": "Support Tomás — let him push. Be ready.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "tomas_bond", "value": 2 },
+        { "type": "trait_delta", "key": "courage", "value": 1 },
+        { "type": "relationship_delta", "key": "lira_influence", "value": -1 }
+      ],
+      "next": "g08_confrontation_gate"
+    },
+    {
+      "id": "c06_choice_b",
+      "text": "Hold Tomás back — this isn't the moment.",
+      "consequences": [
+        { "type": "trait_delta", "key": "cunning", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 },
+        { "type": "relationship_delta", "key": "tomas_bond", "value": -1 }
+      ],
+      "next": "s21_negotiation"
+    },
+    {
+      "id": "c06_choice_c",
+      "text": "Ask Solis to let Tomás speak to Ines directly — now, in this room.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "key": "wisdom", "value": 6 },
+          { "type": "trait_gte", "key": "cunning", "value": 6 },
+          { "type": "relationship_gte", "key": "solis_standing", "value": 4 }
+        ]
+      },
+      "consequences": [
+        { "type": "relationship_delta", "key": "solis_standing", "value": 2 },
+        { "type": "relationship_delta", "key": "tomas_bond", "value": 1 },
+        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+      ],
+      "next": "s21_negotiation"
+    },
+    {
+      "id": "c06_choice_d",
+      "text": "Step back. Let Solis and Tomás settle this themselves.",
+      "consequences": [
+        { "type": "trait_delta", "key": "ambition", "value": 1 },
+        { "type": "relationship_delta", "key": "tomas_bond", "value": -2 }
+      ],
+      "next": "s21_negotiation"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "g06_eska_trust_gate",
+  "text": "You're standing at her bedside. The window behind her frames a pale sky, the kind that gives no information about weather or time. She's looking at you the way someone looks at a door they're deciding whether to open. The room is quiet enough that you can hear the building settle.",
+  "choices": [
+    {
+      "id": "g06_choice_speaks",
+      "text": "She meets your eyes.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "key": "empathy", "value": 5 },
+          { "type": "relationship_gte", "key": "sera_trust", "value": 3 }
+        ]
+      },
+      "next": "s12_eska_speaks"
+    },
+    {
+      "id": "g06_choice_silent",
+      "text": "She looks away.",
+      "next": "s12_eska_silent"
+    }
+  ]
+}

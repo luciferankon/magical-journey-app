@@ -1,0 +1,15 @@
+{
+  "id": "s17a_with_lira",
+  "text": "The Ventus common room at this hour is all embers and shadows — someone left a candle burning on the far table, and the light doesn't quite reach the corners. Lira is already there. She sits the way she always sits: like she chose the chair.\n\n\"You came,\" she says, which is not a statement of surprise.\n\nShe's measured tonight, more careful than usual. She has conditions — she says them plainly, no apology: she won't expose the structure she works within, won't give you direct access to Ines Reeve, won't compromise her own position. What she can do is position you.\n\n\"Solis responds to clarity and conviction,\" Lira says. \"She's met a lot of students who want things. Fewer who know what they want.\" She tilts her head. \"Tell her what you want. Be specific. Don't ask for things she can't give — she'll notice that you're not asking for things she can't give, and it will mean something.\"\n\nShe pauses.\n\n\"What you want,\" she says, \"is leverage. Not answers. Leverage.\" A beat. \"Answers make her the authority. Leverage makes it a conversation.\"\n\nYou sit with that. Treat it like a job interview — the best job interviews are the ones where both parties know exactly what's being assessed.",
+  "choices": [
+    {
+      "id": "s17a_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "key": "cunning", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s18_solis_formal_meeting"
+    }
+  ]
+}

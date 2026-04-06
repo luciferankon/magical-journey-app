@@ -1,0 +1,31 @@
+{
+  "id": "g08_confrontation_gate",
+  "text": "Solis is watching. Tomás has stepped further into the room — not aggressive, but committed. The door is behind him. You're beside him or just behind, and the three of you are occupying a space that has suddenly become very small. The room is deciding.",
+  "choices": [
+    {
+      "id": "g08_choice_works",
+      "text": "It worked.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "key": "courage", "value": 6 },
+          { "type": "relationship_gte", "key": "tomas_bond", "value": 5 }
+        ]
+      },
+      "consequences": [
+        { "type": "trait_delta", "key": "courage", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": -1 }
+      ],
+      "next": "s21_negotiation"
+    },
+    {
+      "id": "g08_choice_fails",
+      "text": "It didn't work.",
+      "consequences": [
+        { "type": "trait_delta", "key": "courage", "value": -1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s21_negotiation"
+    }
+  ]
+}

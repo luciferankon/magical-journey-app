@@ -1,0 +1,15 @@
+{
+  "id": "s09b_watcher_morning",
+  "text": "Nobody saw what you saw. That's the thing about staying back — the darkness covers you both ways.\n\nThe courtyard is ordinary in the early light. Frost on the flagstones. The ivy along the north wall still faintly phosphorescent, fading as the sun comes up. If you hadn't been there, you wouldn't know anything had happened.\n\nTomás finds you on the steps before the bell. He looks like someone who hasn't slept, which means he looks the same as always, except there are new lines around his mouth.\n\n\"I went back to the records room,\" he says, without preamble. He sits beside you on the step and opens a folded piece of paper. His finger points to a line near the bottom. \"Fourth name on the incident list. Partially redacted — see how the ink is different? Someone went over it after the fact. Not carefully enough.\"\n\nThe letters that remain: an I, the fragment of what might be a surname.\n\nYou look at his face when he says it. He thinks it's his sister. He's certain in the way people are certain when they've been hoping for a particular answer for long enough that they've stopped questioning whether it could be true.\n\nYou say nothing. There is nothing to say yet. But the weight of it passes between you anyway, clean and cold as the morning air.",
+  "choices": [
+    {
+      "id": "s09b_continue",
+      "text": "Continue into the morning together.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "tomas_bond", "value": 1 },
+        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+      ],
+      "next": "s10_archive_discovery"
+    }
+  ]
+}

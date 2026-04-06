@@ -1,0 +1,15 @@
+{
+  "id": "s18_solis_formal_meeting",
+  "text": "The assessment room is a borrowed classroom, tidy in the specific way of someone who imposed order on someone else's disorder. Two chairs, facing each other, at the same height. Solis did not put a desk between you. That's the first thing you notice.\n\nShe introduces herself again — properly this time, with her full title, which takes a moment longer than you expect. External assessor. Monitoring function. She makes it sound administrative.\n\nShe asks you three questions.\n\nHow are you settling in? You answer. She listens in a way that suggests she's hearing something other than your words.\n\nHow do you find your Order's curriculum? You answer again. She nods — one small nod, nothing given away.\n\nAnd then: \"What do you think about the incident last week?\"\n\nShe says it the same way she said the other two. Same tone, same pace. The third question is not a question — it's a space she's leaving for you to decide what to put in it. She wants to see what you volunteer. The shape of what you choose to say, and what you choose to leave out.\n\nThis is the assessment. Two people in identical chairs, in careful mutual surveillance, deciding how much truth to show each other.",
+  "choices": [
+    {
+      "id": "s18_continue",
+      "text": "Answer her.",
+      "consequences": [
+        { "type": "set_flag", "key": "met_solis" },
+        { "type": "set_flag", "key": "conclave_offered" }
+      ],
+      "next": "c05_solis_meeting_response"
+    }
+  ]
+}

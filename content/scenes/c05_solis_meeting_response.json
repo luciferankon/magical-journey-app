@@ -1,0 +1,49 @@
+{
+  "id": "c05_solis_meeting_response",
+  "text": "Solis is watching. The room is quiet. Your answer to her third question will be the first real thing either of you says in this room.",
+  "choices": [
+    {
+      "id": "c05_choice_a",
+      "text": "Tell her exactly what you saw — all of it.",
+      "consequences": [
+        { "type": "trait_delta", "key": "courage", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 2 }
+      ],
+      "next": "s19_solis_explains"
+    },
+    {
+      "id": "c05_choice_b",
+      "text": "Tell her part of it — enough to show you're not naïve.",
+      "consequences": [
+        { "type": "trait_delta", "key": "cunning", "value": 2 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s19_solis_explains"
+    },
+    {
+      "id": "c05_choice_c",
+      "text": "Ask her why she's really here.",
+      "consequences": [
+        { "type": "trait_delta", "key": "wisdom", "value": 1 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s19_solis_explains"
+    },
+    {
+      "id": "c05_choice_d",
+      "text": "Tell her you know about the archive. The redacted names. Ines Reeve.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "flag_set", "key": "tomas_knows" },
+          { "type": "flag_set", "key": "knows_ines_alive" }
+        ]
+      },
+      "consequences": [
+        { "type": "trait_delta", "key": "courage", "value": 2 },
+        { "type": "relationship_delta", "key": "solis_standing", "value": 3 }
+      ],
+      "next": "s19_solis_explains"
+    }
+  ]
+}

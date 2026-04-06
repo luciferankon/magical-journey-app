@@ -1,0 +1,11 @@
+{
+  "id": "s12_eska_silent",
+  "text": "She nods when you ask how she's feeling. She says \"better\" when she clearly means something more like \"contained.\" When you try a second time — gently, giving her a way in — she looks at the blanket and says she's tired.\n\nYou gather your things. There's nothing to push against here; she's not hostile, she's just closed, and the difference between those things is that one has a door and one is just a wall.\n\nYou're almost at the door when her voice stops you.\n\n\"She said it would pass.\" Low and careful, as if the words escaped rather than were chosen. \"That most people don't feel it at all.\"\n\nThen silence. She's looking out the window with the focused attention of someone who has decided that the sky is more interesting than anything happening in this room.\n\nYou stand there a moment longer. She doesn't look back.\n\nThe door closes quietly behind you. A she. That's something. Not much — but something.",
+  "choices": [
+    {
+      "id": "s12_silent_continue",
+      "text": "Continue.",
+      "next": "s13_lira_conversation"
+    }
+  ]
+}

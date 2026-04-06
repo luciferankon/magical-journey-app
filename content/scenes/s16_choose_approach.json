@@ -1,0 +1,11 @@
+{
+  "id": "s16_choose_approach",
+  "text": "The night before the formal meeting. Your window frames the dark quadrangle, the violet-green glow of the ivy moving slightly in a wind you can't feel from here. Tomorrow Solis wants to meet properly — a conversation with weight to it, however she dresses it as assessment.\n\nYou have tonight.\n\nYou've been carrying what you know like a set of objects in your coat pockets: the archive records, Eska's words or silence, Lira's partial honesty, whatever you saw in the courtyard and chose to do or not do. Each piece real. The picture almost complete. Almost.\n\nThe question is what kind of person walks into that room tomorrow. Whether you go in with someone's knowledge behind you, or someone's trust beside you — or alone, which is its own kind of preparation. Tonight decides it.",
+  "choices": [
+    {
+      "id": "s16_continue",
+      "text": "Consider your options.",
+      "next": "c04_approach_choice"
+    }
+  ]
+}

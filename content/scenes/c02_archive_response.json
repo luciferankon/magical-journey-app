@@ -1,0 +1,31 @@
+{
+  "id": "c02_archive_response",
+  "text": "Tomás is holding the file. His hands are steady in the way hands are steady when someone is keeping them that way deliberately. He hasn't said anything in two minutes. The clock on the archive wall counts it out in small wooden ticks.",
+  "choices": [
+    {
+      "id": "c02_choice_a",
+      "text": "\"We find out who signed it.\"",
+      "consequences": [
+        { "type": "trait_delta", "key": "wisdom", "value": 1 },
+        { "type": "relationship_delta", "key": "tomas_bond", "value": 1 }
+      ],
+      "next": "s11_eska_visit"
+    },
+    {
+      "id": "c02_choice_b",
+      "text": "\"We need to know more before we move. Visit Eska first.\"",
+      "consequences": [
+        { "type": "trait_delta", "key": "cunning", "value": 1 }
+      ],
+      "next": "s11_eska_visit"
+    },
+    {
+      "id": "c02_choice_c",
+      "text": "\"Take this to Aldric. He told me to stay quiet — but this is different.\"",
+      "consequences": [
+        { "type": "relationship_delta", "key": "aldric_regard", "value": 1 }
+      ],
+      "next": "s11_eska_visit"
+    }
+  ]
+}

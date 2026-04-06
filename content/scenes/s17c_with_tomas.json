@@ -1,0 +1,16 @@
+{
+  "id": "s17c_with_tomas",
+  "text": "The library annex is unlocked at night for senior researchers. Tomás has access. He's at the table in the far corner, the archive copies spread out in front of him again — he keeps returning to them the way you return to a bruise, pressing just to confirm it still hurts.\n\nYou sit down across from him.\n\nAnd then you tell him everything. All of it — what Eska said, or what she almost said. What Lira implied without saying. What the archive suggests when you read it in light of what you now know. What you saw in the courtyard, and what it meant, and the connections you've been building since.\n\nHe listens with his hands flat on the table.\n\nWhen you finish, he's quiet for a long time. Then: \"She was told it was safe. Someone told her it was safe, and she believed them, and she went.\" He's not asking. He's working something out.\n\n\"We go in tomorrow with the records,\" he says. \"We put them on the table and we say: we know about the Fracture incidents, we know about the redacted file, and we want to speak to Ines.\" He looks at you. \"Not subtle. But Solis doesn't need us to be subtle. She needs to know we're not going away.\"\n\nYou finally told him everything. It feels like laying something down.",
+  "choices": [
+    {
+      "id": "s17c_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "tomas_bond", "value": 2 },
+        { "type": "trait_delta", "key": "courage", "value": 1 },
+        { "type": "set_flag", "key": "tomas_knows" }
+      ],
+      "next": "s18_solis_formal_meeting"
+    }
+  ]
+}

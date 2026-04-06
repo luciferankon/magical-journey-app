@@ -1,0 +1,11 @@
+{
+  "id": "s10_archive_discovery",
+  "text": "Tomás has had archive access for three weeks — a legitimate research request, filed in triplicate, approved without remark. The archivist doesn't look up when you enter behind him.\n\nThe records are older than the shelving that holds them. Five incident reports over twelve years, each in a different hand, each filed under a different heading. Tomás has spread them across the reading table like a map of something he's been navigating blind.\n\nFour students named. One fully redacted — not smudged, not faded, but professionally obscured, the way only someone with administrative authority obscures a name. The paper beneath is intact. The removal was deliberate.\n\nBut the marginal handwriting is still there. Small annotations in pencil, the kind that get overlooked in a redaction. A note about transfer timeline. A note about family notification protocol.\n\nTomás pulls a letter from his wallet. You've seen him touch that wallet a hundred times — it's a reflex, like checking a wound. He holds the letter beside the margin annotation.\n\nThe handwriting matches.\n\nYou watch the understanding move through him. His hands stay steady. That's what gets you — the steadiness of his hands, and what it costs him to keep them that way.\n\nShe didn't disappear. She was transferred. Someone inside Aethermoor signed the authorisation. The signatory's name is redacted too. But the signature block is still there, and the signature block has a date, and the date is a Thursday in late autumn three years ago.\n\nThe theory is over. This is fact.",
+  "choices": [
+    {
+      "id": "s10_continue",
+      "text": "Continue.",
+      "next": "c02_archive_response"
+    }
+  ]
+}

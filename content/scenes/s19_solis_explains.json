@@ -1,0 +1,15 @@
+{
+  "id": "s19_solis_explains",
+  "text": "Solis listens to what you say. Then she sets her hands in her lap and tells you what she's here to tell you.\n\nShe calls it \"the monitoring function.\" She describes the Fracture without flinching — ancient, spreading, misunderstood by the Orders, who have their own institutional reasons to prefer misunderstanding it. One student in eight hundred has sensitivity to the fifth thread. Most never encounter it directly and live without incident. Some do encounter it. Without guidance, those encounters produce exactly the kind of crisis that happened in the courtyard.\n\n\"The monitoring function identifies, assesses, and offers a structured path,\" she says. \"We don't remove people. We don't disappear them.\" A pause. \"We offer them something the Orders cannot: a framework that acknowledges what they actually are.\"\n\nShe lets that sit.\n\nAnd then: \"Ines Reeve is one of ours.\" She says it evenly, like confirming a fact that was never in dispute. \"She is well. She made her choice freely, with full information, at seventeen years old.\" She looks at you directly. \"I want you to hear that sentence and not dismiss it.\"\n\nThe problem — the thing that makes this harder than you wanted it to be — is that she isn't wrong about everything. You can feel the places where her logic holds, and the places where it bends around something she isn't saying.",
+  "choices": [
+    {
+      "id": "s19_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "set_flag", "key": "knows_ines_alive" },
+        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+      ],
+      "next": "s20_tomas_in_the_room"
+    }
+  ]
+}

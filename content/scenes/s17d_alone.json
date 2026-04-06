@@ -1,0 +1,15 @@
+{
+  "id": "s17d_alone",
+  "text": "The window seat in the library overlooks the kitchen garden, which is nobody's idea of a romantic view, and that suits you. No one comes here to think about anything consequential. You have the space to yourself.\n\nYou go over what you know. The archive records: real, documented, dated. Eska's words, or the fragment she let slip. Lira's honesty-within-limits — what she said and, more importantly, what she didn't say. What you witnessed or understood in chapter one, and the shape of the thing that's been assembling itself around you since.\n\nThe picture is almost complete. One gap: what Solis actually wants from you specifically. She chose to make contact with you before she'd spoken to other students. Lira said the conversation would matter for you in particular. Those two facts sit uneasily together.\n\nSomething about you is of interest to these people. You don't know what it is.\n\nBut here's what you do know: going in alone means Solis can't use anyone you care about as leverage. Nobody gets implicated by association. If it goes wrong, it goes wrong for you and not for anyone else.\n\nThat's a kind of protection. It's also a kind of loneliness. You sit with both.",
+  "choices": [
+    {
+      "id": "s17d_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "key": "ambition", "value": 1 },
+        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+      ],
+      "next": "s18_solis_formal_meeting"
+    }
+  ]
+}

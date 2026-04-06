@@ -1,0 +1,11 @@
+{
+  "id": "s09c_fracture_morning",
+  "text": "Lira is waiting outside your door.\n\nNot leaning against the wall, not pretending to be somewhere else — waiting, with the patient specificity of someone who knew exactly when you would open it. She's dressed for the day already. Her Ventus badge catches the light.\n\n\"Walk with me,\" she says. Not a question, but not a threat either. Her voice has the careful warmth of someone who has thought about how to begin this conversation.\n\nShe walks slowly, so you can keep pace. She speaks in the same register — unhurried, precise.\n\n\"Last night was complicated.\" She looks ahead, not at you. \"I know what you saw. I know what you chose not to do. And I think you made a reasonable call in an unreasonable situation.\" A pause. The corridor is empty this early. \"What I want you to understand is that there's a way through this that doesn't require you to carry it alone.\"\n\nShe stops at the window above the east courtyard. You can see the frost on the flagstones below.\n\n\"You have options,\" she says. \"I'd like to explain them. But only if you want to hear them.\"\n\nThe uncomfortable thing — the thing you don't want to admit — is that her kindness feels genuine. It doesn't make the leverage any less real. It might make it worse.",
+  "choices": [
+    {
+      "id": "s09c_continue",
+      "text": "Continue.",
+      "next": "c01_fracture_morning_choice"
+    }
+  ]
+}

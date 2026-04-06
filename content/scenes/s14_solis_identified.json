@@ -1,0 +1,11 @@
+{
+  "id": "s14_solis_identified",
+  "text": "The weekly notice board is posted every Monday at six in the morning, and nobody reads it except the students who are waiting for something specific. You read it on Tuesday.\n\nAmong the standard rotation entries — visiting lecturer from the Terram Institute, maintenance work on the south tower resonance fixtures, reminder about essay submission deadlines — one item, third from the bottom:\n\nExternal Examiner: Maren Solis. Arriving Thursday, assessment rotation, three days.\n\nStandard language. Standard format. The kind of entry that would mean nothing to someone who didn't already know what to look for.\n\nYou know what to look for.\n\nThursday. Three days. You have a name, a timeline, and the particular alertness that comes from knowing something is approaching before it arrives. Whether you get to her first or wait for her to come to you — that question resolves itself by Thursday. Until then, the clock is running.",
+  "choices": [
+    {
+      "id": "s14_continue",
+      "text": "Continue.",
+      "next": "g07_solis_initiative_gate"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "s21_negotiation",
+  "text": "All of you end up back in your chairs, or close enough. Solis has shifted slightly — she hasn't lost composure, but she's doing something different now, something that requires more from her than the careful assessment mode she came in with. The room is exhausted in the way rooms get when people have been genuinely honest in them.\n\nSolis has a position. She states it plainly: the monitoring function exists because the alternative is worse. The Fracture is real. What happened in the courtyard will happen again, to other students, unless there are people who know what to look for and what to do. She is one of those people. She would like you to consider, seriously and without dismissal, what she's actually describing.\n\nYou have information. Not everything — nobody in this room has everything — but enough to make this a conversation rather than a presentation. The archive records. What Eska said, or almost said. What Lira confirmed by omission. What you understand, now, about the shape of this.\n\nTomás has need. That's the simplest and most powerful thing in the room.\n\nThe three of you talk. You work through what is possible and what isn't, what can be offered and what can't, what the truth actually is and what each of you is willing to do with it. It's intimate in the way that only conversations held under real pressure can be intimate — people showing the exact size of what they care about.",
+  "choices": [
+    {
+      "id": "s21_continue",
+      "text": "Continue.",
+      "next": "ending_gate_2"
+    }
+  ]
+}

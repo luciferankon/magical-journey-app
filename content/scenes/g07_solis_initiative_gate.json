@@ -1,0 +1,29 @@
+{
+  "id": "g07_solis_initiative_gate",
+  "text": "Thursday morning. Solis arrived on the late coach and went straight to the room the school allocated her. You know which room. You've known since Wednesday when you checked the visiting assessor schedule in the administrative annex. The question is whether knowing is enough.",
+  "choices": [
+    {
+      "id": "g07_choice_initiative",
+      "text": "You reach her before she reaches you.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "key": "cunning", "value": 5 },
+          {
+            "type": "and",
+            "conditions": [
+              { "type": "relationship_gte", "key": "aldric_regard", "value": 3 },
+              { "type": "trait_gte", "key": "wisdom", "value": 4 }
+            ]
+          }
+        ]
+      },
+      "next": "s15_player_finds_solis"
+    },
+    {
+      "id": "g07_choice_wait",
+      "text": "She finds you on her own schedule.",
+      "next": "s15_solis_finds_player"
+    }
+  ]
+}

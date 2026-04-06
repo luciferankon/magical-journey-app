@@ -1,0 +1,15 @@
+{
+  "id": "s15_player_finds_solis",
+  "text": "Her door is open. She's at the table by the window, arranging files into a grid only she understands — each stack a different height, each deliberately placed. She doesn't hear you in the doorway, or she hears you and doesn't react, which tells you something either way.\n\nYou knock on the open door.\n\nShe looks up. Her face does something small and unreadable — recalibration, maybe. She was expecting someone curious. Not this quickly.\n\n\"Close the door,\" she says. Not unfriendly. \"Sit down.\"\n\nShe doesn't shuffle the files away or try to make the room look like something other than what it is. She just folds her hands on the table and looks at you with the attention of someone who has been doing this a long time and finds it genuinely interesting.\n\n\"You have the initiative,\" she says, after a moment. \"That's rarer than it sounds. Don't waste it.\"",
+  "choices": [
+    {
+      "id": "s15_pf_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "solis_standing", "value": 2 },
+        { "type": "trait_delta", "key": "cunning", "value": 1 }
+      ],
+      "next": "s16_choose_approach"
+    }
+  ]
+}

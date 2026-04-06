@@ -1,0 +1,14 @@
+{
+  "id": "s15_solis_finds_player",
+  "text": "She introduces herself during an ordinary Thursday afternoon — you're in the west corridor between classes, and she steps into your path with the precise timing of someone who has checked your schedule in advance.\n\n\"Maren Solis,\" she says, and extends her hand. Her grip is firm and brief, the kind of handshake that conveys exactly as much warmth as intended and no more. \"External assessor. I have a slot tomorrow morning, if you'd be willing.\"\n\nNot quite optional. The phrasing is polite but the structure isn't — this is an invitation in the way a formal summons is an invitation.\n\nShe's already formed a view before you say a word. You see it in the quality of her attention: comprehensive, unhurried, already working. When she looks at you, she's not deciding who you are. She's confirming it.\n\n\"Ten o'clock,\" she says. \"East assessment room.\" And she's gone before you've agreed.",
+  "choices": [
+    {
+      "id": "s15_sf_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+      ],
+      "next": "s16_choose_approach"
+    }
+  ]
+}

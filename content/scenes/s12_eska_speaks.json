@@ -1,0 +1,15 @@
+{
+  "id": "s12_eska_speaks",
+  "text": "She speaks in a low voice, barely above the ambient hum of the healing room's resonance fixtures.\n\n\"Someone gave it to me.\" A pause. She checks the door. \"Deliberately. They said it was a standard assessment — sensitivity testing, they called it. That all first-years had it done.\" Her jaw tightens. \"I believed them. Why wouldn't I?\"\n\nYou don't answer that.\n\n\"They had a badge,\" she says. \"External examiner. I'd never seen them at Aethermoor before. I thought —\" She stops. Recalibrates. \"I assumed the school had outside assessors. That it was normal.\"\n\nShe's doing what people do when they've been deceived and feel, unreasonably, that they should have known better: reviewing each small moment of trust as if it were an error. You recognise it.\n\n\"The thread they gave me,\" she says, very quietly. \"It didn't feel like any of the four. It felt like — \" She presses her lips together. \"It felt wrong. Like trying to hold something that was pulling apart.\"\n\nShe looks out the window. Done, for now. But you have a name — External Examiner — and a fact: the Fracture thread was administered deliberately, to a first-year, as a test.",
+  "choices": [
+    {
+      "id": "s12_speaks_continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "key": "cunning", "value": 1 },
+        { "type": "set_flag", "key": "met_solis" }
+      ],
+      "next": "s13_lira_conversation"
+    }
+  ]
+}
