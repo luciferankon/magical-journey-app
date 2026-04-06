@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const VOICE_ID = "onwK4e9ZLuTAKqWW03F9"; // Daniel — deep British narrator
+const VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"; // George — warm authoritative British
 const MODEL_ID = "eleven_turbo_v2_5";
 
 export async function POST(req: NextRequest) {
