@@ -158,8 +158,103 @@ describe('migrate', () => {
     })
   })
 
-  describe('V1 → V3 multi-hop migration', () => {
-    // A V1 save must migrate all the way to V3 in one call
+  describe('V3 → V4 migration', () => {
+    // Simulate a V3 save: has chapter-3 fields but missing chapter-4 fields
+    const v3Save = {
+      meta: { schemaVersion: 3, createdAt: '2025-01-01T00:00:00.000Z', lastUpdatedAt: '2026-01-01T00:00:00.000Z' },
+      identity: { name: 'Rowan', house: 'terram', background: 'outsider' },
+      traits: { courage: 5, cunning: 6, empathy: 4, ambition: 5, wisdom: 7 },
+      relationships: {
+        sera_trust: 3, caden_rivalry: 1, aldric_regard: 4, lira_influence: 4,
+        tomas_bond: 7, solis_standing: 2, ines_contact: 5,
+      },
+      flags: {
+        witnessed_fracture: true, dueled_caden: false, reported_lira: true, sided_with_lira: false,
+        class_success: true, crisis_intervened: true, crisis_fled: false, house_assigned: true,
+        met_solis: true, knows_ines_alive: true, conclave_offered: false, tomas_knows: true,
+        sera_truth_known: true, caden_aligned: true, fracture_origin_known: true,
+        conclave_split: true, aldric_acts: true,
+      },
+      chapterExports: {
+        crisis_outcome: 'hero', chapter_1_reputation: 'high', lira_status: 'watching',
+        chapter_2_solis_stance: 'confronted', ines_status: 'found', lira_chapter_2_status: 'ally',
+        chapter_3_stance: 'reformer', fracture_origin_shared: 'conclave_only', caden_status: 'ally',
+      },
+      progress: { currentNodeId: 's32a_after_reformer', visitedNodes: [], chapter: 4 },
+    }
+
+    it('adds lira_trust seeded from lira_influence >= 3', () => {
+      const result = migrate(v3Save)
+      // lira_influence is 4 (>= 3) → lira_trust seeds to 2
+      expect(result.relationships.lira_trust).toBe(2)
+    })
+
+    it('adds lira_trust as 0 when lira_influence < 3', () => {
+      const lowInfluence = {
+        ...v3Save,
+        relationships: { ...v3Save.relationships, lira_influence: 2 },
+      }
+      const result = migrate(lowInfluence)
+      expect(result.relationships.lira_trust).toBe(0)
+    })
+
+    it('preserves existing lira_trust if already present in V3 save', () => {
+      const withTrust = {
+        ...v3Save,
+        relationships: { ...v3Save.relationships, lira_trust: 5 },
+      }
+      const result = migrate(withTrust)
+      expect(result.relationships.lira_trust).toBe(5)
+    })
+
+    it('adds chapter-4 flags defaulting to false', () => {
+      const result = migrate(v3Save)
+      expect(result.flags.davo_encountered).toBe(false)
+      expect(result.flags.davo_truth_known).toBe(false)
+      expect(result.flags.veth_protected).toBe(false)
+      expect(result.flags.veth_broken).toBe(false)
+      expect(result.flags.archivist_revealed).toBe(false)
+      expect(result.flags.lira_returned).toBe(false)
+    })
+
+    it('adds chapter-4 chapterExports defaulting to null', () => {
+      const result = migrate(v3Save)
+      expect(result.chapterExports.chapter_4_stance).toBeNull()
+      expect(result.chapterExports.veth_status).toBeNull()
+      expect(result.chapterExports.davo_outcome).toBeNull()
+      expect(result.chapterExports.lira_status_ch4).toBeNull()
+    })
+
+    it('preserves all V3 relationship values', () => {
+      const result = migrate(v3Save)
+      expect(result.relationships.sera_trust).toBe(3)
+      expect(result.relationships.ines_contact).toBe(5)
+      expect(result.relationships.tomas_bond).toBe(7)
+    })
+
+    it('preserves all V3 flag values', () => {
+      const result = migrate(v3Save)
+      expect(result.flags.caden_aligned).toBe(true)
+      expect(result.flags.fracture_origin_known).toBe(true)
+      expect(result.flags.sera_truth_known).toBe(true)
+      expect(result.flags.aldric_acts).toBe(true)
+    })
+
+    it('preserves all V3 chapterExports', () => {
+      const result = migrate(v3Save)
+      expect(result.chapterExports.chapter_3_stance).toBe('reformer')
+      expect(result.chapterExports.fracture_origin_shared).toBe('conclave_only')
+      expect(result.chapterExports.caden_status).toBe('ally')
+    })
+
+    it('sets schemaVersion to current', () => {
+      const result = migrate(v3Save)
+      expect(result.meta.schemaVersion).toBe(SCHEMA_VERSION)
+    })
+  })
+
+  describe('V1 → V4 multi-hop migration', () => {
+    // A V1 save must migrate all the way to V4 in one call
     const v1Save = {
       meta: { schemaVersion: 1, createdAt: '2025-01-01T00:00:00.000Z', lastUpdatedAt: '2025-01-01T00:00:00.000Z' },
       identity: { name: 'Rowan', house: null, background: null },
@@ -178,7 +273,7 @@ describe('migrate', () => {
       expect(result.meta.schemaVersion).toBe(SCHEMA_VERSION)
     })
 
-    it('has all chapter-2 and chapter-3 fields populated', () => {
+    it('has all chapter-2, chapter-3, and chapter-4 fields populated', () => {
       const result = migrate(v1Save)
       // V2 fields
       expect(result.relationships.solis_standing).toBe(0)
@@ -188,6 +283,12 @@ describe('migrate', () => {
       expect(result.relationships.ines_contact).toBe(0)
       expect(result.flags.fracture_origin_known).toBe(false)
       expect(result.chapterExports.chapter_3_stance).toBeNull()
+      // V4 fields
+      expect(result.relationships.lira_trust).toBe(0) // lira_influence was 0, seeds to 0
+      expect(result.flags.davo_encountered).toBe(false)
+      expect(result.flags.archivist_revealed).toBe(false)
+      expect(result.chapterExports.chapter_4_stance).toBeNull()
+      expect(result.chapterExports.veth_status).toBeNull()
     })
   })
 })

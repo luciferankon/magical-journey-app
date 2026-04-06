@@ -3,7 +3,8 @@
   "chapterTitles": {
     "1": "The First Weaving",
     "2": "What the Fracture Remembers",
-    "3": "The Name She Left Behind"
+    "3": "The Name She Left Behind",
+    "4": "The Weight of the Conclave"
   },
   "initialState": {
     "traits": {
@@ -18,7 +19,10 @@
       "caden_rivalry": 0,
       "aldric_regard": 0,
       "lira_influence": 0,
-      "tomas_bond": 0
+      "tomas_bond": 0,
+      "solis_standing": 0,
+      "ines_contact": 0,
+      "lira_trust": 0
     }
   },
   "scenes": [
@@ -104,6 +108,32 @@
     "ending_3a_reformer",
     "ending_3b_insurgent",
     "ending_3c_absorbed",
-    "ending_3d_isolated"
+    "ending_3d_isolated",
+    "s32a_after_reformer",
+    "s32b_after_insurgent",
+    "s32c_after_absorbed",
+    "s32d_after_isolated",
+    "s35_the_arrivals",
+    "c09_first_sight_choice",
+    "s36_davo_encounter",
+    "s37_veth_summons",
+    "c10_veth_crisis_choice",
+    "s38_cover_built",
+    "s38_archivist_moves",
+    "s39_lira_returns",
+    "g11_archivist_reveal_gate",
+    "s40_archivist_in_person",
+    "s41_without_the_archivist",
+    "s42_davo_truth",
+    "c11_davo_question",
+    "s43_the_governance_day",
+    "g12_governance_outcome_gate",
+    "s44_session_breaks",
+    "s44_session_holds",
+    "ending_gate_4",
+    "ending_4a_threshold",
+    "ending_4b_exposure",
+    "ending_4c_architect",
+    "ending_4d_catalyst"
   ]
 }

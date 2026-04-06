@@ -10,6 +10,7 @@ const NPC_META: Record<string, { name: string; role: string; color: string }> = 
   caden_rivalry:   { name: "Caden",   role: "Rivalry",   color: "bg-ignis"    },
   aldric_regard:   { name: "Aldric",  role: "Regard",    color: "bg-gold"     },
   lira_influence:  { name: "Lira",    role: "Influence", color: "bg-fracture" },
+  lira_trust:      { name: "Lira",    role: "Trust",     color: "bg-gold"     },
   tomas_bond:      { name: "Tomás",   role: "Bond",      color: "bg-terram"   },
   solis_standing:  { name: "Solis",   role: "Standing",  color: "bg-ventus"   },
   ines_contact:    { name: "Ines",    role: "Contact",   color: "bg-fracture" },

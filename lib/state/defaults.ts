@@ -76,6 +76,7 @@ export function createInitialState(
       tomas_bond: 0,
       solis_standing: 0,
       ines_contact: 0,
+      lira_trust: 0,
     },
 
     flags: {
@@ -99,6 +100,12 @@ export function createInitialState(
       fracture_origin_known: false,
       conclave_split: false,
       aldric_acts: false,
+      // Chapter 4
+      davo_encountered: false,
+      davo_truth_known: false,
+      veth_protected: false,
+      archivist_revealed: false,
+      lira_returned: false,
     },
 
     chapterExports: {
@@ -114,6 +121,11 @@ export function createInitialState(
       chapter_3_stance: null,
       fracture_origin_shared: null,
       caden_status: null,
+      // Chapter 4
+      chapter_4_stance: null,
+      veth_status: null,
+      davo_outcome: null,
+      lira_status_ch4: null,
     },
 
     progress: {

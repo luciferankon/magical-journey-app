@@ -1,0 +1,16 @@
+{
+  "id": "s40_archivist_in_person",
+  "text": "The room Ines arranged is a seminar space on the third floor of the public archives building, booked under a departmental credit that will appear in no one's expense report as unusual. The building is technically outside Aethermoor's jurisdiction. The booking is technically legitimate.\n\nThe person sitting at the far end of the seminar table is in their late sixties. Small. Precisely dressed in the way of someone who has never stopped thinking of themselves as a scholar first. They look up when you enter and do not stand.\n\n\"You're the one who found the Commission files,\" they say. Not a question.\n\n\"Yes.\"\n\n\"That took me three years to get into a position to retrieve. You did it in one semester.\" They say this without particular warmth or praise — as a data point that requires acknowledgment. \"Sit down.\"\n\nYou sit. Ines sits beside you. She does not look at the Archivist the way most people look at sources — she looks at them the way you'd look at someone you've been corresponding with for eighteen months and are meeting for the first time, which is exactly what this is.\n\n\"Thirty-one years inside,\" the Archivist says. \"Twenty-two working against it.\" They fold their hands on the table. \"Not from heroism. From the specific feeling of having understood something fully and then having to decide whether to keep doing it anyway.\" A pause. \"I kept doing it for nine years. Then I stopped. The difference between those two periods is what I've spent twenty-two years trying to correct.\"\n\nThey open the folder in front of them.\n\n\"I can offer three things,\" they say. \"The original research logs from 1963 — the unredacted versions, pre-Commission. My own formal testimony, on record. And a proposal for controlled public disclosure that was designed specifically to be too well-documented to bury.\" They look at you. \"You'll need to carry the package forward. What you do with it in Chapter 5 is a question I'm not qualified to answer.\"\n\n\"Why not?\"\n\n\"Because,\" they say, \"I've been inside too long to know what's true about the outside anymore. That's why I need someone who hasn't been.\"",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "set_flag", "flag": "archivist_revealed" },
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 2 },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 2 }
+      ],
+      "next": "s42_davo_truth"
+    }
+  ]
+}

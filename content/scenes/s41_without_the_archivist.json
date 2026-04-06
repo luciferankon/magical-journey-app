@@ -1,0 +1,15 @@
+{
+  "id": "s41_without_the_archivist",
+  "text": "You lay it out on the table.\n\nThe Commission summary. Sera's administrative records with her grandmother's name on a voided seal. Caden's photographs — a courtyard, young students, a man with an assessor's badge who was assessed himself four years ago. What Ines has been able to confirm from inside without triggering a flag on her account. Whatever Lira contributed, or whatever is available without her. The whole assembled weight of four months and three chapters of accumulated risk.\n\nTomás looks at it for a long time. He has the quality — rare and somewhat infuriating — of actually reading things when he says he's reading them.\n\n\"It's not the full documentation,\" you say. \"I know that.\"\n\n\"It's not nothing, either,\" he says. He picks up the Commission summary. He puts it back down. \"It's enough to make them uncomfortable.\" He pauses. \"That's a start.\"\n\nHe says it without irony, which is the thing about Tomás that is easy to mistake for simplicity. It is not simplicity. He means: the governance meeting is in two days, the Archivist's direct testimony didn't come through, and *enough to make them uncomfortable* is the realistic description of what you have, and that is what you're working with, and that is still something.\n\nBoth things are true simultaneously. You have less than you wanted. It is still a start.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 1 },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+      ],
+      "next": "s42_davo_truth"
+    }
+  ]
+}

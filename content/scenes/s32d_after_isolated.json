@@ -1,0 +1,14 @@
+{
+  "id": "s32d_after_isolated",
+  "text": "Three weeks since the vote. Twenty-two days of knowing the truth and not knowing what to do with it.\n\nInes's message sits unanswered in the channel: *Still here. Still waiting. Are you?* You have read it eight times. You haven't written back, because writing back requires having an answer, and the answer you have doesn't feel sufficient.\n\nWhat you have is this: the Fracture is a designed phenomenon propagated by people who are now dead, managed by an institution that knows what it is and will not say so, affecting students who never consented to any of it. You have documentation. You have names. What you do not have is a clear line from what you know to something that changes it.\n\nYou are working on that line. It is slow work.\n\nThen, on a Tuesday morning, two things happen.\n\nThe first: a group of young students — twelve, thirteen, fourteen — arrives in the intake courtyard below the window where you've been sitting. They are confused in the way of people who have been told they have a special appointment and have not been told what the appointment is for.\n\nThe second: Caden appears at your shoulder, very quietly. He has been looking out the same window. \"That's my brother,\" he says, pointing at the man with the assessor's badge working his way down the intake line. His voice is completely level in the way voices are when someone is doing all the work of keeping them that way.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 2 }
+      ],
+      "next": "s35_the_arrivals"
+    }
+  ]
+}

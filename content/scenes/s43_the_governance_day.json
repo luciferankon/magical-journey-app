@@ -1,0 +1,12 @@
+{
+  "id": "s43_the_governance_day",
+  "text": "The session starts at nine. You know this because Ines messaged at eight-fifty-two: *going in.*\n\nThe library annex has a window that looks onto a courtyard that is not the Conclave's courtyard, which makes it ideal for sitting in without seeming to wait. You are sitting in it waiting. Tomás is on the bench to your left. Caden is standing. Sera came by at ten and then left to teach a class she couldn't cancel, which tells you something about her specific variety of composure.\n\nAt ten-fourteen, Veth sends a message: *proceeding.*\n\nAt eleven-thirty, he sends: *held.*\n\nWhich is one word that tells you that whatever the first challenge was, it has been met, and the session is continuing rather than collapsing, but is not telling you which way continuing is running.\n\nAt twelve-oh-eight: nothing.\n\nAt one-forty-seven: nothing.\n\nAt two-fifteen, Tomás goes to get coffee. You have not moved in approximately an hour. Caden has cycled through standing, sitting, standing, and is now standing again at a slightly different angle.\n\nAt three-oh-three, Ines sends a message.\n\nIt is one word: *holding.*\n\nYou look at it for a long time. Then you look at Caden. \"She means it's still running,\" you say. \"She means they haven't resolved it yet.\"\n\n\"I know what it means,\" he says.\n\nYou wait.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "g12_governance_outcome_gate"
+    }
+  ]
+}

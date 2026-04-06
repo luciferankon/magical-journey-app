@@ -72,6 +72,22 @@ export function migrate(raw: unknown): PlayerState {
     state = migrateToV3(state);
   }
 
+  if (savedVersion < 4) {
+    // V3 → V4: Added lira_trust relationship (initialised from lira_influence >= 3 → 2, else 0),
+    // six chapter-4 flags (davo_encountered, davo_truth_known, veth_protected, veth_broken,
+    // archivist_revealed, lira_returned), and four chapter-4 chapterExports fields
+    // (chapter_4_stance, veth_status, davo_outcome, lira_status_ch4).
+    // All new flags default to false; all new exports default to null.
+    // Note: veth_broken was added here but removed in V5.
+    state = migrateToV4(state);
+  }
+
+  if (savedVersion < 5) {
+    // V4 → V5: Removed veth_broken flag. The flag was designed but never wired into
+    // any scene or gate — no content path ever set it. Removed to keep the schema clean.
+    state = migrateToV5(state);
+  }
+
   return state;
 }
 
@@ -155,6 +171,69 @@ function migrateToV3(prev: PlayerState): PlayerState {
       fracture_origin_shared: (e.fracture_origin_shared ?? null) as PlayerState["chapterExports"]["fracture_origin_shared"],
       caden_status: (e.caden_status ?? null) as PlayerState["chapterExports"]["caden_status"],
     },
+  };
+}
+
+/**
+ * V3 → V4: Chapter 4 schema additions.
+ * - relationships.lira_trust: new meter; initialised from lira_influence (>= 3 → 2, else 0)
+ * - flags.davo_encountered, davo_truth_known, veth_protected, veth_broken,
+ *   archivist_revealed, lira_returned: new flags, default false (veth_broken removed in V5)
+ * - chapterExports.chapter_4_stance, veth_status, davo_outcome, lira_status_ch4: default null
+ *
+ * All chapter-1, chapter-2, and chapter-3 fields are preserved exactly as they were.
+ */
+function migrateToV4(prev: PlayerState): PlayerState {
+  const r = prev.relationships as unknown as Record<string, unknown>;
+  const f = prev.flags as unknown as Record<string, unknown>;
+  const e = prev.chapterExports as unknown as Record<string, unknown>;
+
+  // lira_trust seeds from lira_influence: >= 3 → 2, else 0.
+  // Preserve an existing value if the field was somehow already present.
+  const liraInfluence = typeof r.lira_influence === "number" ? r.lira_influence : 0;
+  const liraTrustSeed = liraInfluence >= 3 ? 2 : 0;
+
+  return {
+    ...prev,
+    meta: { ...prev.meta, schemaVersion: 4 },
+    relationships: {
+      ...prev.relationships,
+      lira_trust: typeof r.lira_trust === "number" ? r.lira_trust : liraTrustSeed,
+    },
+    flags: {
+      ...prev.flags,
+      davo_encountered: typeof f.davo_encountered === "boolean" ? f.davo_encountered : false,
+      davo_truth_known: typeof f.davo_truth_known === "boolean" ? f.davo_truth_known : false,
+      veth_protected: typeof f.veth_protected === "boolean" ? f.veth_protected : false,
+      archivist_revealed: typeof f.archivist_revealed === "boolean" ? f.archivist_revealed : false,
+      lira_returned: typeof f.lira_returned === "boolean" ? f.lira_returned : false,
+    },
+    chapterExports: {
+      ...prev.chapterExports,
+      chapter_4_stance: (e.chapter_4_stance ?? null) as PlayerState["chapterExports"]["chapter_4_stance"],
+      veth_status: (e.veth_status ?? null) as PlayerState["chapterExports"]["veth_status"],
+      davo_outcome: (e.davo_outcome ?? null) as PlayerState["chapterExports"]["davo_outcome"],
+      lira_status_ch4: (e.lira_status_ch4 ?? null) as PlayerState["chapterExports"]["lira_status_ch4"],
+    },
+  };
+}
+
+/**
+ * V4 → V5: Remove veth_broken flag.
+ * The flag was declared in V4 but no scene or gate ever set it — it was designed
+ * for a branch that was not implemented in Chapter 4. Removed to keep the schema clean.
+ * Saves that somehow have veth_broken set (impossible via normal play, but possible via
+ * direct state manipulation) will have the field stripped silently.
+ */
+function migrateToV5(prev: PlayerState): PlayerState {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { veth_broken: _removed, ...remainingFlags } =
+    prev.flags as unknown as Record<string, unknown>;
+
+  return {
+    ...prev,
+    meta: { ...prev.meta, schemaVersion: 5 },
+    flags: remainingFlags as PlayerState["flags"],
   };
 }
 

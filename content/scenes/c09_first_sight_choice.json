@@ -1,0 +1,53 @@
+{
+  "id": "c09_first_sight_choice",
+  "text": "Caden hasn't moved.\n\nThe queue is still moving. The administrative staff are still being cheerful. Below, Davo Miral writes something on his tablet and steps to the next student.\n\nThere is a staircase at the end of this corridor. There is also a door to the outside route, which would take twenty minutes and arrive at a different entrance entirely. There is your phone. There are four distinct ways this moment can go, and approximately four minutes before the intake session ends and Davo is gone somewhere you can't follow him without authorization.\n\nThe question, which Caden is not asking because he doesn't trust his voice right now, is: what do you do with the four minutes?",
+  "choices": [
+    {
+      "id": "c09_go_down",
+      "text": "Go down — talk to Davo now, before the intake finishes.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "flag_set", "flag": "caden_aligned" },
+          { "type": "trait_gte", "trait": "courage", "value": 6 }
+        ]
+      },
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 }
+      ],
+      "next": "s36_davo_encounter"
+    },
+    {
+      "id": "c09_hold_back",
+      "text": "Hold Caden back — not here, not in the open.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+      ],
+      "next": "s37_veth_summons"
+    },
+    {
+      "id": "c09_send_caden",
+      "text": "Send Caden down alone. You watch from here.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "s36_davo_encounter"
+    },
+    {
+      "id": "c09_contact_ines",
+      "text": "Contact Ines first — she needs to know Davo is here before you move.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "ines_contact",
+        "value": 4
+      },
+      "consequences": [
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 1 },
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "s37_veth_summons"
+    }
+  ]
+}

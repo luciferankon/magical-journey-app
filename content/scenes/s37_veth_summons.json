@@ -1,0 +1,14 @@
+{
+  "id": "s37_veth_summons",
+  "text": "Veth finds you in the corridor between the third-floor archive room and the east staircase. This is unusual: Veth leaves messages through the scheduling system, through routing notes slipped into weekly summaries, through channels that establish plausible separation. He does not find you in corridors.\n\nHe is also less composed than you have ever seen him, which covers a narrower range than it would for most people. His composure has compressed rather than cracked — everything still in the right place, held a degree too tightly.\n\n\"I can't put this in writing,\" he says, without preamble. \"There is no record of this conversation.\"\n\nYou nod.\n\n\"The central governance body.\" He says it carefully, checking each word before he releases it. \"They've summoned me to account for certain communications routed through my office. Irregular communications, they're calling them.\" A beat. \"I have forty-eight hours.\"\n\nThe thing he doesn't say: the name of who those communications were with. The thing you both understand: the summons is not about the communications. It is about what the communications led to, and who is holding what, and what happens if that person is named in a governance session on record.\n\n\"What happens after forty-eight hours?\" you ask.\n\n\"That depends,\" Veth says, \"on what you do in the next forty-eight hours.\" He straightens his jacket. He walks away, and this time there is no routing note, no scheduling entry, nothing that says this conversation ever happened.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "c10_veth_crisis_choice"
+    }
+  ]
+}

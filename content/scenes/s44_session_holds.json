@@ -1,0 +1,16 @@
+{
+  "id": "s44_session_holds",
+  "text": "Veth sends nothing for a day.\n\nThen: *I'm being transferred. Assignment change — internal rotation. Standard procedure.* A longer pause. *It's not.* Then nothing.\n\nThe expansion proceeds under modified language — amended scope, adjusted consent protocols, a restructuring of how the intake sessions are recorded. Three mid-level governance members have been quietly removed. Not the senior figures. The people who facilitated the communications, not the people who authorised what the communications were about.\n\nInes's message arrives at night, longer than usual. Not hopeless — specific. The session shifted the internal balance enough that there is now a faction inside the Conclave that knows the truth. Three people who have seen the documentation, who sat through the Archivist's testimony or heard the transcript, who know what the Commission findings actually say and voted for them to be quietly acknowledged rather than loudly rejected.\n\nThey will not act. Not this year, possibly not this decade. But they cannot unknow what they know.\n\n*Still here,* Ines ends. *Chapter 5 is still coming. The balance shifted a few degrees. A few degrees is a direction. Don't make me wait again.*",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "ambition", "delta": 1 },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "set_chapter_export", "field": "veth_status", "value": "transferred" }
+      ],
+      "next": "ending_gate_4"
+    }
+  ]
+}
