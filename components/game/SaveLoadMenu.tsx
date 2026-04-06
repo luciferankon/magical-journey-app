@@ -8,6 +8,7 @@ import {
   deleteSlot,
   nextAvailableSlot,
   MAX_MANUAL_SLOTS,
+  AUTOSAVE_SLOT_ID,
 } from "@/lib/save";
 import type { SaveIndexEntry } from "@/lib/save";
 import type { PlayerState } from "@/lib/state";
@@ -15,6 +16,7 @@ import type { PlayerState } from "@/lib/state";
 interface SaveLoadMenuProps {
   currentState: PlayerState;
   onLoad: (state: PlayerState) => void;
+  onNewGame: () => void;
   onClose: () => void;
 }
 
@@ -104,8 +106,9 @@ function EmptySlot({ slotId, onSave }: { slotId: string; onSave: (id: string) =>
   );
 }
 
-export function SaveLoadMenu({ currentState, onLoad, onClose }: SaveLoadMenuProps) {
+export function SaveLoadMenu({ currentState, onLoad, onNewGame, onClose }: SaveLoadMenuProps) {
   const [saves, setSaves] = useState<SaveIndexEntry[]>([]);
+  const [confirmingNewGame, setConfirmingNewGame] = useState(false);
 
   function refresh() {
     setSaves(listSaves().filter((e) => e.slotId !== "autosave"));
@@ -128,6 +131,12 @@ export function SaveLoadMenu({ currentState, onLoad, onClose }: SaveLoadMenuProp
   function handleDelete(slotId: string) {
     deleteSlot(slotId);
     refresh();
+  }
+
+  function handleNewGame() {
+    // Wipe autosave so GameShell boots fresh via apiStart
+    deleteSlot(AUTOSAVE_SLOT_ID);
+    onNewGame();
   }
 
   // Build ordered slot list: fill used slots, append empty up to MAX_MANUAL_SLOTS
@@ -185,8 +194,9 @@ export function SaveLoadMenu({ currentState, onLoad, onClose }: SaveLoadMenuProp
             )}
           </div>
 
-          {/* Quick-save to next available */}
-          <div className="px-5 py-4 border-t border-border-subtle">
+          {/* Footer actions */}
+          <div className="px-5 py-4 border-t border-border-subtle flex flex-col gap-2">
+            {/* Quick-save to next available */}
             <button
               onClick={() => {
                 const slot = nextAvailableSlot();
@@ -197,6 +207,34 @@ export function SaveLoadMenu({ currentState, onLoad, onClose }: SaveLoadMenuProp
             >
               Save to new slot
             </button>
+
+            {/* New Game — with inline confirmation */}
+            {confirmingNewGame ? (
+              <div className="flex items-center gap-2">
+                <p className="font-ui text-xs text-muted-blue flex-1">
+                  Unsaved progress will be lost. Continue?
+                </p>
+                <button
+                  onClick={handleNewGame}
+                  className="font-ui text-xs px-3 py-1.5 rounded bg-danger text-parchment hover:bg-danger/80 transition-colors"
+                >
+                  Start fresh
+                </button>
+                <button
+                  onClick={() => setConfirmingNewGame(false)}
+                  className="font-ui text-xs px-3 py-1.5 rounded border border-border-subtle text-muted-blue hover:text-parchment transition-colors"
+                >
+                  Cancel
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => setConfirmingNewGame(true)}
+                className="w-full font-ui text-sm py-2 rounded border border-border-subtle text-slate hover:text-parchment hover:border-parchment/40 transition-colors"
+              >
+                New Game
+              </button>
+            )}
           </div>
         </div>
       </div>

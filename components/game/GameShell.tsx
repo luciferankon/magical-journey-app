@@ -588,6 +588,19 @@ export function GameShell() {
     []
   );
 
+  const handleNewGame = useCallback(() => {
+    dispatch({ type: "CLOSE_SAVE_MENU" });
+    dispatch({ type: "LOAD_STARTED" });
+    void apiStart().then(({ state, sceneView }) => {
+      dispatch({ type: "GAME_STARTED", playerState: state, sceneView });
+    }).catch((err) => {
+      dispatch({
+        type:    "ERROR",
+        message: err instanceof Error ? err.message : "Failed to start new game.",
+      });
+    });
+  }, []);
+
   // ── Render phases ───────────────────────────────────────────────────────────
 
   if (s.phase === "loading") {
@@ -731,6 +744,7 @@ export function GameShell() {
         <SaveLoadMenu
           currentState={s.playerState}
           onLoad={handleSaveLoad}
+          onNewGame={handleNewGame}
           onClose={() => dispatch({ type: "CLOSE_SAVE_MENU" })}
         />
       )}
