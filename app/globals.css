@@ -108,8 +108,14 @@ body {
   50%       { opacity: 0; }
 }
 
-.cursor-blink {
-  animation: blink 1s step-end infinite;
+/* CSS-only cursor — lives on the <p> as ::after so it never gets
+   touched by React re-renders and never resets mid-blink.          */
+.typing-active::after {
+  content: '▋';
+  color: #C9A84C;
+  margin-left: 2px;
+  animation: blink 0.9s step-end infinite;
+  will-change: opacity;
 }
 
 /* ── Choice card entrance animation ─────────────────────────────────────── */
