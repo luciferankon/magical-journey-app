@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0520;stop-opacity:1" />
+      <stop offset="45%" style="stop-color:#3d0a1e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7a3a10;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="80%" cy="15%">
+      <stop offset="0%" style="stop-color:#f0e6d2;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#d4af8a;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#3d0a1e;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="towerGlow" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#7dd3c0;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#4a9b8e;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0a0814;stop-opacity:0" />
+    </radialGradient>
+    <filter id="fogBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.7"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+
+  <!-- Far background: distant towers silhouette -->
+  <g opacity="0.8">
+    <polygon points="200,600 250,300 280,350 320,250 380,350 420,280 480,400 520,280 580,360 620,300 660,450 700,320 750,380 800,280 860,420" fill="#0a0814"/>
+    <polygon points="850,700 900,380 950,420 1000,350 1050,440 1100,360 1150,480 1200,340 1250,410 1300,300 1350,500 1400,350 1450,420 1500,350 1550,480 1600,380 1650,450 1700,340 1750,500" fill="#0a0814"/>
+    <polygon points="1600,650 1650,420 1700,480 1750,380 1800,460 1850,360 1920,500 1920,700" fill="#0a0814"/>
+  </g>
+
+  <!-- Tower glow overlay -->
+  <ellipse cx="450" cy="350" rx="180" ry="200" fill="url(#towerGlow)"/>
+  <ellipse cx="1200" cy="380" rx="200" ry="220" fill="url(#towerGlow)"/>
+
+  <!-- Mid background: forest tree line -->
+  <polygon points="0,750 150,650 280,700 420,620 560,700 680,640 800,710 920,650 1050,710 1180,660 1300,720 1420,650 1550,710 1680,650 1800,720 1920,680 1920,1080 0,1080" fill="#110d1a" opacity="0.9"/>
+
+  <!-- Fog banks -->
+  <ellipse cx="300" cy="850" rx="400" ry="150" fill="#1a0f2e" opacity="0.5" filter="url(#fogBlur)"/>
+  <ellipse cx="1200" cy="900" rx="450" ry="140" fill="#1a0f2e" opacity="0.4" filter="url(#fogBlur)"/>
+  <ellipse cx="960" cy="920" rx="500" ry="120" fill="#0d0520" opacity="0.3" filter="url(#fogBlur)"/>
+
+  <!-- Gate pillars (left) -->
+  <rect x="80" y="500" width="120" height="580" fill="#1a1520" opacity="0.95"/>
+  <rect x="100" y="480" width="80" height="50" fill="#2a2a2a" opacity="0.8"/>
+  <polygon points="100,480 140,420 180,480" fill="#1a1520" opacity="0.9"/>
+
+  <!-- Gate pillars (right) -->
+  <rect x="1720" y="500" width="120" height="580" fill="#1a1520" opacity="0.95"/>
+  <rect x="1740" y="480" width="80" height="50" fill="#2a2a2a" opacity="0.8"/>
+  <polygon points="1740,480 1780,420 1820,480" fill="#1a1520" opacity="0.9"/>
+
+  <!-- Iron gate bars -->
+  <line x1="200" y1="500" x2="200" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="320" y1="500" x2="320" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="440" y1="500" x2="440" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="560" y1="500" x2="560" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="680" y1="500" x2="680" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="800" y1="500" x2="800" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="920" y1="500" x2="920" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1040" y1="500" x2="1040" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1160" y1="500" x2="1160" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1280" y1="500" x2="1280" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1400" y1="500" x2="1400" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1520" y1="500" x2="1520" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+  <line x1="1640" y1="500" x2="1640" y2="950" stroke="#2a2a2a" stroke-width="8" opacity="0.8"/>
+
+  <!-- Horizontal gate bars -->
+  <line x1="200" y1="550" x2="1640" y2="550" stroke="#2a2a2a" stroke-width="6" opacity="0.6"/>
+  <line x1="200" y1="700" x2="1640" y2="700" stroke="#2a2a2a" stroke-width="6" opacity="0.6"/>
+  <line x1="200" y1="850" x2="1640" y2="850" stroke="#2a2a2a" stroke-width="6" opacity="0.6"/>
+
+  <!-- Cobblestone path -->
+  <rect x="600" y="800" width="720" height="280" fill="#2a2420" opacity="0.6"/>
+  <line x1="600" y1="850" x2="1320" y2="850" stroke="#3a3430" stroke-width="2" opacity="0.5"/>
+  <line x1="600" y1="900" x2="1320" y2="900" stroke="#3a3430" stroke-width="2" opacity="0.5"/>
+  <line x1="600" y1="950" x2="1320" y2="950" stroke="#3a3430" stroke-width="2" opacity="0.5"/>
+  <line x1="750" y1="800" x2="750" y2="1080" stroke="#3a3430" stroke-width="2" opacity="0.4"/>
+  <line x1="900" y1="800" x2="900" y2="1080" stroke="#3a3430" stroke-width="2" opacity="0.4"/>
+  <line x1="1050" y1="800" x2="1050" y2="1080" stroke="#3a3430" stroke-width="2" opacity="0.4"/>
+  <line x1="1200" y1="800" x2="1200" y2="1080" stroke="#3a3430" stroke-width="2" opacity="0.4"/>
+
+  <!-- Moon -->
+  <circle cx="1550" cy="160" r="90" fill="url(#moonGlow)"/>
+  <circle cx="1550" cy="160" r="75" fill="#e8dcc8" opacity="0.9"/>
+
+  <!-- Bioluminescent particles on towers - left -->
+  <circle cx="380" cy="280" r="3" fill="#7dd3c0" opacity="0.8"/>
+  <circle cx="420" cy="320" r="2.5" fill="#7dd3c0" opacity="0.7"/>
+  <circle cx="440" cy="240" r="2" fill="#7dd3c0" opacity="0.6"/>
+  <circle cx="480" cy="350" r="3" fill="#7dd3c0" opacity="0.8"/>
+  <circle cx="510" cy="290" r="2" fill="#7dd3c0" opacity="0.5"/>
+  <circle cx="540" cy="380" r="2.5" fill="#7dd3c0" opacity="0.7"/>
+
+  <!-- Bioluminescent particles on towers - right -->
+  <circle cx="1150" cy="320" r="3" fill="#7dd3c0" opacity="0.8"/>
+  <circle cx="1200" cy="280" r="2.5" fill="#7dd3c0" opacity="0.7"/>
+  <circle cx="1250" cy="350" r="2" fill="#7dd3c0" opacity="0.6"/>
+  <circle cx="1300" cy="300" r="3" fill="#7dd3c0" opacity="0.8"/>
+  <circle cx="1350" cy="360" r="2" fill="#7dd3c0" opacity="0.5"/>
+  <circle cx="1400" cy="320" r="2.5" fill="#7dd3c0" opacity="0.7"/>
+
+  <!-- Scattered atmospheric particles -->
+  <circle cx="200" cy="400" r="1.5" fill="#a0b8c0" opacity="0.3"/>
+  <circle cx="350" cy="550" r="1" fill="#a0b8c0" opacity="0.2"/>
+  <circle cx="600" cy="350" r="1.2" fill="#a0b8c0" opacity="0.25"/>
+  <circle cx="1000" cy="450" r="1" fill="#a0b8c0" opacity="0.2"/>
+  <circle cx="1400" cy="500" r="1.5" fill="#a0b8c0" opacity="0.3"/>
+  <circle cx="1700" cy="380" r="1" fill="#a0b8c0" opacity="0.2"/>
+</svg>

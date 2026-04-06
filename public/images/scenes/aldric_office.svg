@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="officeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1018;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="orreryGlow" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#ffcc77;stop-opacity:0.95" />
+      <stop offset="35%" style="stop-color:#dd8844;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="jarGlow1" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#44ff88;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#228844;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="jarGlow2" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#4dd0e1;stop-opacity:0.85" />
+      <stop offset="50%" style="stop-color:#1a7f8c;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="jarGlow3" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#bb88ff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#6a4a99;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="jarGlow4" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffaa44;stop-opacity:0.82" />
+      <stop offset="50%" style="stop-color:#9a6a44;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#0f0a10;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="moonWindow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#4dd0e1;stop-opacity:0.65" />
+      <stop offset="50%" style="stop-color:#0d8fa3;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#001a1f;stop-opacity:0" />
+    </radialGradient>
+    <filter id="orbBloom">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#officeBg)"/>
+
+  <!-- Oak bookshelves - absolutely packed -->
+  <!-- Left wall shelves -->
+  <g opacity="0.88">
+    <rect x="20" y="150" width="420" height="800" fill="#0f0805" opacity="0.95" rx="3"/>
+    <line x1="20" y1="280" x2="440" y2="280" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="20" y1="410" x2="440" y2="410" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="20" y1="540" x2="440" y2="540" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="20" y1="670" x2="440" y2="670" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+
+    <!-- Packed books on left -->
+    <rect x="30" y="170" width="12" height="30" fill="#8b4513" opacity="0.9"/>
+    <rect x="45" y="168" width="14" height="32" fill="#5c3a1a" opacity="0.9"/>
+    <rect x="62" y="172" width="11" height="28" fill="#a0522d" opacity="0.9"/>
+    <rect x="76" y="170" width="13" height="30" fill="#6b4423" opacity="0.9"/>
+    <rect x="92" y="169" width="12" height="31" fill="#8b6f47" opacity="0.9"/>
+    <rect x="107" y="171" width="13" height="29" fill="#4a2511" opacity="0.9"/>
+    <rect x="123" y="170" width="12" height="30" fill="#7a5a3a" opacity="0.9"/>
+    <rect x="138" y="168" width="14" height="32" fill="#9a6a4a" opacity="0.9"/>
+    <rect x="155" y="172" width="11" height="28" fill="#5a3a1a" opacity="0.9"/>
+    <rect x="169" y="170" width="13" height="30" fill="#8a5a2a" opacity="0.9"/>
+
+    <!-- More books (dense) -->
+    <rect x="185" y="169" width="12" height="31" fill="#9a7a4a" opacity="0.85"/>
+    <rect x="200" y="171" width="13" height="29" fill="#6a5a3a" opacity="0.85"/>
+    <rect x="216" y="170" width="12" height="30" fill="#8b5a2a" opacity="0.85"/>
+    <rect x="231" y="168" width="14" height="32" fill="#7a6a3a" opacity="0.85"/>
+    <rect x="248" y="172" width="11" height="28" fill="#9a5a2a" opacity="0.85"/>
+    <rect x="262" y="170" width="13" height="30" fill="#6a4a3a" opacity="0.85"/>
+    <rect x="278" y="169" width="12" height="31" fill="#8a6a4a" opacity="0.85"/>
+    <rect x="293" y="171" width="13" height="29" fill="#5a5a2a" opacity="0.85"/>
+    <rect x="309" y="170" width="12" height="30" fill="#7a4a2a" opacity="0.85"/>
+    <rect x="324" y="168" width="14" height="32" fill="#9a6a3a" opacity="0.85"/>
+
+    <!-- Upper shelf books (smaller) -->
+    <rect x="30" y="305" width="11" height="25" fill="#1a3a5a" opacity="0.85"/>
+    <rect x="44" y="303" width="13" height="27" fill="#2a4a7a" opacity="0.85"/>
+    <rect x="60" y="306" width="10" height="24" fill="#1a2a4a" opacity="0.85"/>
+    <rect x="73" y="304" width="12" height="26" fill="#3a5a8a" opacity="0.85"/>
+    <!-- ... more books across shelf -->
+  </g>
+
+  <!-- Right wall shelves -->
+  <g opacity="0.88">
+    <rect x="1460" y="150" width="420" height="800" fill="#0f0805" opacity="0.95" rx="3"/>
+    <line x1="1460" y1="280" x2="1880" y2="280" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="1460" y1="410" x2="1880" y2="410" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="1460" y1="540" x2="1880" y2="540" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+    <line x1="1460" y1="670" x2="1880" y2="670" stroke="#1a0f08" stroke-width="2.5" opacity="0.5"/>
+
+    <!-- Right side packed books (mirrored aesthetic) -->
+    <rect x="1470" y="170" width="12" height="30" fill="#8b4513" opacity="0.9"/>
+    <rect x="1485" y="168" width="14" height="32" fill="#5c3a1a" opacity="0.9"/>
+    <rect x="1502" y="172" width="11" height="28" fill="#a0522d" opacity="0.9"/>
+  </g>
+
+  <!-- Central focal point: Brass orrery -->
+  <g opacity="0.95">
+    <!-- Base pedestal -->
+    <ellipse cx="960" cy="750" rx="140" ry="80" fill="#3a2810" opacity="0.95" rx="8"/>
+    <rect x="880" y="750" width="160" height="30" fill="#2a1810" opacity="0.9" rx="4"/>
+
+    <!-- Central sphere (sun) -->
+    <circle cx="960" cy="680" r="45" fill="#ffcc77" opacity="0.95"/>
+    <circle cx="960" cy="680" r="40" fill="#ffdd88" opacity="0.8"/>
+    <circle cx="955" cy="670" r="15" fill="#ffff99" opacity="0.7"/>
+
+    <!-- Orbital rings and planets -->
+    <!-- Ring 1 (closest) -->
+    <circle cx="960" cy="680" r="90" fill="none" stroke="#ccaa77" stroke-width="2" opacity="0.5"/>
+    <circle cx="1050" cy="680" r="8" fill="#8b8888" opacity="0.85"/>
+
+    <!-- Ring 2 -->
+    <circle cx="960" cy="680" r="140" fill="none" stroke="#ccaa77" stroke-width="2" opacity="0.4"/>
+    <circle cx="960" cy="820" r="10" fill="#9999aa" opacity="0.8"/>
+
+    <!-- Ring 3 -->
+    <circle cx="960" cy="680" r="190" fill="none" stroke="#ccaa77" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="1150" cy="680" r="7" fill="#aaaaaa" opacity="0.75"/>
+
+    <!-- Ring 4 -->
+    <circle cx="960" cy="680" r="240" fill="none" stroke="#ccaa77" stroke-width="1.5" opacity="0.25"/>
+    <circle cx="770" cy="680" r="9" fill="#8888dd" opacity="0.7"/>
+  </g>
+
+  <!-- Orrery main glow -->
+  <ellipse cx="960" cy="700" rx="320" ry="200" fill="url(#orreryGlow)" opacity="0.55"/>
+
+  <!-- Large desk covered in papers and instruments -->
+  <g opacity="0.8">
+    <!-- Desk surface -->
+    <rect x="500" y="850" width="920" height="80" fill="#2a1810" opacity="0.9" rx="6"/>
+
+    <!-- Papers scattered -->
+    <rect x="530" y="860" width="100" height="80" fill="#3a3030" opacity="0.6" transform="rotate(-5 580 900)"/>
+    <rect x="780" y="870" width="110" height="75" fill="#3a3030" opacity="0.55" transform="rotate(8 835 910)"/>
+    <rect x="1050" y="865" width="95" height="70" fill="#3a3030" opacity="0.6" transform="rotate(-3 1098 900)"/>
+    <rect x="1300" y="875" width="105" height="75" fill="#3a3030" opacity="0.55" transform="rotate(6 1353 910)"/>
+
+    <!-- Candles on desk -->
+    <circle cx="660" cy="820" r="6" fill="#2a2520" opacity="0.9"/>
+    <polygon points="660,810 655,820 665,820" fill="#ffaa44" opacity="0.8"/>
+
+    <circle cx="1260" cy="820" r="6" fill="#2a2520" opacity="0.9"/>
+    <polygon points="1260,810 1255,820 1265,820" fill="#ffaa44" opacity="0.8"/>
+  </g>
+
+  <!-- Glowing specimen jars on shelves -->
+  <!-- Jar 1 - Green -->
+  <g opacity="0.85">
+    <rect x="380" y="350" width="35" height="50" fill="#1a2a1a" opacity="0.95" rx="2"/>
+    <ellipse cx="397" cy="350" rx="18" ry="4" fill="#2a3a2a" opacity="0.8"/>
+    <ellipse cx="397" cy="365" rx="20" ry="30" fill="url(#jarGlow1)" opacity="0.5"/>
+  </g>
+
+  <!-- Jar 2 - Blue -->
+  <g opacity="0.83">
+    <rect x="450" y="340" width="32" height="55" fill="#1a2a3a" opacity="0.95" rx="2"/>
+    <ellipse cx="466" cy="340" rx="16" ry="4" fill="#2a3a4a" opacity="0.8"/>
+    <ellipse cx="466" cy="367" rx="18" ry="32" fill="url(#jarGlow2)" opacity="0.48"/>
+  </g>
+
+  <!-- Jar 3 - Purple -->
+  <g opacity="0.82">
+    <rect x="520" y="360" width="34" height="48" fill="#2a1a3a" opacity="0.95" rx="2"/>
+    <ellipse cx="537" cy="360" rx="17" ry="4" fill="#3a2a4a" opacity="0.8"/>
+    <ellipse cx="537" cy="384" rx="19" ry="28" fill="url(#jarGlow3)" opacity="0.45"/>
+  </g>
+
+  <!-- Jar 4 - Amber -->
+  <g opacity="0.84">
+    <rect x="1480" y="370" width="36" height="50" fill="#2a2a1a" opacity="0.95" rx="2"/>
+    <ellipse cx="1498" cy="370" rx="18" ry="4" fill="#3a3a2a" opacity="0.8"/>
+    <ellipse cx="1498" cy="395" rx="20" ry="30" fill="url(#jarGlow4)" opacity="0.5"/>
+  </g>
+
+  <!-- Telescope in back pointing at skylight -->
+  <g opacity="0.75">
+    <!-- Tripod -->
+    <line x1="300" y1="550" x2="220" y2="850" stroke="#2a1810" stroke-width="5" opacity="0.7"/>
+    <line x1="300" y1="550" x2="380" y2="850" stroke="#2a1810" stroke-width="5" opacity="0.7"/>
+
+    <!-- Tube -->
+    <rect x="280" y="450" width="40" height="120" fill="#1a1a1a" opacity="0.9" rx="4" transform="rotate(-25 300 510)"/>
+
+    <!-- End -->
+    <circle cx="310" cy="430" r="10" fill="#2a2a2a" opacity="0.85"/>
+  </g>
+
+  <!-- Arcane star charts and maps on walls -->
+  <!-- Chart 1 - top left -->
+  <g opacity="0.5">
+    <rect x="450" y="80" width="200" height="150" fill="#1a1a25" opacity="0.6"/>
+    <line x1="480" y1="100" x2="600" y2="150" stroke="#ccaa77" stroke-width="1" opacity="0.5"/>
+    <line x1="520" y1="90" x2="580" y2="200" stroke="#ccaa77" stroke-width="1" opacity="0.5"/>
+    <circle cx="540" cy="130" r="3" fill="#ccaa77" opacity="0.6"/>
+    <circle cx="570" cy="160" r="2.5" fill="#ccaa77" opacity="0.5"/>
+  </g>
+
+  <!-- Chart 2 - top right -->
+  <g opacity="0.5">
+    <rect x="1270" y="100" width="200" height="140" fill="#1a1a25" opacity="0.6"/>
+    <line x1="1300" y1="120" x2="1420" y2="170" stroke="#ccaa77" stroke-width="1" opacity="0.5"/>
+    <line x1="1340" y1="110" x2="1400" y2="220" stroke="#ccaa77" stroke-width="1" opacity="0.5"/>
+    <circle cx="1360" cy="150" r="3" fill="#ccaa77" opacity="0.6"/>
+    <circle cx="1390" cy="180" r="2.5" fill="#ccaa77" opacity="0.5"/>
+  </g>
+
+  <!-- Large window with moonlight -->
+  <g opacity="0.8">
+    <!-- Window frame -->
+    <rect x="1100" y="50" width="340" height="320" fill="#001a2a" opacity="0.95" rx="8" stroke="#1a1a25" stroke-width="6"/>
+
+    <!-- Panes -->
+    <line x1="1270" y1="50" x2="1270" y2="370" stroke="#1a1a20" stroke-width="3" opacity="0.7"/>
+    <line x1="1100" y1="210" x2="1440" y2="210" stroke="#1a1a20" stroke-width="3" opacity="0.7"/>
+
+    <!-- Starlit sky visible -->
+    <circle cx="1200" cy="120" r="2" fill="#e8dcc8" opacity="0.6"/>
+    <circle cx="1350" cy="150" r="1.5" fill="#e8dcc8" opacity="0.5"/>
+    <circle cx="1380" cy="100" r="1" fill="#e8dcc8" opacity="0.4"/>
+
+    <!-- Moon glow from window -->
+    <ellipse cx="1270" cy="210" rx="160" ry="160" fill="url(#moonWindow)" opacity="0.4"/>
+  </g>
+
+  <!-- Cold blue moonlight casting on desk -->
+  <ellipse cx="1270" cy="900" rx="400" ry="180" fill="#4dd0e1" opacity="0.08"/>
+</svg>

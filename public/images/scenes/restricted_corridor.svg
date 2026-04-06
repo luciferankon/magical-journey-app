@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="corridorGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1520;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0f0a15;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050208;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="perspectiveFloor" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2530;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a15;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="torchFlame1" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffaa44;stop-opacity:0.95" />
+      <stop offset="40%" style="stop-color:#dd6633;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#1a1520;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="torchFlame2" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffbb55;stop-opacity:0.9" />
+      <stop offset="45%" style="stop-color:#cc7744;stop-opacity:0.55" />
+      <stop offset="100%" style="stop-color:#1a1520;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#8b3ae8;stop-opacity:0.7" />
+      <stop offset="40%" style="stop-color:#551a7f;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#050208;stop-opacity:0" />
+    </radialGradient>
+    <filter id="flameFlicker">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18" />
+    </filter>
+    <filter id="cobwebBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
+    </filter>
+  </defs>
+
+  <!-- Background - very narrow corridor -->
+  <rect width="1920" height="1080" fill="url(#corridorGrad)"/>
+
+  <!-- Left wall - close, oppressive -->
+  <polygon points="0,0 400,0 500,1080 0,1080" fill="#0f0a12" opacity="0.95"/>
+
+  <!-- Right wall - close, oppressive -->
+  <polygon points="1920,0 1520,0 1420,1080 1920,1080" fill="#0f0a12" opacity="0.95"/>
+
+  <!-- Wall texture - cracks and stains -->
+  <line x1="100" y1="0" x2="150" y2="1080" stroke="#0a0508" stroke-width="2" opacity="0.5"/>
+  <line x1="250" y1="0" x2="320" y2="1080" stroke="#0a0508" stroke-width="1.5" opacity="0.4"/>
+  <line x1="1820" y1="0" x2="1770" y2="1080" stroke="#0a0508" stroke-width="2" opacity="0.5"/>
+  <line x1="1670" y1="0" x2="1600" y2="1080" stroke="#0a0508" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Dark stains on walls -->
+  <ellipse cx="200" cy="300" rx="80" ry="120" fill="#050208" opacity="0.8"/>
+  <ellipse cx="1720" cy="500" rx="70" ry="100" fill="#050208" opacity="0.75"/>
+  <ellipse cx="250" cy="700" rx="85" ry="110" fill="#050208" opacity="0.8"/>
+  <ellipse cx="1670" cy="250" rx="75" ry="95" fill="#050208" opacity="0.75"/>
+
+  <!-- Stain streaks -->
+  <line x1="200" y1="200" x2="220" y2="400" stroke="#050208" stroke-width="8" opacity="0.6"/>
+  <line x1="1720" y1="350" x2="1740" y2="650" stroke="#050208" stroke-width="8" opacity="0.6"/>
+
+  <!-- Floor perspective -->
+  <polygon points="400,0 1520,0 1420,1080 500,1080" fill="url(#perspectiveFloor)"/>
+
+  <!-- Floor cracks and uneven cobblestones -->
+  <line x1="400" y1="100" x2="1520" y2="100" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+  <line x1="380" y1="250" x2="1540" y2="250" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+  <line x1="360" y1="400" x2="1560" y2="400" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+  <line x1="340" y1="550" x2="1580" y2="550" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+  <line x1="320" y1="700" x2="1600" y2="700" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+  <line x1="300" y1="850" x2="1620" y2="850" stroke="#1a1520" stroke-width="2" opacity="0.4"/>
+
+  <!-- Torch 1 - left wall, position 1 -->
+  <g opacity="0.9">
+    <rect x="80" y="150" width="40" height="50" fill="#3a2520" opacity="0.95" rx="3"/>
+    <polygon points="100,120 85,155 115,155" fill="#ffaa44" opacity="0.95"/>
+    <ellipse cx="100" cy="140" rx="35" ry="50" fill="url(#torchFlame1)" opacity="0.7"/>
+    <ellipse cx="100" cy="550" rx="180" ry="120" fill="url(#torchFlame1)" opacity="0.25"/>
+  </g>
+
+  <!-- Torch 2 - right wall, position 1 -->
+  <g opacity="0.9">
+    <rect x="1800" y="200" width="40" height="50" fill="#3a2520" opacity="0.95" rx="3"/>
+    <polygon points="1820,170 1805,205 1835,205" fill="#ffbb55" opacity="0.93"/>
+    <ellipse cx="1820" cy="190" rx="35" ry="50" fill="url(#torchFlame2)" opacity="0.68"/>
+    <ellipse cx="1820" cy="600" rx="180" ry="120" fill="url(#torchFlame2)" opacity="0.22"/>
+  </g>
+
+  <!-- Torch 3 - left wall, position 2 -->
+  <g opacity="0.85">
+    <rect x="80" y="500" width="40" height="50" fill="#3a2520" opacity="0.95" rx="3"/>
+    <polygon points="100,470 85,505 115,505" fill="#ffaa44" opacity="0.92"/>
+    <ellipse cx="100" cy="490" rx="33" ry="48" fill="url(#torchFlame1)" opacity="0.65"/>
+    <ellipse cx="100" cy="880" rx="170" ry="110" fill="url(#torchFlame1)" opacity="0.2"/>
+  </g>
+
+  <!-- Torch 4 - right wall, position 2 -->
+  <g opacity="0.85">
+    <rect x="1800" y="550" width="40" height="50" fill="#3a2520" opacity="0.95" rx="3"/>
+    <polygon points="1820,520 1805,555 1835,555" fill="#ffbb55" opacity="0.9"/>
+    <ellipse cx="1820" cy="540" rx="33" ry="48" fill="url(#torchFlame2)" opacity="0.63"/>
+    <ellipse cx="1820" cy="930" rx="170" ry="110" fill="url(#torchFlame2)" opacity="0.18"/>
+  </g>
+
+  <!-- Darkness between torches - absolute black pools -->
+  <ellipse cx="960" cy="350" rx="300" ry="200" fill="#050208" opacity="0.9"/>
+  <ellipse cx="960" cy="750" rx="280" ry="180" fill="#050208" opacity="0.85"/>
+
+  <!-- Cobwebs in upper corners - thin diagonal white lines -->
+  <!-- Left corner web 1 -->
+  <line x1="50" y1="20" x2="250" y2="180" stroke="#c0b8a8" stroke-width="1.2" opacity="0.6" filter="url(#cobwebBlur)"/>
+  <line x1="80" y1="15" x2="280" y2="200" stroke="#c0b8a8" stroke-width="0.8" opacity="0.4" filter="url(#cobwebBlur)"/>
+  <line x1="120" y1="30" x2="240" y2="220" stroke="#c0b8a8" stroke-width="1" opacity="0.5" filter="url(#cobwebBlur)"/>
+
+  <!-- Right corner web 1 -->
+  <line x1="1920" y1="30" x2="1700" y2="200" stroke="#c0b8a8" stroke-width="1.2" opacity="0.6" filter="url(#cobwebBlur)"/>
+  <line x1="1880" y1="20" x2="1620" y2="210" stroke="#c0b8a8" stroke-width="0.8" opacity="0.4" filter="url(#cobwebBlur)"/>
+  <line x1="1840" y1="40" x2="1680" y2="220" stroke="#c0b8a8" stroke-width="1" opacity="0.5" filter="url(#cobwebBlur)"/>
+
+  <!-- Left corner web 2 (lower) -->
+  <line x1="80" y1="900" x2="300" y2="1050" stroke="#c0b8a8" stroke-width="1" opacity="0.5" filter="url(#cobwebBlur)"/>
+  <line x1="120" y1="950" x2="280" y2="1080" stroke="#c0b8a8" stroke-width="0.9" opacity="0.45" filter="url(#cobwebBlur)"/>
+
+  <!-- Right corner web 2 (lower) -->
+  <line x1="1840" y1="950" x2="1620" y2="1080" stroke="#c0b8a8" stroke-width="1" opacity="0.5" filter="url(#cobwebBlur)"/>
+  <line x1="1800" y1="900" x2="1640" y2="1050" stroke="#c0b8a8" stroke-width="0.9" opacity="0.45" filter="url(#cobwebBlur)"/>
+
+  <!-- Deep end of corridor: solid darkness with violet glow -->
+  <!-- Darkness engulfing -->
+  <rect x="400" y="0" width="1120" height="1080" fill="#020205" opacity="0.95"/>
+
+  <!-- Fade to black at far end -->
+  <rect x="1100" y="0" width="420" height="1080" fill="#000000" opacity="0.8"/>
+
+  <!-- Ominous violet glow from deep within -->
+  <ellipse cx="1700" cy="540" rx="400" ry="350" fill="url(#violetGlow)" opacity="0.5" filter="url(#flameFlicker)"/>
+
+  <!-- Violet light reflecting on near floor at corridor end -->
+  <polygon points="1100,700 1520,800 1420,1080 400,1080" fill="#551a7f" opacity="0.15"/>
+
+  <!-- Unsettling details in darkness at end - faint shapes -->
+  <polygon points="1200,300 1250,320 1230,350" fill="#8b3ae8" opacity="0.2"/>
+  <circle cx="1400" cy="400" r="25" fill="#8b3ae8" opacity="0.15"/>
+  <line x1="1250" y1="550" x2="1350" y2="600" stroke="#8b3ae8" stroke-width="2" opacity="0.15"/>
+</svg>

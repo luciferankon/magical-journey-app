@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="skyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0820;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#1a0a35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1a2a;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="moonGlow2" cx="75%" cy="10%">
+      <stop offset="0%" style="stop-color:#f5ead5;stop-opacity:0.95" />
+      <stop offset="35%" style="stop-color:#d8c0a8;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0d1a2a;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="windowGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffd966;stop-opacity:0.8" />
+      <stop offset="60%" style="stop-color:#cc7722;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#1a0a35;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="fountainGlow" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#4dd0e1;stop-opacity:0.7" />
+      <stop offset="50%" style="stop-color:#1a7f8c;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#0a0820;stop-opacity:0" />
+    </radialGradient>
+    <filter id="fogBlur2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="50" />
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGrad2)"/>
+
+  <!-- Background: Academy building silhouette -->
+  <g opacity="0.9">
+    <!-- Main structure -->
+    <polygon points="200,550 250,300 300,350 350,280 400,330 450,250 500,320 550,260 600,340 650,280 700,360 750,300 800,380 850,320 900,400 950,350 1000,420 1050,380 1100,450 1150,400 1200,480 1250,420 1300,500 1350,440 1400,520 1450,460 1500,540 1550,480 1600,560 1650,500 1700,580 1750,520 1800,600 1850,550 1900,650 1920,700 1920,1080 0,1080 0,700" fill="#0f0613"/>
+
+    <!-- Arched windows across facade -->
+    <circle cx="280" cy="480" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="380" cy="520" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="480" cy="480" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="580" cy="530" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="680" cy="490" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="780" cy="540" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="880" cy="500" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="980" cy="550" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="1080" cy="510" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="1180" cy="560" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="1280" cy="520" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="1380" cy="570" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="1480" cy="530" r="35" fill="#1a0a35" opacity="0.8"/>
+    <ellipse cx="1580" cy="580" rx="38" ry="45" fill="#1a0a35" opacity="0.8"/>
+    <circle cx="1680" cy="540" r="35" fill="#1a0a35" opacity="0.8"/>
+  </g>
+
+  <!-- Window glows (warm amber from within) -->
+  <ellipse cx="280" cy="480" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="380" cy="520" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="480" cy="480" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="580" cy="530" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="680" cy="490" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="780" cy="540" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="880" cy="500" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="980" cy="550" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1080" cy="510" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1180" cy="560" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1280" cy="520" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1380" cy="570" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1480" cy="530" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1580" cy="580" rx="42" ry="48" fill="url(#windowGlow)" opacity="0.6"/>
+  <ellipse cx="1680" cy="540" rx="38" ry="38" fill="url(#windowGlow)" opacity="0.6"/>
+
+  <!-- Midground: Stone colonnade arches -->
+  <!-- Left colonnade -->
+  <g opacity="0.75">
+    <rect x="20" y="600" width="80" height="480" fill="#1a1520"/>
+    <path d="M 20 600 Q 60 550 100 600" stroke="#2a2520" stroke-width="8" fill="none" opacity="0.6"/>
+    <rect x="40" y="800" width="40" height="280" fill="#252025" opacity="0.8"/>
+  </g>
+
+  <!-- Right colonnade -->
+  <g opacity="0.75">
+    <rect x="1820" y="600" width="80" height="480" fill="#1a1520"/>
+    <path d="M 1820 600 Q 1860 550 1900 600" stroke="#2a2520" stroke-width="8" fill="none" opacity="0.6"/>
+    <rect x="1840" y="800" width="40" height="280" fill="#252025" opacity="0.8"/>
+  </g>
+
+  <!-- Center: Fountain silhouette -->
+  <g opacity="0.8">
+    <!-- Basin -->
+    <ellipse cx="960" cy="750" rx="140" ry="100" fill="#0a0613" opacity="0.9"/>
+    <ellipse cx="960" cy="740" rx="140" ry="30" fill="#1a4d5c" opacity="0.7"/>
+
+    <!-- Central pedestal -->
+    <rect x="930" y="680" width="60" height="70" fill="#1a1520" opacity="0.9"/>
+    <circle cx="960" cy="670" r="45" fill="#1a1520" opacity="0.8"/>
+
+    <!-- Top ornament -->
+    <polygon points="960,600 1000,650 920,650" fill="#252025" opacity="0.7"/>
+  </g>
+
+  <!-- Fountain glow -->
+  <ellipse cx="960" cy="750" rx="160" ry="120" fill="url(#fountainGlow)" opacity="0.5"/>
+
+  <!-- Hanging lanterns with warm point glows -->
+  <!-- Left side lanterns -->
+  <g opacity="0.8">
+    <circle cx="200" cy="300" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="200" cy="300" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="200" cy="300" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="400" cy="250" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="400" cy="250" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="400" cy="250" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="600" cy="280" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="600" cy="280" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="600" cy="280" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+
+  <!-- Right side lanterns -->
+  <g opacity="0.8">
+    <circle cx="1720" cy="300" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="1720" cy="300" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="1720" cy="300" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="1520" cy="250" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="1520" cy="250" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="1520" cy="250" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+  <g opacity="0.8">
+    <circle cx="1320" cy="280" r="20" fill="#2a2520" opacity="0.9"/>
+    <circle cx="1320" cy="280" r="15" fill="#1a1520" opacity="0.8"/>
+    <ellipse cx="1320" cy="280" rx="18" ry="22" fill="url(#windowGlow)" opacity="0.4"/>
+  </g>
+
+  <!-- Fog near ground -->
+  <ellipse cx="500" cy="900" rx="600" ry="200" fill="#0f0613" opacity="0.4" filter="url(#fogBlur2)"/>
+  <ellipse cx="1400" cy="920" rx="550" ry="180" fill="#0f0613" opacity="0.35" filter="url(#fogBlur2)"/>
+  <ellipse cx="960" cy="950" rx="700" ry="150" fill="#1a0a35" opacity="0.25" filter="url(#fogBlur2)"/>
+
+  <!-- Cobblestone ground catching moonlight -->
+  <rect x="300" y="950" width="1320" height="130" fill="#2a2420" opacity="0.5"/>
+  <line x1="300" y1="975" x2="1620" y2="975" stroke="#4a4038" stroke-width="2" opacity="0.4"/>
+  <line x1="300" y1="1000" x2="1620" y2="1000" stroke="#4a4038" stroke-width="2" opacity="0.4"/>
+  <line x1="300" y1="1025" x2="1620" y2="1025" stroke="#4a4038" stroke-width="2" opacity="0.4"/>
+  <line x1="500" y1="950" x2="500" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+  <line x1="700" y1="950" x2="700" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+  <line x1="900" y1="950" x2="900" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+  <line x1="1100" y1="950" x2="1100" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+  <line x1="1300" y1="950" x2="1300" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+  <line x1="1500" y1="950" x2="1500" y2="1080" stroke="#4a4038" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Moon -->
+  <circle cx="1650" cy="120" r="85" fill="url(#moonGlow2)"/>
+  <circle cx="1650" cy="120" r="70" fill="#f0e8d8" opacity="0.9"/>
+
+  <!-- Atmospheric dust particles -->
+  <circle cx="300" cy="400" r="1.5" fill="#b0c0d0" opacity="0.25"/>
+  <circle cx="600" cy="300" r="1" fill="#b0c0d0" opacity="0.2"/>
+  <circle cx="960" cy="500" r="1.2" fill="#b0c0d0" opacity="0.22"/>
+  <circle cx="1300" cy="350" r="1" fill="#b0c0d0" opacity="0.2"/>
+  <circle cx="1600" cy="450" r="1.5" fill="#b0c0d0" opacity="0.25"/>
+  <circle cx="450" cy="600" r="1" fill="#b0c0d0" opacity="0.18"/>
+  <circle cx="1200" cy="700" r="1.2" fill="#b0c0d0" opacity="0.22"/>
+  <circle cx="750" cy="550" r="1" fill="#b0c0d0" opacity="0.2"/>
+</svg>

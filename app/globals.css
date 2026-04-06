@@ -170,3 +170,70 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #2E3150 #141624;
 }
+
+/* ── Visual novel background image transition ────────────────────────────── */
+
+@keyframes scene-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes scene-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.scene-transitioning {
+  animation: scene-fade-out 300ms ease-in forwards;
+}
+
+.scene-image {
+  animation: scene-fade-in 500ms ease-out forwards;
+}
+
+/* ── Scene location text overlay ────────────────────────────────────────── */
+
+@keyframes location-label-in {
+  0%   { opacity: 0; transform: translateY(-8px); }
+  50%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; }
+}
+
+@keyframes location-label-out {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(8px); }
+}
+
+.location-label-enter {
+  animation: location-label-in 300ms ease-out both;
+}
+
+.location-label-exit {
+  animation: location-label-out 300ms ease-in forwards;
+}
+
+/* ── Dialogue panel vignette effect ────────────────────────────────────── */
+
+.vignette-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(8, 4, 12, 0) 0%, rgba(8, 4, 12, 0.3) 100%);
+}
+
+/* ── Dynamic house color classes for dialogue ────────────────────────────── */
+
+.text-ignis   { color: #C94C2A; }
+.text-aqualyn { color: #2A7A8C; }
+.text-terram  { color: #4A7A2A; }
+.text-ventus  { color: #4A5A8C; }
+
+.border-l-ignis   { border-left-color: #C94C2A !important; }
+.border-l-aqualyn { border-left-color: #2A7A8C !important; }
+.border-l-terram  { border-left-color: #4A7A2A !important; }
+.border-l-ventus  { border-left-color: #4A5A8C !important; }
+
+.border-ignis-glow   { border-color: #FF6B35 !important; }
+.border-aqualyn-glow { border-color: #7DE8F8 !important; }
+.border-terram-glow  { border-color: #AADE6A !important; }
+.border-ventus-glow  { border-color: #C0CCEE !important; }

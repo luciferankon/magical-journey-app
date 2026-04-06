@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#ff4500;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#cc3300;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#661a00;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient id="fireGlow" cx="50%" cy="70%">
+      <stop offset="0%" style="stop-color:#ffaa44;stop-opacity:0.95" />
+      <stop offset="40%" style="stop-color:#dd6633;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#1a0f08;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="moonGlow3" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#4dd0e1;stop-opacity:0.7" />
+      <stop offset="50%" style="stop-color:#0d8fa3;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#001a1f;stop-opacity:0" />
+    </radialGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a0f08;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a1810;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0f08;stop-opacity:1" />
+    </linearGradient>
+    <filter id="fireFlicker">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+    </filter>
+    <filter id="bookBlur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+    </filter>
+  </defs>
+
+  <!-- Background - warm wood paneling -->
+  <rect width="1920" height="1080" fill="url(#panelGrad)"/>
+
+  <!-- Left wall bookshelves -->
+  <g opacity="0.85">
+    <!-- Shelf frames -->
+    <rect x="20" y="200" width="380" height="700" fill="#0f0805" opacity="0.8" rx="4"/>
+    <line x1="20" y1="280" x2="400" y2="280" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="20" y1="380" x2="400" y2="380" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="20" y1="480" x2="400" y2="480" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="20" y1="580" x2="400" y2="580" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="20" y1="680" x2="400" y2="680" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+
+    <!-- Books on shelves - colored rectangles -->
+    <!-- Top shelf -->
+    <rect x="30" y="250" width="30" height="25" fill="#8b4513" opacity="0.8"/>
+    <rect x="65" y="250" width="35" height="25" fill="#5c3a1a" opacity="0.8"/>
+    <rect x="105" y="250" width="28" height="25" fill="#a0522d" opacity="0.8"/>
+    <rect x="138" y="250" width="32" height="25" fill="#6b4423" opacity="0.8"/>
+    <rect x="175" y="250" width="30" height="25" fill="#8b6f47" opacity="0.8"/>
+    <rect x="210" y="250" width="35" height="25" fill="#4a2511" opacity="0.8"/>
+    <rect x="250" y="250" width="28" height="25" fill="#7a5a3a" opacity="0.8"/>
+    <rect x="283" y="250" width="32" height="25" fill="#9a6a4a" opacity="0.8"/>
+    <rect x="320" y="250" width="30" height="25" fill="#5a3a1a" opacity="0.8"/>
+    <rect x="355" y="250" width="35" height="25" fill="#8a5a2a" opacity="0.8"/>
+
+    <!-- Second shelf -->
+    <rect x="30" y="350" width="32" height="25" fill="#1a3a5a" opacity="0.8"/>
+    <rect x="67" y="350" width="30" height="25" fill="#2a4a7a" opacity="0.8"/>
+    <rect x="102" y="350" width="33" height="25" fill="#1a2a4a" opacity="0.8"/>
+    <rect x="140" y="350" width="28" height="25" fill="#3a5a8a" opacity="0.8"/>
+    <rect x="173" y="350" width="35" height="25" fill="#1a4a6a" opacity="0.8"/>
+    <rect x="213" y="350" width="30" height="25" fill="#2a3a5a" opacity="0.8"/>
+    <rect x="248" y="350" width="32" height="25" fill="#3a6a9a" opacity="0.8"/>
+    <rect x="285" y="350" width="28" height="25" fill="#1a3a5a" opacity="0.8"/>
+    <rect x="318" y="350" width="33" height="25" fill="#2a5a7a" opacity="0.8"/>
+    <rect x="356" y="350" width="30" height="25" fill="#1a4a5a" opacity="0.8"/>
+
+    <!-- Third shelf -->
+    <rect x="30" y="450" width="28" height="25" fill="#5a1a1a" opacity="0.8"/>
+    <rect x="63" y="450" width="33" height="25" fill="#7a2a2a" opacity="0.8"/>
+    <rect x="101" y="450" width="30" height="25" fill="#6a1a1a" opacity="0.8"/>
+    <rect x="136" y="450" width="32" height="25" fill="#8a3a3a" opacity="0.8"/>
+    <rect x="173" y="450" width="28" height="25" fill="#5a2a1a" opacity="0.8"/>
+    <rect x="206" y="450" width="35" height="25" fill="#9a4a2a" opacity="0.8"/>
+    <rect x="246" y="450" width="30" height="25" fill="#6a3a1a" opacity="0.8"/>
+    <rect x="281" y="450" width="33" height="25" fill="#7a4a2a" opacity="0.8"/>
+    <rect x="319" y="450" width="28" height="25" fill="#5a2a2a" opacity="0.8"/>
+    <rect x="352" y="450" width="32" height="25" fill="#8a3a1a" opacity="0.8"/>
+
+    <!-- Fourth shelf -->
+    <rect x="30" y="550" width="35" height="25" fill="#4a5a3a" opacity="0.8"/>
+    <rect x="70" y="550" width="28" height="25" fill="#5a6a4a" opacity="0.8"/>
+    <rect x="103" y="550" width="32" height="25" fill="#3a4a2a" opacity="0.8"/>
+    <rect x="140" y="550" width="30" height="25" fill="#6a7a5a" opacity="0.8"/>
+    <rect x="175" y="550" width="33" height="25" fill="#4a5a3a" opacity="0.8"/>
+    <rect x="213" y="550" width="28" height="25" fill="#5a6a4a" opacity="0.8"/>
+    <rect x="246" y="550" width="32" height="25" fill="#3a5a2a" opacity="0.8"/>
+    <rect x="283" y="550" width="30" height="25" fill="#6a7a5a" opacity="0.8"/>
+    <rect x="318" y="550" width="33" height="25" fill="#4a6a3a" opacity="0.8"/>
+    <rect x="356" y="550" width="28" height="25" fill="#5a6a4a" opacity="0.8"/>
+
+    <!-- Fifth shelf -->
+    <rect x="30" y="650" width="30" height="25" fill="#6a4a2a" opacity="0.8"/>
+    <rect x="65" y="650" width="32" height="25" fill="#8a6a4a" opacity="0.8"/>
+    <rect x="102" y="650" width="28" height="25" fill="#5a3a1a" opacity="0.8"/>
+    <rect x="135" y="650" width="33" height="25" fill="#7a5a3a" opacity="0.8"/>
+    <rect x="173" y="650" width="30" height="25" fill="#9a6a4a" opacity="0.8"/>
+    <rect x="208" y="650" width="35" height="25" fill="#6a4a2a" opacity="0.8"/>
+    <rect x="248" y="650" width="28" height="25" fill="#8a5a3a" opacity="0.8"/>
+    <rect x="281" y="650" width="32" height="25" fill="#5a4a2a" opacity="0.8"/>
+    <rect x="318" y="650" width="30" height="25" fill="#7a5a3a" opacity="0.8"/>
+    <rect x="353" y="650" width="32" height="25" fill="#9a6a4a" opacity="0.8"/>
+  </g>
+
+  <!-- Right wall bookshelves -->
+  <g opacity="0.85">
+    <!-- Shelf frames -->
+    <rect x="1520" y="200" width="380" height="700" fill="#0f0805" opacity="0.8" rx="4"/>
+    <line x1="1520" y1="280" x2="1900" y2="280" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="1520" y1="380" x2="1900" y2="380" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="1520" y1="480" x2="1900" y2="480" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="1520" y1="580" x2="1900" y2="580" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+    <line x1="1520" y1="680" x2="1900" y2="680" stroke="#1a0f08" stroke-width="3" opacity="0.6"/>
+
+    <!-- Books (mirrored from left) -->
+    <!-- Top shelf right -->
+    <rect x="1530" y="250" width="30" height="25" fill="#8b4513" opacity="0.8"/>
+    <rect x="1565" y="250" width="35" height="25" fill="#5c3a1a" opacity="0.8"/>
+    <rect x="1605" y="250" width="28" height="25" fill="#a0522d" opacity="0.8"/>
+    <rect x="1638" y="250" width="32" height="25" fill="#6b4423" opacity="0.8"/>
+    <rect x="1675" y="250" width="30" height="25" fill="#8b6f47" opacity="0.8"/>
+    <rect x="1710" y="250" width="35" height="25" fill="#4a2511" opacity="0.8"/>
+    <rect x="1750" y="250" width="28" height="25" fill="#7a5a3a" opacity="0.8"/>
+    <rect x="1783" y="250" width="32" height="25" fill="#9a6a4a" opacity="0.8"/>
+    <rect x="1820" y="250" width="30" height="25" fill="#5a3a1a" opacity="0.8"/>
+    <rect x="1855" y="250" width="35" height="25" fill="#8a5a2a" opacity="0.8"/>
+
+    <!-- Second shelf right -->
+    <rect x="1530" y="350" width="32" height="25" fill="#1a3a5a" opacity="0.8"/>
+    <rect x="1567" y="350" width="30" height="25" fill="#2a4a7a" opacity="0.8"/>
+    <rect x="1602" y="350" width="33" height="25" fill="#1a2a4a" opacity="0.8"/>
+    <rect x="1640" y="350" width="28" height="25" fill="#3a5a8a" opacity="0.8"/>
+    <rect x="1673" y="350" width="35" height="25" fill="#1a4a6a" opacity="0.8"/>
+    <rect x="1713" y="350" width="30" height="25" fill="#2a3a5a" opacity="0.8"/>
+    <rect x="1748" y="350" width="32" height="25" fill="#3a6a9a" opacity="0.8"/>
+    <rect x="1785" y="350" width="28" height="25" fill="#1a3a5a" opacity="0.8"/>
+    <rect x="1818" y="350" width="33" height="25" fill="#2a5a7a" opacity="0.8"/>
+    <rect x="1856" y="350" width="30" height="25" fill="#1a4a5a" opacity="0.8"/>
+
+    <!-- Third and subsequent shelves (abbreviated for space) -->
+  </g>
+
+  <!-- Fireplace - center/right -->
+  <g opacity="0.95">
+    <!-- Fireplace opening -->
+    <rect x="1150" y="400" width="550" height="550" fill="#0a0603" opacity="0.95" rx="15"/>
+
+    <!-- Fire logs - dark silhouettes -->
+    <ellipse cx="1300" cy="800" rx="100" ry="40" fill="#1a0f08" opacity="0.9"/>
+    <ellipse cx="1450" cy="810" rx="90" ry="35" fill="#1a0f08" opacity="0.9"/>
+    <ellipse cx="1580" cy="805" rx="85" ry="38" fill="#1a0f08" opacity="0.9"/>
+
+    <!-- Flames - gradient fill -->
+    <polygon points="1250,750 1220,550 1280,600 1250,450" fill="url(#fireGrad)" opacity="0.95"/>
+    <polygon points="1380,780 1340,500 1420,620 1400,420" fill="url(#fireGrad)" opacity="0.95"/>
+    <polygon points="1520,760 1480,520 1560,640 1540,450" fill="url(#fireGrad)" opacity="0.95"/>
+    <polygon points="1650,770 1610,540 1690,660 1670,460" fill="url(#fireGrad)" opacity="0.95"/>
+
+    <!-- Fireplace stone frame -->
+    <rect x="1150" y="400" width="550" height="550" fill="none" stroke="#2a2520" stroke-width="25" opacity="0.7" rx="15"/>
+  </g>
+
+  <!-- Fire glow illuminating the room -->
+  <ellipse cx="1350" cy="700" rx="600" ry="500" fill="url(#fireGlow)" opacity="0.5" filter="url(#fireFlicker)"/>
+
+  <!-- Window on left - moonlight -->
+  <rect x="420" y="180" width="280" height="380" fill="#001a2a" opacity="0.95" rx="10"/>
+  <circle cx="560" cy="370" r="140" fill="#4dd0e1" opacity="0.4"/>
+
+  <!-- Window frame panes -->
+  <line x1="560" y1="180" x2="560" y2="560" stroke="#1a1a25" stroke-width="3" opacity="0.8"/>
+  <line x1="420" y1="370" x2="700" y2="370" stroke="#1a1a25" stroke-width="3" opacity="0.8"/>
+
+  <!-- Outside moonlit courtyard view (cold blue) -->
+  <polygon points="420,180 700,180 700,560 420,560" fill="#0d1a2a" opacity="0.5"/>
+
+  <!-- Armchairs near fire - silhouettes -->
+  <g opacity="0.75">
+    <!-- Chair 1 -->
+    <ellipse cx="950" cy="750" rx="70" ry="90" fill="#1a0f08" opacity="0.95"/>
+    <rect x="900" y="830" width="100" height="50" fill="#1a0f08" opacity="0.9" rx="5"/>
+
+    <!-- Chair 2 -->
+    <ellipse cx="1100" cy="750" rx="70" ry="90" fill="#1a0f08" opacity="0.95"/>
+    <rect x="1050" y="830" width="100" height="50" fill="#1a0f08" opacity="0.9" rx="5"/>
+  </g>
+
+  <!-- Side tables -->
+  <rect x="880" y="800" width="60" height="80" fill="#2a1810" opacity="0.8" rx="3"/>
+  <rect x="1130" y="800" width="60" height="80" fill="#2a1810" opacity="0.8" rx="3"/>
+
+  <!-- Ceiling beams visible in darkness above -->
+  <line x1="0" y1="150" x2="1920" y2="150" stroke="#1a0f08" stroke-width="35" opacity="0.6"/>
+  <line x1="0" y1="220" x2="1920" y2="220" stroke="#1a0f08" stroke-width="28" opacity="0.5"/>
+
+  <!-- Deep burgundy carpet on floor -->
+  <rect x="300" y="880" width="1320" height="200" fill="#5a1a2a" opacity="0.75"/>
+  <rect x="350" y="900" width="1220" height="160" fill="#6a2a3a" opacity="0.6"/>
+
+  <!-- Carpet pattern (subtle) -->
+  <circle cx="450" cy="950" r="20" fill="#4a1a2a" opacity="0.4"/>
+  <circle cx="750" cy="980" r="18" fill="#4a1a2a" opacity="0.4"/>
+  <circle cx="1050" cy="940" r="20" fill="#4a1a2a" opacity="0.4"/>
+  <circle cx="1350" cy="970" r="18" fill="#4a1a2a" opacity="0.4"/>
+  <circle cx="1650" cy="945" r="20" fill="#4a1a2a" opacity="0.4"/>
+</svg>

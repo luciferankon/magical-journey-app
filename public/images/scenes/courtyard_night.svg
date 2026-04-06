@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="catastropheSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#000005;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#0a0510;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0520;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="catastropheMoon" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#8899bb;stop-opacity:0.5" />
+      <stop offset="50%" style="stop-color:#445588;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#000005;stop-opacity:0" />
+    </radialGradient>
+    <radialGradient id="fractureGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#8b3ae8;stop-opacity:0.8" />
+      <stop offset="40%" style="stop-color:#551a7f;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#000005;stop-opacity:0" />
+    </radialGradient>
+    <filter id="fractureSmoke">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" />
+    </filter>
+  </defs>
+
+  <!-- Sky - absolute deep black -->
+  <rect width="1920" height="1080" fill="url(#catastropheSky)"/>
+
+  <!-- Sickly pale moon behind dark clouds -->
+  <ellipse cx="250" cy="150" rx="120" ry="110" fill="#1a1a3a" opacity="0.95"/>
+  <circle cx="250" cy="150" r="100" fill="url(#catastropheMoon)"/>
+  <ellipse cx="250" cy="150" rx="95" ry="95" fill="#556688" opacity="0.3"/>
+
+  <!-- Academy building silhouette in darkness -->
+  <g opacity="0.85">
+    <polygon points="200,650 350,300 450,350 550,200 680,350 750,250 900,400 1000,280 1150,420 1250,300 1400,450 1500,340 1620,500 1720,380 1850,550 1920,700 1920,1080 0,1080 0,700" fill="#0a0510" opacity="0.95"/>
+
+    <!-- Windows - NO LONGER WARM - dark and shattered -->
+    <circle cx="320" cy="450" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="420" cy="480" r="28" fill="#0f0520" opacity="0.9"/>
+    <circle cx="520" cy="440" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="620" cy="500" r="28" fill="#0f0520" opacity="0.9"/>
+    <circle cx="720" cy="460" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="820" cy="520" r="28" fill="#0f0520" opacity="0.9"/>
+    <circle cx="920" cy="480" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="1020" cy="540" r="28" fill="#0f0520" opacity="0.9"/>
+    <circle cx="1120" cy="500" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="1220" cy="560" r="28" fill="#0f0520" opacity="0.9"/>
+    <circle cx="1320" cy="520" r="30" fill="#0f0520" opacity="0.9"/>
+    <circle cx="1420" cy="580" r="28" fill="#0f0520" opacity="0.9"/>
+
+    <!-- Shattered window cracks -->
+    <line x1="300" y1="420" x2="340" y2="480" stroke="#551a7f" stroke-width="1.5" opacity="0.6"/>
+    <line x1="310" y1="450" x2="330" y2="450" stroke="#551a7f" stroke-width="1" opacity="0.5"/>
+    <line x1="400" y1="450" x2="440" y2="510" stroke="#551a7f" stroke-width="1.5" opacity="0.6"/>
+    <line x1="510" y1="410" x2="530" y2="470" stroke="#551a7f" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Courtyard ground - cobblestones -->
+  <polygon points="300,700 1620,700 1550,1080 350,1080" fill="#1a1520" opacity="0.85"/>
+
+  <!-- Cobblestone grid -->
+  <line x1="300" y1="750" x2="1620" y2="750" stroke="#0f0a15" stroke-width="2" opacity="0.5"/>
+  <line x1="280" y1="820" x2="1650" y2="820" stroke="#0f0a15" stroke-width="2" opacity="0.5"/>
+  <line x1="260" y1="890" x2="1680" y2="890" stroke="#0f0a15" stroke-width="2" opacity="0.5"/>
+  <line x1="240" y1="960" x2="1710" y2="960" stroke="#0f0a15" stroke-width="2" opacity="0.5"/>
+
+  <!-- DARK PURPLE fountain at center (water has turned purple, pool is sickly) -->
+  <g opacity="0.9">
+    <!-- Basin -->
+    <ellipse cx="960" cy="820" rx="180" ry="130" fill="#1a0530" opacity="0.95"/>
+    <ellipse cx="960" cy="810" rx="180" ry="40" fill="#3d1565" opacity="0.8"/>
+
+    <!-- Water surface shows deep purple -->
+    <ellipse cx="960" cy="820" rx="170" ry="120" fill="#2d0a4d" opacity="0.85"/>
+
+    <!-- Sickly violet glow from water -->
+    <ellipse cx="960" cy="820" rx="200" ry="150" fill="url(#fractureGlow)" opacity="0.6"/>
+  </g>
+
+  <!-- Cracks in courtyard ground with PURPLE/DARK ENERGY seeping through -->
+  <!-- Major crack 1 - center diagonal -->
+  <g opacity="0.9">
+    <polygon points="600,750 610,900 605,1080 595,1080 600,900 590,750" fill="#3d1565" opacity="0.7"/>
+    <!-- Glow along crack -->
+    <polygon points="600,750 615,900 610,1080 590,1080 595,900 585,750" fill="#8b3ae8" opacity="0.3"/>
+  </g>
+
+  <!-- Major crack 2 - from left -->
+  <g opacity="0.85">
+    <polygon points="350,900 450,950 520,1080 510,1080 440,950 340,900" fill="#3d1565" opacity="0.7"/>
+    <polygon points="350,900 460,960 530,1080 510,1080 440,960 340,900" fill="#8b3ae8" opacity="0.25"/>
+  </g>
+
+  <!-- Major crack 3 - from right -->
+  <g opacity="0.85">
+    <polygon points="1570,850 1500,950 1400,1080 1420,1080 1510,950 1580,850" fill="#3d1565" opacity="0.7"/>
+    <polygon points="1570,850 1490,960 1390,1080 1420,1080 1520,960 1580,850" fill="#8b3ae8" opacity="0.25"/>
+  </g>
+
+  <!-- Smaller cracks branching -->
+  <line x1="600" y1="850" x2="700" y2="950" stroke="#3d1565" stroke-width="3" opacity="0.6"/>
+  <line x1="600" y1="850" x2="500" y2="920" stroke="#3d1565" stroke-width="3" opacity="0.6"/>
+  <line x1="1320" y1="800" x2="1400" y2="900" stroke="#3d1565" stroke-width="3" opacity="0.6"/>
+  <line x1="1320" y1="800" x2="1250" y2="880" stroke="#3d1565" stroke-width="3" opacity="0.6"/>
+
+  <!-- Purple/dark energy rising from cracks as smoke -->
+  <ellipse cx="600" cy="850" rx="250" ry="300" fill="#551a7f" opacity="0.3" filter="url(#fractureSmoke)"/>
+  <ellipse cx="420" cy="920" rx="200" ry="250" fill="#3d1565" opacity="0.25" filter="url(#fractureSmoke)"/>
+  <ellipse cx="1400" cy="900" rx="220" ry="280" fill="#551a7f" opacity="0.3" filter="url(#fractureSmoke)"/>
+  <ellipse cx="1550" cy="950" rx="200" ry="260" fill="#3d1565" opacity="0.25" filter="url(#fractureSmoke)"/>
+
+  <!-- More violet energy wisps -->
+  <ellipse cx="750" cy="750" rx="180" ry="150" fill="#8b3ae8" opacity="0.15" filter="url(#fractureSmoke)"/>
+  <ellipse cx="1150" cy="780" rx="200" ry="160" fill="#8b3ae8" opacity="0.15" filter="url(#fractureSmoke)"/>
+
+  <!-- Dead trees along edges -->
+  <!-- Left dead trees -->
+  <g opacity="0.7">
+    <line x1="150" y1="800" x2="180" y2="500" stroke="#1a0a0a" stroke-width="8" opacity="0.9"/>
+    <line x1="160" y1="500" x2="100" y2="350" stroke="#0f0505" stroke-width="4" opacity="0.8"/>
+    <line x1="160" y1="500" x2="220" y2="350" stroke="#0f0505" stroke-width="4" opacity="0.8"/>
+    <line x1="200" y1="850" x2="240" y2="550" stroke="#1a0a0a" stroke-width="7" opacity="0.85"/>
+    <line x1="245" y1="550" x2="200" y2="400" stroke="#0f0505" stroke-width="3.5" opacity="0.75"/>
+    <line x1="245" y1="550" x2="290" y2="380" stroke="#0f0505" stroke-width="3.5" opacity="0.75"/>
+  </g>
+
+  <!-- Right dead trees -->
+  <g opacity="0.7">
+    <line x1="1770" y1="800" x2="1740" y2="500" stroke="#1a0a0a" stroke-width="8" opacity="0.9"/>
+    <line x1="1740" y1="500" x2="1800" y2="350" stroke="#0f0505" stroke-width="4" opacity="0.8"/>
+    <line x1="1740" y1="500" x2="1680" y2="350" stroke="#0f0505" stroke-width="4" opacity="0.8"/>
+    <line x1="1720" y1="850" x2="1680" y2="550" stroke="#1a0a0a" stroke-width="7" opacity="0.85"/>
+    <line x1="1635" y1="550" x2="1680" y2="400" stroke="#0f0505" stroke-width="3.5" opacity="0.75"/>
+    <line x1="1635" y1="550" x2="1590" y2="380" stroke="#0f0505" stroke-width="3.5" opacity="0.75"/>
+  </g>
+
+  <!-- Violet light reflecting on ground from fractures -->
+  <ellipse cx="960" cy="900" rx="600" ry="200" fill="#551a7f" opacity="0.1"/>
+
+  <!-- Eerie violet wisps rising -->
+  <path d="M 600 1000 Q 620 800 610 500" stroke="#8b3ae8" stroke-width="15" fill="none" opacity="0.15" filter="url(#fractureSmoke)"/>
+  <path d="M 1320 1000 Q 1300 800 1310 500" stroke="#8b3ae8" stroke-width="15" fill="none" opacity="0.15" filter="url(#fractureSmoke)"/>
+
+  <!-- Atmospheric oppression - NO warm colors anywhere -->
+  <!-- The world is literally breaking -->
+</svg>

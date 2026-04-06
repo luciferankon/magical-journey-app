@@ -14,10 +14,17 @@ interface DialogueBoxProps {
 const CHAR_DELAY_MS = 18;
 
 const HOUSE_BAR: Record<House, string> = {
-  ignis:   "bg-ignis",
-  aqualyn: "bg-aqualyn",
-  terram:  "bg-terram",
-  ventus:  "bg-ventus",
+  ignis:   "#C94C2A",
+  aqualyn: "#2A7A8C",
+  terram:  "#4A7A2A",
+  ventus:  "#4A5A8C",
+};
+
+const HOUSE_TEXT: Record<House, string> = {
+  ignis:   "#FFD4B8",
+  aqualyn: "#B8F0F8",
+  terram:  "#D4F0B8",
+  ventus:  "#D8DEF8",
 };
 
 export function DialogueBox({
@@ -69,44 +76,49 @@ export function DialogueBox({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
-  const barClass  = house ? HOUSE_BAR[house] : "bg-gold";
+  const barColor = house ? HOUSE_BAR[house] : "#C9A84C";
+  const textColor = house ? HOUSE_TEXT[house] : "#D4F0B8";
 
   return (
     <div
-      className="w-full bg-panel/90 backdrop-blur-sm border-t border-gold/30 relative"
+      className="w-full backdrop-blur-sm border-t border-l-4 relative"
+      style={{
+        backgroundColor: 'rgba(8, 4, 12, 0.88)',
+        borderTopColor: 'rgba(120, 60, 180, 0.4)',
+        borderLeftColor: barColor,
+      }}
       onClick={() => { if (!isDone) finishImmediately(); }}
       role="region"
       aria-label="Narrative text"
       aria-live="polite"
     >
-      {/* Gold top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gold opacity-60" />
-
-      {/* House-coloured left bar */}
-      <div className={`absolute left-0 top-0 bottom-0 w-0.5 ${barClass}`} />
-
-      <div className="px-6 pt-5 pb-4 pl-8">
-        {/* Speaker name */}
+      <div className="px-6 pt-5 pb-4">
+        {/* Speaker name in house color */}
         {speakerName && (
-          <p className="font-display text-xs tracking-[0.2em] uppercase text-gold mb-2">
+          <p
+            className="font-display text-xs tracking-[0.2em] uppercase mb-2 font-bold"
+            style={{ color: barColor }}
+          >
             {speakerName}
           </p>
         )}
 
-        {/* Prose text */}
-        <p className="font-body text-base leading-relaxed text-parchment min-h-[3rem]">
+        {/* Prose text - warm parchment color */}
+        <p className="font-body text-sm leading-relaxed min-h-[3rem]" style={{ color: '#e8dcc8' }}>
           {displayed}
           {!isDone && (
-            <span className="cursor-blink text-gold ml-0.5" aria-hidden="true">
+            <span className="cursor-blink ml-0.5" aria-hidden="true" style={{ color: '#C9A84C' }}>
               ▋
             </span>
           )}
         </p>
 
-        {/* Continue chevron */}
+        {/* Continue indicator - pulsing arrow */}
         {isDone && !completed && (
           <div className="mt-3 flex justify-end">
-            <span className="font-ui text-xs text-muted-blue animate-bounce">▼</span>
+            <span className="font-ui text-xs animate-pulse" style={{ color: 'rgba(120, 60, 180, 0.6)' }}>
+              ▶
+            </span>
           </div>
         )}
       </div>
