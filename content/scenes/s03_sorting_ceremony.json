@@ -1,11 +1,33 @@
 {
   "id": "s03_sorting_ceremony",
-  "text": "The Grand Hall is an argument for the existence of awe.\n\nThe ceiling is a star map — not painted, but actual stars, a preserved slice of sky held overhead by some Weaving so old that nobody alive knows who first cast it. The tables below are dressed in four colours: deep crimson for Ignis, teal and silver for Aqualyn, forest green and wood-brown for Terram, slate blue and silver for Ventus. Floating candelabras drift between them, unhurried.\n\nThe Resonance Trial is not dramatic. You place your palm on the Orb — a sphere of spun glass and compressed ley-line energy — and the Orb reads you. Not your thoughts. Something deeper. The particular frequency of the thread that runs through you, waiting to be drawn.\n\nThe orb flares its colour. The room holds its breath.\n\nThen the Hall Master announces your Order, and the table for your house lights up, and the students there make room, and Aethermoor Academy has known you for approximately forty seconds and has already decided who you are.\n\nYou sit down. You're not sure you agree with it yet. But you pull the uniform piping closer and look out at the other tables, and you think: all right. Let's see what this means.",
+  "text": "The Grand Hall is an argument for the existence of awe.\n\nThe ceiling is a star map — not painted, but actual stars, a preserved slice of sky held overhead by some Weaving so old that nobody alive knows who first cast it. The tables below are dressed in four colours: deep crimson for Ignis, teal and silver for Aqualyn, forest green and wood-brown for Terram, slate blue and silver for Ventus. Floating candelabras drift between them, unhurried.\n\nThe Resonance Trial is not dramatic. You place your palm on the Orb — a sphere of spun glass and compressed ley-line energy — and the Orb reads you. Not your thoughts. Something deeper. The particular frequency of the thread that runs through you, waiting to be drawn.\n\nThe orb flares its colour. The room holds its breath.\n\nThen the Hall Master announces your Order, and the table for your house lights up, and the students there make room, and Aethermoor Academy has known you for approximately forty seconds and has already decided who you are.\n\nYou sit down. You're not sure you agree with it yet. But the seat is yours now, and the hall is watching, and the person beside you is about to say something.",
   "choices": [
     {
-      "id": "take_your_seat",
-      "text": "Take your seat at the table.",
+      "id": "introduce_yourself",
+      "text": "Introduce yourself to the student nearest you before they have to ask.",
       "consequences": [
+        { "type": "trait_delta", "trait": "empathy", "delta": 1 },
+        { "type": "relationship_delta", "character": "sera_trust", "delta": 1 },
+        { "type": "set_flag", "flag": "house_assigned" }
+      ],
+      "next": "s04_common_room_night"
+    },
+    {
+      "id": "read_the_room",
+      "text": "Say nothing yet. Study the hall — every table, every face.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+        { "type": "set_flag", "flag": "house_assigned" }
+      ],
+      "next": "s04_common_room_night"
+    },
+    {
+      "id": "catch_cadens_eye",
+      "text": "Catch Caden's eye across the hall and hold it a beat longer than is comfortable.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 },
         { "type": "set_flag", "flag": "house_assigned" }
       ],
       "next": "s04_common_room_night"

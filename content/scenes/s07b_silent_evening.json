@@ -1,23 +1,21 @@
 {
   "id": "s07b_silent_evening",
-  "text": "You pull Tomás around the corner before Lira's thread collapses and she turns.\n\nNeither of you speaks until you're two full corridors away. Then Tomás stops walking, and you stop too, and he looks at the stone floor for a moment like he's deciding something.\n\n\"I've seen it before,\" he says. \"The Fracture. I know what it looks like.\"\n\nHe pulls out his phone — a small crack across one corner of the screen — and shows you an article. A disappearance, three years ago, from a Weaving school in the north. A senior student. No explanation, no body found.\n\n\"That's my sister,\" Tomás says. He says it the way people say things they've said a thousand times in their heads before saying them out loud: carefully, quietly, without performing it. \"She was working on something she wouldn't talk about. Two weeks later she was gone. The school said 'personal circumstances.'\" He puts the phone away. \"They didn't say which circumstances.\"\n\nHe looks at you directly. \"I came here to find out what happened. I've been careful. I'm not ready to go to a teacher — not yet, not without more. But I'm also not going to pretend I can do this alone.\"\n\nThe library is warm and late and smells like beeswax and old paper. Somewhere above you, a book is floating back to its shelf on its own.",
+  "text": "You pull Tomás around the corner before Lira's thread collapses and she turns.\n\nNeither of you speaks until you're two full corridors away. Then Tomás stops walking, and you stop too, and he looks at the stone floor for a moment like he's deciding something.\n\n\"I've seen it before,\" he says. \"The Fracture. I know what it looks like.\"\n\nHe pulls out his phone — a small crack across one corner of the screen — and shows you an article. A disappearance, three years ago, from a Weaving school in the north. A senior student. No explanation, no body found.\n\n\"That's my sister,\" Tomás says. He says it the way people say things they've said a thousand times in their heads before saying them out loud: carefully, quietly, without performing it. \"She was working on something she wouldn't talk about. Two weeks later she was gone. The school said 'personal circumstances.'\" He puts the phone away. \"They didn't say which circumstances.\"\n\nHe looks at you directly. \"I came here to find out what happened. I've been careful. I'm not ready to go to a teacher — not yet, not without more. But I'm also not going to pretend I can do this alone.\"\n\nThe library is warm and late and smells like beeswax and old paper. Somewhere above you, a book is floating back to its shelf on its own.\n\nHe needs an answer. He deserves an honest one.",
   "choices": [
     {
-      "id": "agree_to_investigate",
+      "id": "commit_fully",
       "text": "\"I'm in. We do this together, quietly.\"",
       "consequences": [
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 3 },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 }
       ],
       "next": "s08_chapter_crisis"
     },
     {
-      "id": "agree_but_plan_to_tell",
-      "text": "\"All right. Quietly — for now.\" You mean it when you say it. Mostly.",
+      "id": "agree_with_limit",
+      "text": "\"I'll help. But if it gets dangerous, we go to Aldric.\"",
       "consequences": [
         { "type": "relationship_delta", "character": "tomas_bond", "delta": 1 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 2 }
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": 1 }
       ],
       "next": "s08_chapter_crisis"
     }
