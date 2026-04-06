@@ -1,7 +1,6 @@
 export type {
   GateCondition,
   Consequence,
-  PlayerState,
   Scene,
   Choice,
   AvailableChoice,

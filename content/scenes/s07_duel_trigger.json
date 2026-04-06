@@ -1,0 +1,23 @@
+{
+  "id": "s07_duel_trigger",
+  "text": "Lira turns.\n\nShe doesn't look surprised. She looks like someone who chose to be seen and is now enjoying the confirmation. The Weave is gone — it collapsed the instant she moved, leaving only the faint smell of ozone and that wrong-frequency hum fading from the air. She lets her hands drop to her sides.\n\n\"New student,\" she says. Not unkind. Not warm either. \"Brave or stupid, I can never tell from the outside.\"\n\nShe looks at you for a long moment. Then: \"We should settle this properly. A formal challenge. You versus Caden Miral — if you can hold your ground against an Ignis second-year, I'll know you're worth keeping quiet about. If you can't—\" She smiles. The smile doesn't reach her eyes. \"Then you'll have bigger problems than me.\"\n\nBehind you, the doorway. In the doorway, Caden, apparently having taken the same route home. He looks between you and Lira with the expression of someone who is not going to ask questions until he has more information, but who is absolutely, immediately interested.\n\nLira raises an eyebrow. \"Well?\"",
+  "choices": [
+    {
+      "id": "accept_duel",
+      "text": "Accept — face Caden.",
+      "consequences": [],
+      "next": "g03_duel_gate"
+    },
+    {
+      "id": "back_down",
+      "text": "Back down — this isn't worth it. Not yet.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": -1 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 },
+        { "type": "set_flag", "flag": "sided_with_lira" }
+      ],
+      "next": "s08_chapter_crisis"
+    }
+  ]
+}

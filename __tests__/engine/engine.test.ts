@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import {
   startGame,
   makeChoice,
@@ -6,7 +6,9 @@ import {
   resolveAvailableChoices,
   isEngineError,
 } from '@/lib/engine/engine'
-import type { PlayerState, Scene } from '@/lib/engine/types'
+import { createInitialState, setFlag, applyTrait } from '@/lib/state'
+import type { Scene } from '@/lib/engine'
+import type { PlayerState } from '@/lib/state'
 
 // ---------------------------------------------------------------------------
 // Mock the loader so tests do not hit the filesystem
@@ -23,7 +25,7 @@ vi.mock('@/lib/engine/loader', () => {
           text: 'Enter the forest.',
           consequences: [
             { type: 'trait_delta', trait: 'courage', delta: 1 },
-            { type: 'set_flag', flag: 'entered_wood' },
+            { type: 'set_flag', flag: 'witnessed_fracture' },
           ],
           next: 'forest',
         },
@@ -36,8 +38,8 @@ vi.mock('@/lib/engine/loader', () => {
         {
           id: 'use_secret',
           text: 'Use the secret passage.',
-          gate: { type: 'flag_set', flag: 'knows_secret' },
-          consequences: [{ type: 'set_flag', flag: 'used_secret' }],
+          gate: { type: 'flag_set', flag: 'house_assigned' },
+          consequences: [{ type: 'set_flag', flag: 'class_success' }],
           next: 'secret_room',
         },
       ],
@@ -49,7 +51,7 @@ vi.mock('@/lib/engine/loader', () => {
         {
           id: 'brave_path',
           text: 'Take the brave path.',
-          gate: { type: 'trait_gte', trait: 'courage', value: 2 },
+          gate: { type: 'trait_gte', trait: 'courage', value: 5 },
           consequences: [],
           next: 'ending_glory',
         },
@@ -95,8 +97,8 @@ vi.mock('@/lib/engine/loader', () => {
     loadManifest: () => ({
       startSceneId: 'intro',
       initialState: {
-        traits: { courage: 0, wisdom: 0 },
-        relationships: { fox: 0 },
+        traits: { courage: 3, wisdom: 3 },
+        relationships: {},
       },
       scenes: Object.keys(scenes),
     }),
@@ -104,18 +106,16 @@ vi.mock('@/lib/engine/loader', () => {
 })
 
 // ---------------------------------------------------------------------------
-// Helpers
+// Helper — build a full PlayerState at a given node
 // ---------------------------------------------------------------------------
 
-function makeState(overrides: Partial<PlayerState> = {}): PlayerState {
-  return {
-    currentSceneId: 'intro',
-    traits: { courage: 0, wisdom: 0 },
-    flags: [],
-    relationships: { fox: 0 },
-    history: ['intro'],
-    ...overrides,
+function makeState(nodeId = 'intro', mutate?: (s: PlayerState) => PlayerState): PlayerState {
+  const base = createInitialState()
+  const withNode: PlayerState = {
+    ...base,
+    progress: { ...base.progress, currentNodeId: nodeId, visitedNodes: [nodeId] },
   }
+  return mutate ? mutate(withNode) : withNode
 }
 
 // ---------------------------------------------------------------------------
@@ -125,18 +125,18 @@ function makeState(overrides: Partial<PlayerState> = {}): PlayerState {
 describe('startGame', () => {
   it('returns the start scene id from the manifest', () => {
     const { state } = startGame()
-    expect(state.currentSceneId).toBe('intro')
+    expect(state.progress.currentNodeId).toBe('intro')
   })
 
-  it('history contains the start scene', () => {
+  it('visitedNodes contains the start scene', () => {
     const { state } = startGame()
-    expect(state.history).toEqual(['intro'])
+    expect(state.progress.visitedNodes).toContain('intro')
   })
 
-  it('initialises traits and relationships from manifest', () => {
+  it('traits are initialised at default values', () => {
     const { state } = startGame()
-    expect(state.traits).toMatchObject({ courage: 0, wisdom: 0 })
-    expect(state.relationships).toMatchObject({ fox: 0 })
+    expect(state.traits.courage).toBe(3)
+    expect(state.traits.wisdom).toBe(3)
   })
 
   it('returns a scene view with choices', () => {
@@ -159,14 +159,13 @@ describe('startGame', () => {
 
 describe('resolveAvailableChoices', () => {
   it('ungated choices are always available', () => {
-    const state = makeState()
     const { sceneView } = startGame()
-    const go_forest = sceneView.availableChoices.find((c) => c.id === 'go_forest')
-    expect(go_forest?.available).toBe(true)
+    const goForest = sceneView.availableChoices.find((c) => c.id === 'go_forest')
+    expect(goForest?.available).toBe(true)
   })
 
   it('gated choice unlocks when condition is met', () => {
-    const state = makeState({ flags: ['knows_secret'] })
+    const state = makeState('intro', (s) => setFlag(s, 'house_assigned', true))
     const { scene } = startGame().sceneView
     const choices = resolveAvailableChoices(scene, state)
     const secret = choices.find((c) => c.id === 'use_secret')
@@ -184,15 +183,15 @@ describe('makeChoice', () => {
     const result = makeChoice('go_forest', state)
     expect(isEngineError(result)).toBe(false)
     if (!isEngineError(result)) {
-      expect(result.newState.currentSceneId).toBe('forest')
+      expect(result.newState.progress.currentNodeId).toBe('forest')
     }
   })
 
-  it('appends next scene to history', () => {
+  it('appends next scene to visitedNodes', () => {
     const state = makeState()
     const result = makeChoice('go_forest', state)
     if (!isEngineError(result)) {
-      expect(result.newState.history).toEqual(['intro', 'forest'])
+      expect(result.newState.progress.visitedNodes).toContain('forest')
     }
   })
 
@@ -200,14 +199,13 @@ describe('makeChoice', () => {
     const state = makeState()
     const result = makeChoice('go_forest', state)
     if (!isEngineError(result)) {
-      expect(result.newState.traits.courage).toBe(1)
-      expect(result.newState.flags).toContain('entered_wood')
+      expect(result.newState.traits.courage).toBe(4) // 3 + 1
+      expect(result.newState.flags.witnessed_fracture).toBe(true)
     }
   })
 
-  it('unlocks gated choice in next scene after consequences satisfy the gate', () => {
-    // go_forest gives courage +1, making courage = 1
-    // brave_path in forest requires courage >= 2, so should still be locked
+  it('brave_path is locked when courage is below threshold after go_forest', () => {
+    // go_forest gives courage +1 → courage = 4, but brave_path needs >= 5
     const state = makeState()
     const result = makeChoice('go_forest', state)
     if (!isEngineError(result)) {
@@ -216,31 +214,32 @@ describe('makeChoice', () => {
     }
   })
 
-  it('gated choice in next scene unlocks when state already satisfies gate', () => {
-    const state = makeState({ traits: { courage: 2, wisdom: 0 }, currentSceneId: 'forest' })
+  it('brave_path unlocks when courage already meets threshold', () => {
+    const state = makeState('forest', (s) => applyTrait(s, 'courage', 2)) // courage = 5
     const result = makeChoice('brave_path', state)
     if (!isEngineError(result)) {
-      expect(result.newState.currentSceneId).toBe('ending_glory')
+      expect(result.newState.progress.currentNodeId).toBe('ending_glory')
       expect(result.nextSceneView.isEnding).toBe(true)
     }
   })
 
-  it('secret passage unlocks and advances correctly when flag is held', () => {
-    const state = makeState({ flags: ['knows_secret'] })
+  it('secret passage unlocks and advances correctly when gate flag is held', () => {
+    const state = makeState('intro', (s) => setFlag(s, 'house_assigned', true))
     const result = makeChoice('use_secret', state)
     if (!isEngineError(result)) {
-      expect(result.newState.currentSceneId).toBe('secret_room')
-      expect(result.newState.flags).toContain('used_secret')
+      expect(result.newState.progress.currentNodeId).toBe('secret_room')
+      expect(result.newState.flags.class_success).toBe(true)
       expect(result.nextSceneView.isEnding).toBe(true)
     }
   })
 
   it('does not mutate the input state', () => {
     const state = makeState()
-    const originalTraits = { ...state.traits }
+    const originalCourage = state.traits.courage
+    const originalNodes = [...state.progress.visitedNodes]
     makeChoice('go_forest', state)
-    expect(state.traits).toEqual(originalTraits)
-    expect(state.history).toEqual(['intro'])
+    expect(state.traits.courage).toBe(originalCourage)
+    expect(state.progress.visitedNodes).toEqual(originalNodes)
   })
 
   // -------------------------------------------------------------------------
@@ -254,21 +253,20 @@ describe('makeChoice', () => {
   })
 
   it('returns CHOICE_UNAVAILABLE when gate is not satisfied', () => {
-    // use_secret requires flag knows_secret; state does not have it
-    const result = makeChoice('use_secret', makeState())
+    const result = makeChoice('use_secret', makeState()) // house_assigned = false
     expect(isEngineError(result)).toBe(true)
     if (isEngineError(result)) expect(result.code).toBe('CHOICE_UNAVAILABLE')
   })
 
   it('returns ALREADY_ENDED when current scene is an ending', () => {
-    const endState = makeState({ currentSceneId: 'ending_glory' })
+    const endState = makeState('ending_glory')
     const result = makeChoice('any_choice', endState)
     expect(isEngineError(result)).toBe(true)
     if (isEngineError(result)) expect(result.code).toBe('ALREADY_ENDED')
   })
 
-  it('returns SCENE_NOT_FOUND when currentSceneId is invalid', () => {
-    const badState = makeState({ currentSceneId: 'ghost_scene' })
+  it('returns SCENE_NOT_FOUND when currentNodeId is invalid', () => {
+    const badState = makeState('ghost_scene')
     const result = makeChoice('go_forest', badState)
     expect(isEngineError(result)).toBe(true)
     if (isEngineError(result)) expect(result.code).toBe('SCENE_NOT_FOUND')
@@ -281,7 +279,7 @@ describe('makeChoice', () => {
 
 describe('resumeGame', () => {
   it('returns the current scene view for a valid state', () => {
-    const state = makeState({ currentSceneId: 'forest' })
+    const state = makeState('forest')
     const view = resumeGame(state)
     expect(isEngineError(view)).toBe(false)
     if (!isEngineError(view)) {
@@ -290,14 +288,14 @@ describe('resumeGame', () => {
   })
 
   it('returns SCENE_NOT_FOUND for an unknown scene', () => {
-    const state = makeState({ currentSceneId: 'nowhere' })
+    const state = makeState('nowhere')
     const view = resumeGame(state)
     expect(isEngineError(view)).toBe(true)
     if (isEngineError(view)) expect(view.code).toBe('SCENE_NOT_FOUND')
   })
 
   it('correctly shows gated choices as unavailable during resume', () => {
-    const state = makeState({ currentSceneId: 'forest', traits: { courage: 1, wisdom: 0 } })
+    const state = makeState('forest') // courage = 3, brave_path needs >= 5
     const view = resumeGame(state)
     if (!isEngineError(view)) {
       const brave = view.availableChoices.find((c) => c.id === 'brave_path')

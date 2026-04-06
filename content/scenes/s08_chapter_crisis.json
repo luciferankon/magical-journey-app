@@ -1,0 +1,37 @@
+{
+  "id": "s08_chapter_crisis",
+  "text": "It happens at eleven-fourteen on a Tuesday night.\n\nYou're crossing the main courtyard — taking the long way back, the way you've learned to take when you need to think — when you hear the sound. Not the crack of a collision or the flash of an accident. Something quieter than that. A sound like the air being subtracted.\n\nA student you don't recognise — first-year, you think, the way they're holding their jacket — is on the ground near the fountain. Around them, the cobblestones have gone dark, like the light is being pulled out of them. The student's hands are pressed to the stone and they're not moving.\n\nFracture wound. You know what it looks like. You know what causes it.\n\nCaden is ten feet to your left. He looks at the student, then at his own hands, then at the student again — he wants to help and doesn't know how. Sera is frozen by the gate, her Weaving already half-raised, her face white. Tomás is across the courtyard, watching you with the expression that means he's waiting for a signal.\n\nOn the balcony above the east wing, three floors up, Lira Thane stands with her arms folded and her face in shadow. She's very still.\n\nYou've seen what she can do. You know what this is. And you know, in the way you know things you'd rather not know, that you are the only person here who has any idea what to do next.",
+  "choices": [
+    {
+      "id": "step_forward",
+      "text": "Step forward — use what you saw to attempt a counter-Weave.",
+      "consequences": [],
+      "next": "g04_crisis_courage_gate"
+    },
+    {
+      "id": "pull_sera_back",
+      "text": "Stay back — pull Sera clear and call for the teachers.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "empathy", "delta": 2 },
+        { "type": "relationship_delta", "character": "sera_trust", "delta": 2 },
+        { "type": "trait_delta", "trait": "courage", "delta": -1 }
+      ],
+      "next": "ending_gate"
+    },
+    {
+      "id": "signal_tomas",
+      "text": "Signal Tomás — execute whatever plan you have together.",
+      "consequences": [],
+      "next": "g05_crisis_tomas_gate"
+    },
+    {
+      "id": "do_nothing",
+      "text": "Do nothing — watch what happens.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": -2 },
+        { "type": "set_flag", "flag": "crisis_fled" }
+      ],
+      "next": "ending_gate"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "g05_crisis_tomas_gate",
+  "text": "You make the signal — two fingers, then one — and Tomás moves immediately.\n\nYou talked about this, in the library, in the spaces between the things you actually said out loud. Not this exact scenario. But the shape of it: what you would do if something happened, if the Fracture showed itself in a place it couldn't be ignored. He'd been the one who said the words. You'd been the one who listened and didn't say no.\n\nHe's already at the student's side when you reach him. He pulls a small object from his jacket pocket — a flat, dark stone that hums when he places it against the cobblestones. A focusing anchor. He looks up at you. \"I need you on the other side. Steady. Don't let go.\"",
+  "choices": [
+    {
+      "id": "plan_succeeds",
+      "text": "The anchor holds. Between the two of you, the Fracture thread pulls free — slow, excruciating, but it comes.",
+      "gate": { "type": "relationship_gte", "character": "tomas_bond", "value": 4 },
+      "consequences": [
+        { "type": "set_flag", "flag": "crisis_intervened" },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 2 },
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 3 },
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "ending_gate"
+    },
+    {
+      "id": "plan_fails",
+      "text": "You try — you both try — but the coordination isn't there. The trust isn't deep enough yet. The thread holds and the dark spreads.",
+      "gate": { "type": "relationship_lte", "character": "tomas_bond", "value": 3 },
+      "consequences": [
+        { "type": "set_flag", "flag": "crisis_intervened" },
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": -1 }
+      ],
+      "next": "ending_gate"
+    }
+  ]
+}

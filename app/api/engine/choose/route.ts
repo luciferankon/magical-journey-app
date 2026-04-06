@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 import { makeChoice, isEngineError } from '@/lib/engine'
-import type { PlayerState } from '@/lib/engine'
+import type { PlayerState } from '@/lib/state'
 
 interface ChooseRequestBody {
   choiceId: string
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     return Response.json({ error: '`choiceId` must be a non-empty string' }, { status: 422 })
   }
 
-  if (!state || typeof state.currentSceneId !== 'string') {
+  if (!state || typeof state.progress?.currentNodeId !== 'string') {
     return Response.json({ error: '`state` must be a valid PlayerState object' }, { status: 422 })
   }
 

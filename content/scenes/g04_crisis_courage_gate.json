@@ -1,0 +1,31 @@
+{
+  "id": "g04_crisis_courage_gate",
+  "text": "You don't think about it.\n\nThat's the thing you'll remember later, in the versions of this night you replay when you can't sleep: you didn't decide. There was the student on the ground and the dark spreading from their hands and the knowledge of what it was, and then you were moving.\n\nThe counter-Weave is not in any textbook you've read. You're drawing it from the memory of what Lira's hands looked like, reversed — the Fracture pattern inverted, the frequency opposed. It's like trying to push two magnets together. Your arms are shaking.\n\nThe courtyard is very quiet. Everyone is watching you now.",
+  "choices": [
+    {
+      "id": "counter_weave_succeeds",
+      "text": "The dark retreats. The student gasps. The thread holds.",
+      "gate": { "type": "trait_gte", "trait": "courage", "value": 6 },
+      "consequences": [
+        { "type": "set_flag", "flag": "crisis_intervened" },
+        { "type": "trait_delta", "trait": "courage", "delta": 3 },
+        { "type": "trait_delta", "trait": "ambition", "delta": 1 },
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 }
+      ],
+      "next": "ending_gate"
+    },
+    {
+      "id": "counter_weave_falters",
+      "text": "The thread doesn't hold. You tried — everyone saw you try — but the Fracture is older and deeper than anything you know how to oppose.",
+      "gate": { "type": "trait_lte", "trait": "courage", "value": 5 },
+      "consequences": [
+        { "type": "set_flag", "flag": "crisis_intervened" },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+      ],
+      "next": "ending_gate"
+    }
+  ]
+}

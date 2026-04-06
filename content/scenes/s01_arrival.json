@@ -1,0 +1,12 @@
+{
+  "id": "s01_arrival",
+  "text": "The enchanted railway doesn't announce its arrival — it simply appears, a ripple of warm light through the fog, and then it's gone, and you're standing on the platform at Aethermoor Station with your trunk at your feet and the school rising above the treeline.\n\nYou've seen photographs. The photographs don't prepare you.\n\nAethermoor Academy sits on the convergence point of four ley lines, and you can feel it — a low, electrical hum behind the sternum, like the moment before a thunderstorm decides to become one. The towers are old stone and older ivy. The ivy, you'll later learn, is bioluminescent. It's only just dusk and the stems are already beginning to glow: faint violet-green, slow as breathing.\n\nAround you, other students are already moving — some confident, some clutching their admissions letters like anchors. A girl with a Aqualyn scarf walks past reading a list. Two third-years with Ignis piping on their robes are laughing about something you didn't catch.\n\nYou pick up your trunk. The ley lines hum. Somewhere ahead, through the iron gate, Aethermoor is waiting.",
+  "choices": [
+    {
+      "id": "enter_the_gate",
+      "text": "Walk through the gate.",
+      "consequences": [],
+      "next": "s02_first_meeting"
+    }
+  ]
+}

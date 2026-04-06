@@ -1,93 +1,118 @@
 /**
- * Core engine types — all game logic operates against these contracts.
- * Content files and the UI layer must conform to these shapes.
+ * Engine API contract types — used by the UI to communicate with the engine.
+ *
+ * These types match the engine implementation in the peaceful-satoshi branch.
+ * When that branch merges, this file can be replaced by the authoritative source.
+ *
+ * The UI imports from here; it never imports from the engine implementation.
  */
 
-// ---------------------------------------------------------------------------
-// Gate conditions — evaluated against PlayerState to unlock choices
-// ---------------------------------------------------------------------------
-
-export type GateCondition =
-  | { type: 'trait_gte'; trait: string; value: number }
-  | { type: 'trait_lte'; trait: string; value: number }
-  | { type: 'flag_set'; flag: string }
-  | { type: 'flag_unset'; flag: string }
-  | { type: 'relationship_gte'; character: string; value: number }
-  | { type: 'relationship_lte'; character: string; value: number }
-  | { type: 'and'; conditions: GateCondition[] }
-  | { type: 'or'; conditions: GateCondition[] }
-  | { type: 'not'; condition: GateCondition }
-
-// ---------------------------------------------------------------------------
-// Consequences — mutations applied to PlayerState after a choice is made
-// ---------------------------------------------------------------------------
-
-export type Consequence =
-  | { type: 'trait_delta'; trait: string; delta: number }
-  | { type: 'set_flag'; flag: string }
-  | { type: 'unset_flag'; flag: string }
-  | { type: 'relationship_delta'; character: string; delta: number }
-
-// ---------------------------------------------------------------------------
-// Scene / Choice — the narrative graph nodes loaded from content files
-// ---------------------------------------------------------------------------
-
-export interface Choice {
-  id: string
-  text: string
-  /** Optional gate — if present, the choice is only available when the gate passes */
-  gate?: GateCondition
-  consequences: Consequence[]
-  /** Scene ID to advance to, or the sentinel value 'END' for an ending */
-  next: string
-}
+// ── Scene & choice types ──────────────────────────────────────────────────────
 
 export interface Scene {
-  id: string
-  /** Narrative prose shown to the player */
-  text: string
-  choices: Choice[]
-  /** True when this scene concludes the story */
-  isEnding?: boolean
+  id: string;
+  /** Narrative prose shown to the player. Never hardcode this in JSX. */
+  text: string;
+  choices: Choice[];
+  isEnding?: boolean;
 }
 
-// ---------------------------------------------------------------------------
-// PlayerState — the single source of truth mutated throughout a playthrough
-// ---------------------------------------------------------------------------
-
-export interface PlayerState {
-  currentSceneId: string
-  traits: Record<string, number>
-  /** String set serialized as an array for JSON compatibility */
-  flags: string[]
-  relationships: Record<string, number>
-  /** Ordered list of scene IDs the player has visited */
-  history: string[]
+export interface Choice {
+  id: string;
+  text: string;
+  gate?: GateCondition;
+  consequences: Consequence[];
+  /** Scene ID to advance to after this choice. */
+  next: string;
 }
 
-// ---------------------------------------------------------------------------
-// Engine API surface types
-// ---------------------------------------------------------------------------
+// ── Gate conditions ───────────────────────────────────────────────────────────
 
+export type GateCondition =
+  | { type: "trait_gte"; trait: string; value: number }
+  | { type: "trait_lte"; trait: string; value: number }
+  | { type: "flag_set"; flag: string }
+  | { type: "flag_unset"; flag: string }
+  | { type: "relationship_gte"; character: string; value: number }
+  | { type: "relationship_lte"; character: string; value: number }
+  | { type: "and"; conditions: GateCondition[] }
+  | { type: "or"; conditions: GateCondition[] }
+  | { type: "not"; condition: GateCondition };
+
+// ── Consequences ──────────────────────────────────────────────────────────────
+
+export type Consequence =
+  | { type: "trait_delta"; trait: string; delta: number }
+  | { type: "set_flag"; flag: string }
+  | { type: "unset_flag"; flag: string }
+  | { type: "relationship_delta"; character: string; delta: number };
+
+// ── View types returned by the API ────────────────────────────────────────────
+
+/**
+ * A choice as presented to the player — includes availability so the UI can
+ * render locked choices with a lock icon without re-evaluating gate logic.
+ */
 export interface AvailableChoice {
-  id: string
-  text: string
-  /** False when a gate exists but the current state doesn't satisfy it */
-  available: boolean
+  id: string;
+  text: string;
+  /** False when the gate condition is not met. UI renders the choice as locked. */
+  available: boolean;
 }
 
+/**
+ * Everything the UI needs to render the current scene moment.
+ */
 export interface SceneView {
-  scene: Scene
-  availableChoices: AvailableChoice[]
-  isEnding: boolean
+  scene: Scene;
+  availableChoices: AvailableChoice[];
+  isEnding: boolean;
 }
 
+/**
+ * The result of resolving a player choice.
+ */
 export interface ChoiceResult {
-  newState: PlayerState
-  nextSceneView: SceneView
+  newState: import("@/lib/state").PlayerState;
+  nextSceneView: SceneView;
 }
 
+/**
+ * Structured engine error. The UI should map each code to a friendly message.
+ */
 export interface EngineError {
-  code: 'SCENE_NOT_FOUND' | 'CHOICE_NOT_FOUND' | 'CHOICE_UNAVAILABLE' | 'ALREADY_ENDED'
-  message: string
+  code:
+    | "SCENE_NOT_FOUND"
+    | "CHOICE_NOT_FOUND"
+    | "CHOICE_UNAVAILABLE"
+    | "ALREADY_ENDED";
+  message: string;
 }
+
+// ── API request/response shapes ───────────────────────────────────────────────
+
+/** POST /api/engine/start — response body */
+export interface StartResponse {
+  state: import("@/lib/state").PlayerState;
+  sceneView: SceneView;
+}
+
+/** POST /api/engine/choose — request body */
+export interface ChooseRequest {
+  choiceId: string;
+  state: import("@/lib/state").PlayerState;
+}
+
+/** POST /api/engine/choose — response body (success) */
+export interface ChooseResponse {
+  newState: import("@/lib/state").PlayerState;
+  nextSceneView: SceneView;
+}
+
+/** POST /api/engine/resume — request body */
+export interface ResumeRequest {
+  state: import("@/lib/state").PlayerState;
+}
+
+/** POST /api/engine/resume — response body (success) */
+export type ResumeResponse = SceneView;

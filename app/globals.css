@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
+/* ── Game palette CSS variables ──────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0D0F1A;
+  --foreground: #F0EAD6;
 }
+
+/* ── Static design tokens (Tailwind v4 @theme) ────────────────────────────
+   Naming convention: consumed as bg-{name}, text-{name}, border-{name}.
+   e.g. --color-deep → bg-deep, text-deep, border-deep
+──────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Surfaces */
+  --color-deep:           #0D0F1A;
+  --color-panel:          #141624;
+  --color-card:           #1C1F33;
+  --color-elevated:       #232640;
+
+  /* Borders */
+  --color-border-subtle:  #2E3150;
+  --color-border-active:  #C9A84C;
+
+  /* Text */
+  --color-parchment:      #F0EAD6;
+  --color-muted-blue:     #9A9EB8;
+  --color-slate:          #5C607A;
+  --color-on-gold:        #0D0F1A;
+
+  /* Gold accent */
+  --color-gold:           #C9A84C;
+  --color-gold-light:     #F0D080;
+  --color-gold-dark:      #8A6E2A;
+
+  /* Semantic states */
+  --color-success:        #4CAF7A;
+  --color-warning:        #E0A030;
+  --color-danger:         #C94C4C;
+  --color-info:           #4C8BC9;
+
+  /* Fracture (forbidden magic) */
+  --color-fracture:       #6B2FA0;
+  --color-fracture-glow:  #A855F7;
+  --color-fracture-void:  #0A0510;
+
+  /* House: Ignis (fire) */
+  --color-ignis:          #C94C2A;
+  --color-ignis-secondary:#E8803A;
+  --color-ignis-glow:     #FF6B35;
+  --color-ignis-deep:     #5C1A0A;
+  --color-ignis-text:     #FFD4B8;
+
+  /* House: Aqualyn (water) */
+  --color-aqualyn:        #2A7A8C;
+  --color-aqualyn-secondary:#4AB8CC;
+  --color-aqualyn-glow:   #7DE8F8;
+  --color-aqualyn-deep:   #0A2A33;
+  --color-aqualyn-text:   #B8F0F8;
+
+  /* House: Terram (earth) */
+  --color-terram:         #4A7A2A;
+  --color-terram-secondary:#8AB84A;
+  --color-terram-glow:    #AADE6A;
+  --color-terram-deep:    #1A2A0A;
+  --color-terram-text:    #D4F0B8;
+
+  /* House: Ventus (air) */
+  --color-ventus:         #4A5A8C;
+  --color-ventus-secondary:#8A9AC8;
+  --color-ventus-glow:    #C0CCEE;
+  --color-ventus-deep:    #1A1E33;
+  --color-ventus-text:    #D8DEF8;
+
+  /* Fonts */
+  --font-display: "Cinzel", "Georgia", serif;
+  --font-body:    "Lora", "Palatino Linotype", "Palatino", serif;
+  --font-ui:      "Inter", "Helvetica Neue", "Helvetica", sans-serif;
+  --font-flavour: "IM Fell English", "Garamond", "Adobe Garamond Pro", serif;
+}
+
+/* ── Font variable bridge (next/font injects CSS vars at runtime) ─────────── */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+  --font-display: var(--font-cinzel,    "Cinzel", "Georgia", serif);
+  --font-body:    var(--font-lora,      "Lora", "Palatino", serif);
+  --font-ui:      var(--font-inter,     "Inter", "Helvetica Neue", sans-serif);
+  --font-flavour: var(--font-im-fell,   "IM Fell English", "Garamond", serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base styles ─────────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body, "Lora", "Palatino", serif);
+}
+
+/* ── Typewriter cursor animation ─────────────────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Choice card entrance animation ─────────────────────────────────────── */
+
+@keyframes choice-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.choice-enter {
+  animation: choice-enter 200ms ease-out both;
+}
+
+/* ── Chapter title card fade ─────────────────────────────────────────────── */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.anim-fade-in  { animation: fade-in  400ms ease-out both; }
+.anim-fade-out { animation: fade-out 600ms ease-in  both; }
+
+/* ── Stat bar fill transition ────────────────────────────────────────────── */
+
+.stat-bar-fill {
+  transition: width 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Fracture screen-shake ───────────────────────────────────────────────── */
+
+@keyframes fracture-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20%       { transform: translate(-3px, 1px); }
+  40%       { transform: translate(3px, -1px); }
+  60%       { transform: translate(-2px, 2px); }
+  80%       { transform: translate(2px, -2px); }
+}
+
+.fracture-shake {
+  animation: fracture-shake 150ms ease-in-out;
+}
+
+/* ── Scrollbar styling ───────────────────────────────────────────────────── */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2E3150 #141624;
 }

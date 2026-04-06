@@ -1,0 +1,41 @@
+{
+  "id": "s06_corridor_incident",
+  "text": "You find the restricted corridor by accident.\n\nYou're taking the long route back from the library — the one that cuts behind the eastern tower, which someone told you at dinner was faster if you didn't mind the smell of old stone and the torches that lit themselves about three seconds too late. They were right about the smell. They were wrong about the time.\n\nYou hear it before you see it: a sound like a wire pulled to snapping, low and resonant, at a frequency that sits wrong in the body. Then the light.\n\nLira Thane is at the far end of the corridor, both hands raised, and the Weave she's drawing is nothing you recognise from this morning's class. It's not Ember or Tide or Stone or Wind — those threads are warm colours and clear shapes. This is violet-black and fractal and it doesn't fold, it splits. The air around her hands looks thin, like paper held to sunlight.\n\nFracture Weaving. Forbidden. You've read the theoretical descriptions. They don't do it justice.\n\nShe hasn't seen you. Tomás Reeve is standing three feet to your left — he must have come the same route, found the same shortcut. He's looking at Lira with the focused stillness of someone who has already reached a conclusion. Then he looks at you.\n\nHe's waiting to see what you do.",
+  "choices": [
+    {
+      "id": "confront_lira",
+      "text": "Step forward — confront her directly.",
+      "consequences": [
+        { "type": "set_flag", "flag": "witnessed_fracture" },
+        { "type": "trait_delta", "trait": "courage", "delta": 2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 3 },
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 1 }
+      ],
+      "next": "s07_duel_trigger"
+    },
+    {
+      "id": "pull_tomas_away",
+      "text": "Pull Tomás away — say nothing to anyone, not yet.",
+      "consequences": [
+        { "type": "set_flag", "flag": "witnessed_fracture" },
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": 1 }
+      ],
+      "next": "s07b_silent_evening"
+    },
+    {
+      "id": "report_to_aldric",
+      "text": "Report it to Professor Aldric immediately.",
+      "consequences": [
+        { "type": "set_flag", "flag": "witnessed_fracture" },
+        { "type": "set_flag", "flag": "reported_lira" },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": -3 },
+        { "type": "relationship_delta", "character": "tomas_bond", "delta": -1 }
+      ],
+      "next": "s07c_aldric_meeting"
+    }
+  ]
+}

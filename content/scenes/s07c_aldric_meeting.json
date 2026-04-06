@@ -1,0 +1,15 @@
+{
+  "id": "s07c_aldric_meeting",
+  "text": "Professor Aldric's office door is open.\n\nThis, you'll learn later, is unusual. The door is almost always closed. But it's open tonight, and there's lamplight through the gap, and when you knock and give your name he says \"come in\" without any of the usual administrative pause.\n\nHis office is a study in controlled accumulation: books, specimen jars with things that glow faintly, a spinning brass orrery above the desk that tracks something other than the conventional planets. He doesn't offer you a seat until he's listened to everything you have to say. You tell him exactly what you saw.\n\nHe's quiet for a long time afterward.\n\n\"Fracture Weaving,\" he says, finally. Not a question. \"You're certain.\"\n\n\"Yes.\"\n\nAnother pause. He makes a note — pen on paper, unhurried. \"I'll need to verify this carefully before I act. If I move too quickly and there's insufficient evidence, the student in question will simply become more careful. Harder to catch.\" He looks up. \"I'm asking you to stay quiet about this. Not because what you saw doesn't matter — because it does. But because the right moment is worth waiting for.\"\n\nHe holds your gaze when he says the last part: \"This stays between us. Can you do that?\"",
+  "choices": [
+    {
+      "id": "agree_to_stay_quiet",
+      "text": "\"Yes. I can do that.\"",
+      "consequences": [
+        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
+        { "type": "relationship_delta", "character": "lira_influence", "delta": -8 }
+      ],
+      "next": "s08_chapter_crisis"
+    }
+  ]
+}

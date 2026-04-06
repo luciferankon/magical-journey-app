@@ -26,8 +26,8 @@ export const RELATIONSHIP_MAX = 10;
 
 // ── Progress defaults ─────────────────────────────────────────────────────────
 
-/** Node ID where every new playthrough begins. */
-export const STARTING_NODE_ID = "S01_ARRIVAL";
+/** Node ID where every new playthrough begins. Must match content/manifest.json startSceneId. */
+export const STARTING_NODE_ID = "s01_arrival";
 
 /** Chapter number for a new playthrough. */
 export const STARTING_CHAPTER = 1;

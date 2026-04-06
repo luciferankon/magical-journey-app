@@ -1,27 +1,44 @@
 {
-  "startSceneId": "intro",
+  "startSceneId": "s01_arrival",
+  "chapterTitles": {
+    "1": "The First Weaving",
+    "2": "What the Fracture Remembers"
+  },
   "initialState": {
     "traits": {
-      "courage": 0,
-      "wisdom": 0,
-      "empathy": 0,
-      "compassion": 0,
-      "curiosity": 0
+      "courage": 3,
+      "cunning": 3,
+      "empathy": 3,
+      "ambition": 3,
+      "wisdom": 3
     },
     "relationships": {
-      "fox": 0,
-      "keeper": 0
+      "sera_trust": 0,
+      "caden_rivalry": 0,
+      "aldric_regard": 0,
+      "lira_influence": 0,
+      "tomas_bond": 0
     }
   },
   "scenes": [
-    "intro",
-    "forest_clearing",
-    "fox_dialogue",
-    "fox_wisdom",
-    "chest_scene",
-    "ancient_gate",
-    "village_gate",
-    "ending_glory",
-    "ending_quiet"
+    "s01_arrival",
+    "s02_first_meeting",
+    "s03_sorting_ceremony",
+    "s04_common_room_night",
+    "s05_class_morning",
+    "g01_class_courage_gate",
+    "g02_class_cunning_gate",
+    "s06_corridor_incident",
+    "s07_duel_trigger",
+    "g03_duel_gate",
+    "s07b_silent_evening",
+    "s07c_aldric_meeting",
+    "s08_chapter_crisis",
+    "g04_crisis_courage_gate",
+    "g05_crisis_tomas_gate",
+    "ending_gate",
+    "ending_a_marked",
+    "ending_b_watcher",
+    "ending_c_fracture"
   ]
 }

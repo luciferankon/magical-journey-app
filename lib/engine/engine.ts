@@ -1,13 +1,20 @@
 import type {
   GateCondition,
   Consequence,
-  PlayerState,
   Scene,
   AvailableChoice,
   SceneView,
   ChoiceResult,
   EngineError,
 } from './types'
+import type { PlayerState, TraitKey, RelationshipKey, FlagKey } from '@/lib/state'
+import {
+  createInitialState,
+  applyTrait,
+  applyRelationship,
+  setFlag,
+  advanceToNode,
+} from '@/lib/state'
 import { loadScene, loadManifest } from './loader'
 
 // ---------------------------------------------------------------------------
@@ -21,22 +28,22 @@ import { loadScene, loadManifest } from './loader'
 export function evaluateGate(condition: GateCondition, state: PlayerState): boolean {
   switch (condition.type) {
     case 'trait_gte':
-      return (state.traits[condition.trait] ?? 0) >= condition.value
+      return (state.traits[condition.trait as TraitKey] ?? 0) >= condition.value
 
     case 'trait_lte':
-      return (state.traits[condition.trait] ?? 0) <= condition.value
+      return (state.traits[condition.trait as TraitKey] ?? 0) <= condition.value
 
     case 'flag_set':
-      return state.flags.includes(condition.flag)
+      return state.flags[condition.flag as FlagKey] === true
 
     case 'flag_unset':
-      return !state.flags.includes(condition.flag)
+      return !state.flags[condition.flag as FlagKey]
 
     case 'relationship_gte':
-      return (state.relationships[condition.character] ?? 0) >= condition.value
+      return (state.relationships[condition.character as RelationshipKey] ?? 0) >= condition.value
 
     case 'relationship_lte':
-      return (state.relationships[condition.character] ?? 0) <= condition.value
+      return (state.relationships[condition.character as RelationshipKey] ?? 0) <= condition.value
 
     case 'and':
       return condition.conditions.every((c) => evaluateGate(c, state))
@@ -54,43 +61,32 @@ export function evaluateGate(condition: GateCondition, state: PlayerState): bool
 // ---------------------------------------------------------------------------
 
 /**
- * Apply a list of consequences to state and return the updated state.
- * Never mutates the input — always returns a new state object.
+ * Apply a list of engine consequences to state, returning a new PlayerState.
+ * Uses the state module's typed mutation functions to ensure clamping and
+ * meta.lastUpdatedAt are always applied correctly.
  */
 export function applyConsequences(
   consequences: Consequence[],
   state: PlayerState,
 ): PlayerState {
-  let traits = { ...state.traits }
-  let flags = [...state.flags]
-  let relationships = { ...state.relationships }
-
+  let s = state
   for (const c of consequences) {
     switch (c.type) {
       case 'trait_delta':
-        traits = { ...traits, [c.trait]: (traits[c.trait] ?? 0) + c.delta }
+        s = applyTrait(s, c.trait as TraitKey, c.delta)
         break
-
       case 'set_flag':
-        if (!flags.includes(c.flag)) {
-          flags = [...flags, c.flag]
-        }
+        s = setFlag(s, c.flag as FlagKey, true)
         break
-
       case 'unset_flag':
-        flags = flags.filter((f) => f !== c.flag)
+        s = setFlag(s, c.flag as FlagKey, false)
         break
-
       case 'relationship_delta':
-        relationships = {
-          ...relationships,
-          [c.character]: (relationships[c.character] ?? 0) + c.delta,
-        }
+        s = applyRelationship(s, c.character as RelationshipKey, c.delta)
         break
     }
   }
-
-  return { ...state, traits, flags, relationships }
+  return s
 }
 
 // ---------------------------------------------------------------------------
@@ -126,21 +122,13 @@ function buildSceneView(scene: Scene, state: PlayerState): SceneView {
 // ---------------------------------------------------------------------------
 
 /**
- * Initialise a brand-new game state from the content manifest.
+ * Initialise a brand-new game state.
  * Returns the starting scene view alongside the initial state.
  */
 export function startGame(): { state: PlayerState; sceneView: SceneView } {
   const manifest = loadManifest()
   const startScene = loadScene(manifest.startSceneId)
-
-  const state: PlayerState = {
-    currentSceneId: manifest.startSceneId,
-    traits: { ...manifest.initialState.traits },
-    flags: [],
-    relationships: { ...manifest.initialState.relationships },
-    history: [manifest.startSceneId],
-  }
-
+  const state = advanceToNode(createInitialState(), startScene.id)
   return { state, sceneView: buildSceneView(startScene, state) }
 }
 
@@ -157,28 +145,27 @@ export function makeChoice(
   choiceId: string,
   state: PlayerState,
 ): ChoiceResult | EngineError {
-  // Guard: already at an ending
+  const currentNodeId = state.progress.currentNodeId
+
   let currentScene: Scene
   try {
-    currentScene = loadScene(state.currentSceneId)
+    currentScene = loadScene(currentNodeId)
   } catch {
-    return { code: 'SCENE_NOT_FOUND', message: `Scene "${state.currentSceneId}" not found` }
+    return { code: 'SCENE_NOT_FOUND', message: `Scene "${currentNodeId}" not found` }
   }
 
   if (currentScene.isEnding) {
     return { code: 'ALREADY_ENDED', message: 'The story has already ended' }
   }
 
-  // Find the chosen choice
   const choice = currentScene.choices.find((c) => c.id === choiceId)
   if (!choice) {
     return {
       code: 'CHOICE_NOT_FOUND',
-      message: `Choice "${choiceId}" does not exist in scene "${state.currentSceneId}"`,
+      message: `Choice "${choiceId}" does not exist in scene "${currentNodeId}"`,
     }
   }
 
-  // Gate check
   if (choice.gate != null && !evaluateGate(choice.gate, state)) {
     return {
       code: 'CHOICE_UNAVAILABLE',
@@ -186,10 +173,6 @@ export function makeChoice(
     }
   }
 
-  // Apply consequences
-  const stateAfterConsequences = applyConsequences(choice.consequences, state)
-
-  // Load next scene
   let nextScene: Scene
   try {
     nextScene = loadScene(choice.next)
@@ -197,12 +180,10 @@ export function makeChoice(
     return { code: 'SCENE_NOT_FOUND', message: `Next scene "${choice.next}" not found` }
   }
 
-  // Advance narrative position
-  const newState: PlayerState = {
-    ...stateAfterConsequences,
-    currentSceneId: nextScene.id,
-    history: [...stateAfterConsequences.history, nextScene.id],
-  }
+  const newState = advanceToNode(
+    applyConsequences(choice.consequences, state),
+    nextScene.id,
+  )
 
   return {
     newState,
@@ -215,11 +196,12 @@ export function makeChoice(
  * Use this to hydrate a session from storage.
  */
 export function resumeGame(state: PlayerState): SceneView | EngineError {
+  const currentNodeId = state.progress.currentNodeId
   let scene: Scene
   try {
-    scene = loadScene(state.currentSceneId)
+    scene = loadScene(currentNodeId)
   } catch {
-    return { code: 'SCENE_NOT_FOUND', message: `Scene "${state.currentSceneId}" not found` }
+    return { code: 'SCENE_NOT_FOUND', message: `Scene "${currentNodeId}" not found` }
   }
   return buildSceneView(scene, state)
 }

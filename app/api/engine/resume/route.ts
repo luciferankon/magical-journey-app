@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server'
 import { resumeGame, isEngineError } from '@/lib/engine'
-import type { PlayerState } from '@/lib/engine'
+import type { PlayerState } from '@/lib/state'
 
 /**
  * POST /api/engine/resume
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
   }
 
   const { state } = body
-  if (!state || typeof state.currentSceneId !== 'string') {
+  if (!state || typeof state.progress?.currentNodeId !== 'string') {
     return Response.json({ error: '`state` must be a valid PlayerState object' }, { status: 422 })
   }
 
