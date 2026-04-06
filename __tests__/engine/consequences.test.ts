@@ -122,4 +122,39 @@ describe('applyConsequences', () => {
     expect(result.flags.sided_with_lira).toBe(false)
     expect(result.relationships.tomas_bond).toBe(2)
   })
+
+  it('set_chapter_export writes the field to chapterExports', () => {
+    const state = createInitialState()
+    const result = applyConsequences(
+      [{ type: 'set_chapter_export', field: 'crisis_outcome', value: 'hero' }],
+      state,
+    )
+    expect(result.chapterExports.crisis_outcome).toBe('hero')
+  })
+
+  it('advance_chapter increments chapter and clears progress', () => {
+    const state = createInitialState()
+    const result = applyConsequences(
+      [{ type: 'advance_chapter' }],
+      state,
+    )
+    expect(result.progress.chapter).toBe(2)
+    expect(result.progress.currentNodeId).toBe('')
+    expect(result.progress.visitedNodes).toEqual([])
+  })
+
+  it('set_chapter_export then advance_chapter preserves the export', () => {
+    const state = createInitialState()
+    const result = applyConsequences(
+      [
+        { type: 'set_chapter_export', field: 'crisis_outcome', value: 'hero' },
+        { type: 'set_chapter_export', field: 'lira_status', value: 'watching' },
+        { type: 'advance_chapter' },
+      ],
+      state,
+    )
+    expect(result.chapterExports.crisis_outcome).toBe('hero')
+    expect(result.chapterExports.lira_status).toBe('watching')
+    expect(result.progress.chapter).toBe(2)
+  })
 })

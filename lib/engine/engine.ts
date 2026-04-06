@@ -7,13 +7,15 @@ import type {
   ChoiceResult,
   EngineError,
 } from './types'
-import type { PlayerState, TraitKey, RelationshipKey, FlagKey } from '@/lib/state'
+import type { PlayerState, TraitKey, RelationshipKey, FlagKey, ChapterExports } from '@/lib/state'
 import {
   createInitialState,
   applyTrait,
   applyRelationship,
   setFlag,
+  setChapterExports,
   advanceToNode,
+  advanceChapter,
 } from '@/lib/state'
 import { loadScene, loadManifest } from './loader'
 
@@ -83,6 +85,12 @@ export function applyConsequences(
         break
       case 'relationship_delta':
         s = applyRelationship(s, c.character as RelationshipKey, c.delta)
+        break
+      case 'set_chapter_export':
+        s = setChapterExports(s, { [c.field]: c.value } as Partial<ChapterExports>)
+        break
+      case 'advance_chapter':
+        s = advanceChapter(s)
         break
     }
   }

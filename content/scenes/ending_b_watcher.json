@@ -1,6 +1,17 @@
 {
   "id": "ending_b_watcher",
   "text": "The courtyard empties. The teachers handle it. The student in the healing room is stable.\n\nYou go back to your room and sit on the edge of the bed and look at the wall for a while. You know things other people don't. You saw what you saw. Nobody was watching you closely enough to know how much you understood.\n\nTomás knocks quietly about an hour later. He doesn't ask what you did or why. He sits in the chair by the window and says: \"My sister used to say that the most important thing about dangerous knowledge isn't what you do with it right away. It's who you protect it from long enough to understand it properly.\" He doesn't look at you when he says it. \"She was usually right about things like that.\"\n\nIn the morning, the school will say it was an accident — a first-year who pushed their thread too hard. The story will have all the right edges sanded off.\n\nYou know better. You'll keep knowing better.\n\nLira Thane passes you on the stairs two days later and doesn't look at you. You look at her. She doesn't know you saw her. Not yet.\n\nYou knew something nobody else did. The question was what to do with it.",
-  "isEnding": true,
-  "choices": []
+  "choices": [
+    {
+      "id": "continue_to_chapter_2",
+      "text": "Continue to Chapter Two.",
+      "consequences": [
+        { "type": "set_chapter_export", "field": "crisis_outcome", "value": "observer" },
+        { "type": "set_chapter_export", "field": "chapter_1_reputation", "value": "high" },
+        { "type": "set_chapter_export", "field": "lira_status", "value": "unaware" },
+        { "type": "advance_chapter" }
+      ],
+      "next": "s09b_watcher_morning"
+    }
+  ]
 }

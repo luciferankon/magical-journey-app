@@ -45,7 +45,24 @@ export type Consequence =
   | { type: "trait_delta"; trait: string; delta: number }
   | { type: "set_flag"; flag: string }
   | { type: "unset_flag"; flag: string }
-  | { type: "relationship_delta"; character: string; delta: number };
+  | { type: "relationship_delta"; character: string; delta: number }
+  /**
+   * Set a named field in chapterExports. The field must exist on ChapterExports;
+   * the value must be a valid string literal for that field's union type.
+   * Use this at chapter-ending nodes to record cross-chapter carry state.
+   *
+   * @example { type: "set_chapter_export", field: "crisis_outcome", value: "hero" }
+   */
+  | { type: "set_chapter_export"; field: string; value: string }
+  /**
+   * Advance to the next chapter. Increments progress.chapter, clears
+   * visitedNodes, and resets currentNodeId to "". The engine will then
+   * advanceToNode() to the chapter opening scene via the choice's `next` field.
+   *
+   * Always place this consequence LAST in the list — it mutates progress and
+   * must run after all chapterExports have been set.
+   */
+  | { type: "advance_chapter" };
 
 // ── View types returned by the API ────────────────────────────────────────────
 

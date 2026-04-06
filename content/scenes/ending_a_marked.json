@@ -1,6 +1,17 @@
 {
   "id": "ending_a_marked",
   "text": "By morning, the school knows something happened.\n\nNot the full story — that's been contained, filed, qualified with the careful language institutions use when something has threatened their reputation for safety. But the shape of it spreads the way shapes do in close quarters: someone saw, someone told someone else, someone else remembered your face at the centre of it.\n\nAldric stops you in the corridor before breakfast. He doesn't say much — that's not his way. He says: \"What you did last night was inadvisable.\" Then a pause. \"It was also effective.\" He moves on without waiting for your answer.\n\nCaden finds you in the common room. He's carrying two cups of something hot and he puts one down in front of you and sits across from you and doesn't say anything for a long moment. Then he says: \"You knew what it was, didn't you. What she was doing.\" It's not quite a question. \"How long have you known?\"\n\nYou look up at Lira's window that evening, just once, from the courtyard. You can't see her.\n\nBut later, in your room, you find a small folded note under your door. No signature. Four words in precise, elegant handwriting:\n\n*I'm watching you now.*\n\nYou didn't know it yet, but the Fracture had already chosen you.",
-  "isEnding": true,
-  "choices": []
+  "choices": [
+    {
+      "id": "continue_to_chapter_2",
+      "text": "Continue to Chapter Two.",
+      "consequences": [
+        { "type": "set_chapter_export", "field": "crisis_outcome", "value": "hero" },
+        { "type": "set_chapter_export", "field": "chapter_1_reputation", "value": "high" },
+        { "type": "set_chapter_export", "field": "lira_status", "value": "watching" },
+        { "type": "advance_chapter" }
+      ],
+      "next": "s09a_marked_morning"
+    }
+  ]
 }
