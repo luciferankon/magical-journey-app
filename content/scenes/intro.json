@@ -1,0 +1,32 @@
+{
+  "id": "intro",
+  "text": "You stand at the edge of the Whispering Wood. A narrow path winds into shadow. Your lantern flickers. The night is quiet — almost too quiet.",
+  "choices": [
+    {
+      "id": "enter_boldly",
+      "text": "Step boldly onto the path.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "set_flag", "flag": "entered_wood" }
+      ],
+      "next": "forest_clearing"
+    },
+    {
+      "id": "listen_carefully",
+      "text": "Stop and listen before moving.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "set_flag", "flag": "heard_whisper" }
+      ],
+      "next": "forest_clearing"
+    },
+    {
+      "id": "turn_back",
+      "text": "Turn back toward the village.",
+      "consequences": [
+        { "type": "set_flag", "flag": "turned_back_intro" }
+      ],
+      "next": "village_gate"
+    }
+  ]
+}

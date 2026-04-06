@@ -1,0 +1,14 @@
+{
+  "id": "village_gate",
+  "text": "The village gate comes into view. Warm light from windows. The smell of woodsmoke. Someone left a lantern burning for you. You feel the weight of what you chose — and the warmth of what you chose it for.",
+  "choices": [
+    {
+      "id": "walk_home",
+      "text": "Walk through the gate.",
+      "consequences": [
+        { "type": "set_flag", "flag": "returned_home" }
+      ],
+      "next": "ending_quiet"
+    }
+  ]
+}
