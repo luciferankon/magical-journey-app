@@ -1,0 +1,23 @@
+{
+  "id": "s22c_after_exposed",
+  "text": "Two weeks since the exposure, and the school is still in the particular kind of unease that follows truth spoken loudly in institutional spaces: not chaos, not calm, but the specific busy silence of a place recalibrating its official version of itself.\n\nSolis is gone. The replacement assessor — a young man named Veth who speaks rarely and writes constantly — arrived four days ago and has said nothing of consequence. The faculty corridor is very busy in ways it was not before.\n\nTomás is grateful and frightened, which he has said, in those words, only once, and then moved on. He has been in the library annex most evenings, working, and you have been there with him, which is the kind of company you can offer when words aren't adequate.\n\nThen: two days ago, a message under the library annex door. You recognised the channel — the same one Ines had used before, the same handwriting. The message was brief.\n\n*You had no idea what you've done. I chose this. I was safer before you found me.*\n\nNo signature. No response address.\n\nYesterday, a second message. Different handwriting, same channel. More precise. Less charged.\n\n*1963 Resonance Commission. If you want to understand what you started, find it.*\n\nTomás read the first one four times. He hasn't seen the second. You haven't decided yet whether to show him.",
+  "choices": [
+    {
+      "id": "s22c_continue",
+      "text": "You put the second note in your pocket and go looking.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
+      ],
+      "next": "s23_conclave_crack"
+    }
+  ]
+}

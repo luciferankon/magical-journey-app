@@ -1,0 +1,23 @@
+{
+  "id": "s22d_after_deferred",
+  "text": "Three weeks. The focusing anchor arrived in the post two weeks ago and has been sitting on the desk beside your lamp, humming when you press it and silent when you don't. You have been thinking. That is what you tell yourself: you have been thinking. Waiting for something to resolve into clarity. The clarity has not come, but you have become more comfortable in its absence, which might be the same thing or might be something else entirely.\n\nTomás still waits. He knows you know something. He has not pressed it. That is a kindness that has a cost, and you both understand that, and you have not yet found the moment to honour it properly.\n\nThe replacement assessor arrived eight days ago. Younger than Solis. More careful. Saying less, watching more. His name is Veth and he has already found the library annex, which means he is not here by accident.\n\nThis morning, something changes. The focusing anchor hums differently — once, the frequency slightly off — and goes quiet. You look at it for a long moment.\n\nTwenty minutes later you come back to your room and find a letter on your desk. Not through the post. Not slid under the door. Just present, the way things are when someone with enough skill places them.\n\nThe handwriting is small and deliberate. The signature at the bottom is a single letter: *A.*\n\n*1963 Resonance Commission. You should have asked when you had the chance. You still can.*",
+  "choices": [
+    {
+      "id": "s22d_continue",
+      "text": "You read it again, more slowly the second time.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
+      ],
+      "next": "s23_conclave_crack"
+    }
+  ]
+}

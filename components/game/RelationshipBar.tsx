@@ -12,6 +12,7 @@ const NPC_META: Record<string, { name: string; role: string; color: string }> = 
   lira_influence:  { name: "Lira",    role: "Influence", color: "bg-fracture" },
   tomas_bond:      { name: "Tomás",   role: "Bond",      color: "bg-terram"   },
   solis_standing:  { name: "Solis",   role: "Standing",  color: "bg-ventus"   },
+  ines_contact:    { name: "Ines",    role: "Contact",   color: "bg-fracture" },
 };
 
 export function RelationshipBar({ npcKey, value, max = 10 }: RelationshipBarProps) {

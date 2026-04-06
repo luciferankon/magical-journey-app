@@ -1,0 +1,99 @@
+{
+  "id": "c07_access_choice",
+  "text": "Three routes present themselves, and one more that might work if you're willing to do it alone.\n\nThe VOIDED classification has an author — every classification does — buried somewhere in the administrative record. Someone signed it. Someone made this decision and put their name on it, even if that name is now two layers deep in misdirected bureaucracy. You could follow that thread yourself.\n\nAlternatively: Ines is inside the Conclave's system. She reached out to you for a reason. If anyone can get you the contents of a sealed Conclave commission file, it's someone already in the room.\n\nOr: Aldric never joined the Conclave. He gave a reason at the time, or gave no reason at all, depending on who you ask. A man who declined an institution's invitation often knows something about that institution worth knowing.\n\nOr: Caden has been watching. You have felt it — the specific quality of attention from someone who came here looking for something and hasn't found it yet. You could ask him what he came looking for.",
+  "choices": [
+    {
+      "id": "c07_ines",
+      "text": "Go through Ines — she's inside the Conclave's system.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "ines_contact",
+        "value": 2
+      },
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
+      ],
+      "next": "s24_ines_contact"
+    },
+    {
+      "id": "c07_aldric",
+      "text": "Go through Aldric — he declined the Conclave once. He might know why this is sealed.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "aldric_regard",
+        "value": 3
+      },
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
+      ],
+      "next": "s24_aldric_knows"
+    },
+    {
+      "id": "c07_caden",
+      "text": "Go through Caden — he came here for a reason. Time to find out what it is.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
+      ],
+      "next": "s24_caden_opens"
+    },
+    {
+      "id": "c07_solo",
+      "text": "Find it yourself — the seal has an author. Follow the author.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "trait_gte",
+            "trait": "cunning",
+            "value": 6
+          },
+          {
+            "type": "trait_gte",
+            "trait": "wisdom",
+            "value": 6
+          }
+        ]
+      },
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        }
+      ],
+      "next": "s24_solo_trace"
+    }
+  ]
+}

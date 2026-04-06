@@ -25,6 +25,9 @@ export type {
   Chapter2SolisStance,
   InesStatus,
   LiraChapter2Status,
+  Chapter3Stance,
+  FractureOriginShared,
+  CadenStatus,
 } from "./schema";
 export { SCHEMA_VERSION } from "./schema";
 

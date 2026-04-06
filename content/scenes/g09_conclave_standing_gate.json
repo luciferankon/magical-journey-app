@@ -1,0 +1,33 @@
+{
+  "id": "g09_conclave_standing_gate",
+  "text": "You have four days and a piece of information that could change the outcome of a vote you cannot attend.\n\nThe question is how to get it there. You know something about what you have access to.",
+  "choices": [
+    {
+      "id": "g09_inside",
+      "text": "Continue.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "relationship_gte",
+            "character": "solis_standing",
+            "value": 4
+          },
+          {
+            "type": "relationship_gte",
+            "character": "ines_contact",
+            "value": 4
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "s28_inside_move"
+    },
+    {
+      "id": "g09_outside",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "s28_outside_move"
+    }
+  ]
+}

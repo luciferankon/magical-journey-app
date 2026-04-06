@@ -63,6 +63,15 @@ export function migrate(raw: unknown): PlayerState {
     state = migrateToV2(state);
   }
 
+  if (savedVersion < 3) {
+    // V2 → V3: Added ines_contact relationship, five chapter-3 flags
+    // (sera_truth_known, caden_aligned, fracture_origin_known, conclave_split, aldric_acts),
+    // and three chapter-3 chapterExports fields
+    // (chapter_3_stance, fracture_origin_shared, caden_status).
+    // All new fields default to 0 / false / null.
+    state = migrateToV3(state);
+  }
+
   return state;
 }
 
@@ -108,6 +117,43 @@ function migrateToV2(prev: PlayerState): PlayerState {
       chapter_2_solis_stance: (e.chapter_2_solis_stance ?? null) as PlayerState["chapterExports"]["chapter_2_solis_stance"],
       ines_status: (e.ines_status ?? null) as PlayerState["chapterExports"]["ines_status"],
       lira_chapter_2_status: (e.lira_chapter_2_status ?? null) as PlayerState["chapterExports"]["lira_chapter_2_status"],
+    },
+  };
+}
+
+/**
+ * V2 → V3: Chapter 3 schema additions.
+ * - relationships.ines_contact: new meter, defaults to 0
+ * - flags.sera_truth_known, caden_aligned, fracture_origin_known, conclave_split, aldric_acts: new flags, default false
+ * - chapterExports.chapter_3_stance, fracture_origin_shared, caden_status: new exports, default null
+ *
+ * All chapter-1 and chapter-2 fields are preserved exactly as they were.
+ */
+function migrateToV3(prev: PlayerState): PlayerState {
+  const r = prev.relationships as unknown as Record<string, unknown>;
+  const f = prev.flags as unknown as Record<string, unknown>;
+  const e = prev.chapterExports as unknown as Record<string, unknown>;
+
+  return {
+    ...prev,
+    meta: { ...prev.meta, schemaVersion: 3 },
+    relationships: {
+      ...prev.relationships,
+      ines_contact: typeof r.ines_contact === "number" ? r.ines_contact : 0,
+    },
+    flags: {
+      ...prev.flags,
+      sera_truth_known: typeof f.sera_truth_known === "boolean" ? f.sera_truth_known : false,
+      caden_aligned: typeof f.caden_aligned === "boolean" ? f.caden_aligned : false,
+      fracture_origin_known: typeof f.fracture_origin_known === "boolean" ? f.fracture_origin_known : false,
+      conclave_split: typeof f.conclave_split === "boolean" ? f.conclave_split : false,
+      aldric_acts: typeof f.aldric_acts === "boolean" ? f.aldric_acts : false,
+    },
+    chapterExports: {
+      ...prev.chapterExports,
+      chapter_3_stance: (e.chapter_3_stance ?? null) as PlayerState["chapterExports"]["chapter_3_stance"],
+      fracture_origin_shared: (e.fracture_origin_shared ?? null) as PlayerState["chapterExports"]["fracture_origin_shared"],
+      caden_status: (e.caden_status ?? null) as PlayerState["chapterExports"]["caden_status"],
     },
   };
 }

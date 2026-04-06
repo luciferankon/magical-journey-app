@@ -29,26 +29,7 @@
           }
         ]
       },
-      "consequences": [
-        {
-          "type": "set_chapter_export",
-          "field": "chapter_2_solis_stance",
-          "value": "confronted"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "ines_status",
-          "value": "found"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "lira_chapter_2_status",
-          "value": "ally"
-        },
-        {
-          "type": "advance_chapter"
-        }
-      ],
+      "consequences": [],
       "next": "ending_2a_reunion"
     },
     {
@@ -68,26 +49,7 @@
           }
         ]
       },
-      "consequences": [
-        {
-          "type": "set_chapter_export",
-          "field": "chapter_2_solis_stance",
-          "value": "joined"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "ines_status",
-          "value": "hidden"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "lira_chapter_2_status",
-          "value": "ally"
-        },
-        {
-          "type": "advance_chapter"
-        }
-      ],
+      "consequences": [],
       "next": "ending_2b_absorbed"
     },
     {
@@ -122,51 +84,13 @@
           }
         ]
       },
-      "consequences": [
-        {
-          "type": "set_chapter_export",
-          "field": "chapter_2_solis_stance",
-          "value": "confronted"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "ines_status",
-          "value": "exposed"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "lira_chapter_2_status",
-          "value": "enemy"
-        },
-        {
-          "type": "advance_chapter"
-        }
-      ],
+      "consequences": [],
       "next": "ending_2c_exposed"
     },
     {
       "id": "ending_gate_2d",
       "text": "Continue.",
-      "consequences": [
-        {
-          "type": "set_chapter_export",
-          "field": "chapter_2_solis_stance",
-          "value": "walked"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "ines_status",
-          "value": "hidden"
-        },
-        {
-          "type": "set_chapter_export",
-          "field": "lira_chapter_2_status",
-          "value": "neutral"
-        },
-        {
-          "type": "advance_chapter"
-        }
-      ],
+      "consequences": [],
       "next": "ending_2d_deferred"
     }
   ]

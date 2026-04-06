@@ -1,6 +1,31 @@
 {
   "id": "ending_2b_absorbed",
-  "isEnding": true,
   "text": "You joined the logic of containment. This is how you think of it, later — not that you were convinced, but that her argument had genuine weight and you let it land. The weight was real. That's the part you keep returning to.\n\nTomás doesn't know where his sister is. He has your face to look at when he asks questions, and you give him what you can: that the process is documented, that there are safeguards, that people don't simply disappear. You don't tell him his sister's name is on the list.\n\nYou'll tell him when it's safe, you think. That's what you think.\n\nSolis leaves the next morning. Before she goes, a small package appears on your desk: flat stone, pale grey, roughly the size of a playing card. When you press it to the surface of the desk, it hums — the faintest resonance, barely perceptible, the same frequency you felt under the flagstones in the courtyard. A focusing anchor. No note. The same kind Tomás used during the crisis.\n\nYou sit with the stone in your hand for a long time.\n\nThe question that follows you into the weeks after this: at what point does making the sensible choice become the wrong one? You don't have an answer. You're not sure the question has one. You carry it anyway, the way you carry the stone — present, functional, always faintly humming.",
-  "choices": []
+  "choices": [
+    {
+      "id": "continue_to_chapter_3",
+      "text": "Continue to Chapter Three.",
+      "consequences": [
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "joined"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "hidden"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "gone"
+        },
+        {
+          "type": "advance_chapter"
+        }
+      ],
+      "next": "s22b_after_absorbed"
+    }
+  ]
 }

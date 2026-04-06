@@ -1,0 +1,23 @@
+{
+  "id": "s28_outside_move",
+  "text": "You don't have inside access. Not the kind that reaches the Conclave's deliberation directly.\n\nWhat you have is what you've built across three chapters of a story that wasn't supposed to be yours. Tomás, who is patient and specific and knows what it means to wait for something that may not come. Caden, if you've brought him in — steady and practical, with an idea about the ley-line corridor that might be useful. Sera, if she knows — carrying her grandmother's name on a classification seal, which gives her a kind of standing the player doesn't have. Aldric, if he's taken his step.\n\nYou call them in to the library annex — whoever you have — and you lay out what you know and what you need. The conversation that follows is the kind that happens when people who trust each other are frightened by the same thing: specific, uncomfortable, and productive.\n\nThe plan that emerges is not elegant. It relies on Veth passing information both directions. It relies on the Archivist's network inside the Conclave recognising what they're receiving and knowing what to do with it. It relies on whoever is in the room being willing to be moved by evidence.\n\nThose are a lot of things to rely on.\n\nBut you have what you have, and what you have is people who showed up when you needed them to.\n\nThat is not nothing.",
+  "choices": [
+    {
+      "id": "s28_outside_continue",
+      "text": "You set the plan in motion.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        }
+      ],
+      "next": "s29_caden_and_sera"
+    }
+  ]
+}

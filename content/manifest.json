@@ -2,7 +2,8 @@
   "startSceneId": "s01_arrival",
   "chapterTitles": {
     "1": "The First Weaving",
-    "2": "What the Fracture Remembers"
+    "2": "What the Fracture Remembers",
+    "3": "The Name She Left Behind"
   },
   "initialState": {
     "traits": {
@@ -73,6 +74,36 @@
     "ending_2a_reunion",
     "ending_2b_absorbed",
     "ending_2c_exposed",
-    "ending_2d_deferred"
+    "ending_2d_deferred",
+    "s22a_after_reunion",
+    "s22b_after_absorbed",
+    "s22c_after_exposed",
+    "s22d_after_deferred",
+    "s23_conclave_crack",
+    "c07_access_choice",
+    "s24_ines_contact",
+    "s24_aldric_knows",
+    "s24_caden_opens",
+    "s24_solo_trace",
+    "s25_the_origin",
+    "c08_first_response",
+    "s26_tomas_learns",
+    "s26_sera_confronted",
+    "s26_ines_response",
+    "s26_alone_with_it",
+    "s27_conclave_internal",
+    "g09_conclave_standing_gate",
+    "s28_inside_move",
+    "s28_outside_move",
+    "s29_caden_and_sera",
+    "s30_the_vote",
+    "g10_vote_outcome_gate",
+    "s31_vote_shifted",
+    "s31_vote_passed",
+    "ending_gate_3",
+    "ending_3a_reformer",
+    "ending_3b_insurgent",
+    "ending_3c_absorbed",
+    "ending_3d_isolated"
   ]
 }

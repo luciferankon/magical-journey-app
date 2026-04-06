@@ -1,0 +1,22 @@
+{
+  "id": "s27_conclave_internal",
+  "text": "Veth finds you three days later.\n\nThis surprises you — not that he finds you, but that he finds you here, at this specific table in the restricted archive, which means either he has been watching your movements or he asked someone who has. He sits down across from you with the particular precision of someone who has been trained to appear neutral while carrying information.\n\n\"I've been asked,\" he says, \"to pass something to you. By a senior member who requested a back channel.\"\n\nHe slides a folded piece of paper across the table. You recognise the handwriting from a single letter, from twenty minutes after an anchor on your desk changed its frequency: *A.*\n\nThe message says:\n\n*The Conclave meets in four days to vote on an expansion of the absorption programme. The proposal would lower the assessment threshold by three years. Students as young as fourteen could be formally assessed and placed. My faction is against it. The other faction is not. The vote is currently projected to fail by one. Your information — the Commission findings — is the one piece of evidence that could shift two votes, if it reaches the right people before the meeting concludes.\n\nYou have four days. I need to know what you're going to do with what you have.*\n\nYou fold the letter.\n\nVeth watches you. He has the face of someone who is genuinely not sure which side he's on, which means either he is very good at appearing that way or he is telling the truth about his uncertainty.",
+  "choices": [
+    {
+      "id": "s27_continue",
+      "text": "Four days. You start counting.",
+      "consequences": [
+        {
+          "type": "set_flag",
+          "flag": "conclave_split"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
+      ],
+      "next": "g09_conclave_standing_gate"
+    }
+  ]
+}

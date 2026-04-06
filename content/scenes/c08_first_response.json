@@ -1,0 +1,79 @@
+{
+  "id": "c08_first_response",
+  "text": "You know what you know.\n\nNow what.\n\nThe question is not academic. This is the kind of knowledge that changes the shape of everything it touches — the people it reaches, the decisions it enables, the weight it puts on whoever carries it next. You cannot unknow it. You can only choose what it becomes.\n\nTomás has been waiting, in his specific and patient way, for something to resolve. Sera has been building a case from the other direction for two years. Ines has been inside the system with proof she hasn't been able to get out. And there is the option of sitting with it alone, of understanding it fully before you move — of making sure the shape is clear before you hand it to anyone.",
+  "choices": [
+    {
+      "id": "c08_tomas",
+      "text": "Tell Tomás immediately.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "tomas_bond",
+        "value": 3
+      },
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
+      ],
+      "next": "s26_tomas_learns"
+    },
+    {
+      "id": "c08_sera",
+      "text": "Find Sera. If E. Voss is her grandmother, she's part of this.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
+      ],
+      "next": "s26_sera_confronted"
+    },
+    {
+      "id": "c08_ines",
+      "text": "Go back to Ines — she needs to know you found it.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "ines_contact",
+        "value": 2
+      },
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
+      ],
+      "next": "s26_ines_response"
+    },
+    {
+      "id": "c08_alone",
+      "text": "Sit with it. Understand it fully before you move.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 2
+        }
+      ],
+      "next": "s26_alone_with_it"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "s29_caden_and_sera",
+  "text": "The night before the vote.\n\nThe library annex feels different at this hour — the lamps lower, the archive shelves casting longer shadows. Whoever is here has come because you asked them to, or because they knew to come without being asked, which is a different and more meaningful thing.\n\nIf Caden is present, he is not the person he was when you arrived at Aethermoor. The competitive quality — the specific attention of someone measuring you against themselves — has shifted into something adjacent: he looks at the problem the way he used to look at you, with the same focused calculation, but now it's pointed at the same thing you're pointing at. He has an idea about the ley-line corridor, about how information moves through the Academy's physical infrastructure when conventional channels are watched. It might work. It requires precision and it requires nerve and he says so without apology.\n\nIf Sera is present, she has brought the administrative classification records — her grandmother's name on a VOIDED classification seal is not comfortable evidence, but it is standing. A Voss challenging a Voss classification is not something the Conclave's administrative body can easily dismiss. She holds the folder with the specific stillness of someone who has decided what she thinks about her grandmother and moved past the part that required sitting still with it.\n\nIf neither is present, what you have is yourself and Tomás and whatever you've managed to build. That is not nothing. It is also not as much.\n\nYou run through it one more time. The plan. The gaps. The things you're relying on. The morning will bring what it brings.",
+  "choices": [
+    {
+      "id": "s29_continue",
+      "text": "You end the meeting and try to sleep.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 1
+        }
+      ],
+      "next": "s30_the_vote"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "s24_aldric_knows",
+  "text": "Aldric does not look surprised when you say the name.\n\nHe looks, instead, like someone who has been carrying a specific weight for a long time and has just been asked to set it down in a room with another person. The weight doesn't leave. It just becomes shared.\n\n\"I have known about the Commission,\" he says, \"since I was twenty-six. A junior researcher — very drunk at a faculty dinner, very guilty about something — said something he was not supposed to say.\" He pauses. \"I filed it under things-I-cannot-prove. I have been living adjacent to that knowledge for twelve years.\"\n\nYou ask why he didn't go to the Conclave.\n\n\"I didn't go to the Conclave,\" he says, \"because I didn't have evidence. I had a drunk man's words and a very uneasy feeling. The uneasy feeling was sufficient to convince me not to join them when they asked. It was not sufficient to convince anyone else of anything.\" Another pause. \"I hope you understand the difference.\"\n\nHe crosses to his shelves — the private collection, not the teaching library — and removes a monograph on ley-line resonance from 1971. He hands it to you.\n\nInside the back cover, in pencil, in handwriting so small it requires a moment to read: a name, a date in 1963, and three words.\n\n*The thread bifurcates.*\n\n\"I don't know what that means precisely,\" Aldric says. \"But I know what bifurcates means, and I know what a thread is in this context. Someone who was there wanted to remember something, and didn't want anyone else to find it.\"",
+  "choices": [
+    {
+      "id": "s24_aldric_continue",
+      "text": "You close the monograph carefully.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "fracture_origin_known"
+        },
+        {
+          "type": "set_flag",
+          "flag": "aldric_acts"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
+      ],
+      "next": "s25_the_origin"
+    }
+  ]
+}

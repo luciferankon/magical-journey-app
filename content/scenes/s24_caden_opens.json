@@ -1,0 +1,31 @@
+{
+  "id": "s24_caden_opens",
+  "text": "It is late, and the Ignis common room is empty except for Caden, who is sitting at the far table with a folder open in front of him that he closes when you come in — and then, after a moment, opens again.\n\nThe speed of that second gesture is the most honest thing he has ever done in front of you.\n\n\"Davo,\" he says, when you've asked your question. Not a question. The name is a decision. \"My brother. He left Lyndmere four years ago. Personal circumstances, the school said.\" He looks at the folder. \"Personal circumstances. That's what they say when they can't say what they mean.\"\n\nYou wait.\n\n\"The truth — what I have, what I've been able to piece together across four years of asking questions people didn't want to answer — is that a visiting examiner came to Lyndmere and assessed Davo. After that, Davo came home. But he wasn't... he wasn't himself. He's been home since. He's stable, he says. He says he's fine. He's not fine.\"\n\nCaden slides the folder across the table. Inside is a record — a scheduling log from Lyndmere Academy, four years old, with one entry circled in pencil.\n\n*External Assessment, Examiner: [redacted], based: Aethermoor Academy.*\n\n\"I came here,\" Caden says, \"because Lyndmere and Aethermoor share a ley-line corridor. And because that examiner was logged as being based here. And because I wanted to know who they were.\"\n\nHe looks at you for a moment. Then: \"You know who they were, don't you.\"\n\nIt is not a question. You do.",
+  "choices": [
+    {
+      "id": "s24_caden_continue",
+      "text": "You tell him what you know.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": -1
+        },
+        {
+          "type": "set_flag",
+          "flag": "caden_aligned"
+        },
+        {
+          "type": "set_flag",
+          "flag": "fracture_origin_known"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
+      ],
+      "next": "s25_the_origin"
+    }
+  ]
+}

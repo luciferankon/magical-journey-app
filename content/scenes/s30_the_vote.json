@@ -1,0 +1,12 @@
+{
+  "id": "s30_the_vote",
+  "text": "You cannot be in the room.\n\nThis is the fact you have been living with since Veth first handed you the Archivist's letter, and it has not become easier. The Conclave's deliberation is not open. You are not a member. The only access you have is through the people and channels you have built, and those have been used, and what happens now is not something you can influence in this moment.\n\nYou wait in the library annex.\n\nVeth passes information both directions, twice in the morning and once after the midday break — brief notes, nothing substantial, just signals that the deliberation is continuing and the Commission findings were received. The Archivist's faction is in the room. Solis's faction is in the room. Ines is in the room, as a junior member, carrying more than anyone in the room except the Archivist knows she's carrying.\n\nThe light through the annex window changes. Morning to afternoon to late afternoon, the particular flat grey of the hour before the season decides it's done for the day.\n\nAt a quarter past four, Veth comes through the door.\n\nHis face is exactly as neutral as it always is. You cannot read it. You have not been able to read it since the day he arrived. You wait to hear which way the vote went.",
+  "choices": [
+    {
+      "id": "s30_continue",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "g10_vote_outcome_gate"
+    }
+  ]
+}

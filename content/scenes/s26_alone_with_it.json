@@ -1,0 +1,23 @@
+{
+  "id": "s26_alone_with_it",
+  "text": "You sit with it.\n\nAn hour, in your room, with the door closed and the focusing anchor humming its low frequency on the desk. It is, you think, the correct response: to stay very still with something this large before you try to move it.\n\nThe thing about knowing the origin of something terrible is that it doesn't change what the thing is. The Fracture is still spreading. Students are still being assessed and absorbed and contained. Maelie Voss deteriorated in six weeks. Davo Miral came home from Lyndmere and hasn't been the same since. Whatever the mechanism — whatever the ley-line propagation did and is doing — that is unchanged. Knowing why it started doesn't stop it.\n\nWhat understanding the shape of institutional guilt does not dissolve is the institution.\n\nYou sit with this too. The specific discomfort of a large true thing in a small room.\n\nAt some point — you don't check the time — you stop sitting with it and start thinking about what comes next. The two activities are different: one is reception, one is preparation. You have done the first. You need to do the second.\n\nThe question is not whether to act. The question is how, and with what, and in what direction, and whether what you have is enough. You are not sure. You have to find out what you have before you can know if it's sufficient.\n\nYou reach for your notebook.",
+  "choices": [
+    {
+      "id": "s26_alone_continue",
+      "text": "You start writing down what you know.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        }
+      ],
+      "next": "s27_conclave_internal"
+    }
+  ]
+}

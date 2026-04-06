@@ -1,0 +1,12 @@
+{
+  "id": "s25_the_origin",
+  "text": "What the 1963 Resonance Commission actually did.\n\nThe Fracture was not discovered. It was induced.\n\nSixty years ago, a group of Aethermoor researchers — working under a classified Conclave directive — theorised that elemental Weaving was approaching a ceiling. A hard limit on what any human Weaver could achieve, produced by resonance interference as the four threads worked against each other. The Commission's mandate was to investigate. Their conclusion, reached after four years of theoretical work, was that a fifth thread — running perpendicular to the existing four, introduced deliberately — could break through the ceiling entirely.\n\nThey called it the Fracture Thread. They induced it in three volunteer Weavers.\n\nThe thread worked. All three subjects registered the fifth resonance. All three also began to deteriorate within eight weeks — not physically, exactly, but at the level of coherence, the capacity to hold the self together under the pressure of a resonance that had no established path to ground. Within six months, all three had been withdrawn from active Weaving entirely. The Commission was dissolved. The research was sealed.\n\nThe Conclave built its containment doctrine on those three cases. *This is what happens when the Fracture is not managed. This is why we manage it.*\n\nWhat the doctrine never acknowledged: the induced thread did not stop when the experiment ended. It propagated — slowly, through the ley-line network that Aethermoor was built on — and has been spreading generationally for sixty years. Every student with Fracture sensitivity since 1963 is a downstream effect of that original experiment.\n\nThe Conclave's founders knew this. Not immediately — the propagation wasn't confirmed until the late 1960s. But they knew, and they sealed the evidence, and they built a sixty-year institution of responsible management around a thing they caused.\n\nYou sit with this for a while. The shape of sixty years of institutional guilt, dressed as stewardship.",
+  "choices": [
+    {
+      "id": "s25_continue",
+      "text": "You need to decide what to do with what you know.",
+      "consequences": [],
+      "next": "c08_first_response"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "s23_conclave_crack",
+  "text": "The 1963 Resonance Commission.\n\nYou find the housing within an hour: a physical archive box in the restricted collection, third shelf from the floor, in a row of identically-sized boxes labelled with committee names and dates. The box itself is unremarkable. It is what is on the box that stops you.\n\nThe classification level reads VOIDED.\n\nYou have seen restricted. You have seen confidential. You have seen eyes-only designations that required two faculty countersignatures to access. VOIDED is different. VOIDED means the contents have been formally determined to *not exist* — a category reserved, according to the administrative code in the archive's index, for materials deemed contrary to institutional continuity.\n\nNot dangerous. Not sensitive. *Not existent.*\n\nYou stand there for a moment with your hand near the box and do not touch it. Someone fought very hard to make these files officially absent. The seal itself tells you something. The effort tells you something. The fact that the box is still here — still present on a shelf, still labelled, still findable — tells you that whoever did the sealing was operating inside the institution, not outside it. They didn't destroy the files. They made them disappear while leaving them exactly where they were.\n\nThe box is there. What's inside it is another problem.",
+  "choices": [
+    {
+      "id": "s23_continue",
+      "text": "You need a way in.",
+      "consequences": [],
+      "next": "c07_access_choice"
+    }
+  ]
+}

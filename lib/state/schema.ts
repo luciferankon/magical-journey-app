@@ -9,7 +9,7 @@
  * migrations.ts.
  */
 
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 // ── Enumerations ──────────────────────────────────────────────────────────────
 
@@ -33,6 +33,7 @@ export type TraitKey = "courage" | "cunning" | "empathy" | "ambition" | "wisdom"
  * Each key represents a distinct interpersonal dynamic.
  * Chapter 1: sera_trust, caden_rivalry, aldric_regard, lira_influence, tomas_bond
  * Chapter 2: solis_standing
+ * Chapter 3: ines_contact
  */
 export type RelationshipKey =
   | "sera_trust"      // Trust with Sera Voss (Aqualyn roommate)
@@ -40,7 +41,8 @@ export type RelationshipKey =
   | "aldric_regard"   // Professional regard from Professor Aldric
   | "lira_influence"  // Lira Thane's leverage / influence over the player
   | "tomas_bond"      // Emotional closeness with Tomás Reeve
-  | "solis_standing"; // Maren Solis's (Conclave examiner) assessment of the player
+  | "solis_standing"  // Maren Solis's (Conclave examiner) assessment of the player
+  | "ines_contact";   // Ines Reeve's cautious trust / contact with the player
 
 /**
  * Boolean story flags set by CONSEQUENCE nodes.
@@ -49,6 +51,7 @@ export type RelationshipKey =
  *
  * Chapter 1 flags: witnessed_fracture → house_assigned
  * Chapter 2 flags: met_solis → tomas_knows
+ * Chapter 3 flags: sera_truth_known → aldric_acts
  */
 export type FlagKey =
   // ── Chapter 1 ──────────────────────────────────────────────────────────────
@@ -64,7 +67,13 @@ export type FlagKey =
   | "met_solis"           // Player has had at least one direct encounter with Maren Solis
   | "knows_ines_alive"    // Player learned that Tomás's sister Ines is alive and inside the Conclave
   | "conclave_offered"    // The Conclave (via Solis) has made a formal or implicit offer to the player
-  | "tomas_knows";        // Tomás has been told the full truth about Ines's whereabouts
+  | "tomas_knows"         // Tomás has been told the full truth about Ines's whereabouts
+  // ── Chapter 3 ──────────────────────────────────────────────────────────────
+  | "sera_truth_known"    // Player learned the truth about Sera's grief (her sister was Fracture-touched)
+  | "caden_aligned"       // Caden has chosen a side alongside the player
+  | "fracture_origin_known" // Player has learned the Fracture is not natural — it was designed
+  | "conclave_split"      // The Conclave's internal disagreement has been exposed to the player
+  | "aldric_acts";        // Aldric has taken an active step (not just passive counsel)
 
 /**
  * How the player resolved the Chapter 1 courtyard crisis.
@@ -110,6 +119,32 @@ export type InesStatus = "found" | "hidden" | "exposed";
  * - gone:   Lira has been removed from the school or disappeared
  */
 export type LiraChapter2Status = "ally" | "enemy" | "gone";
+
+/**
+ * How the player ultimately positioned themselves at the end of Chapter 3.
+ * Exported at end of Chapter 3; used to seed Chapter 4 state.
+ * - reformer:  Player shifted the Conclave vote from within; reform path is open
+ * - insurgent: Vote passed; player and allies are moving toward public disclosure
+ * - absorbed:  Player accepted a Conclave position; becoming part of the institution
+ * - isolated:  Player knows the truth but has no clear leverage or coalition
+ */
+export type Chapter3Stance = "reformer" | "insurgent" | "absorbed" | "isolated";
+
+/**
+ * How widely the Fracture's true origin was shared at the end of Chapter 3.
+ * - public:         The 1963 Commission findings were made publicly known
+ * - conclave_only:  Findings circulated only inside the Conclave deliberation
+ * - kept_secret:    Player discovered the truth but did not share it
+ */
+export type FractureOriginShared = "public" | "conclave_only" | "kept_secret";
+
+/**
+ * Caden Miral's status at the end of Chapter 3.
+ * - ally:          Caden has chosen a side alongside the player
+ * - rival_knowing: Caden knows the truth but has not committed to the player's path
+ * - unaware:       Caden was not brought into the truth
+ */
+export type CadenStatus = "ally" | "rival_knowing" | "unaware";
 
 // ── Sub-schemas ───────────────────────────────────────────────────────────────
 
@@ -181,6 +216,12 @@ export interface Relationships {
    * Added in Chapter 2. Range: 0–10. Default: 0.
    */
   solis_standing: number;
+  /**
+   * Ines Reeve's cautious trust and willingness to communicate with the player.
+   * High = she trusts the player enough to share dangerous information.
+   * Added in Chapter 3. Range: 0–10. Default: 0.
+   */
+  ines_contact: number;
 }
 
 /**
@@ -217,6 +258,17 @@ export interface Flags {
   conclave_offered: boolean;
   /** Tomás has been told the full truth about his sister's whereabouts and status. */
   tomas_knows: boolean;
+  // ── Chapter 3 ──────────────────────────────────────────────────────────────
+  /** Player learned Sera's sister Maelie was Fracture-touched and the school lied; Sera's grief has found its true shape. */
+  sera_truth_known: boolean;
+  /** Caden has revealed his brother Davo's history and chosen a side alongside the player. */
+  caden_aligned: boolean;
+  /** Player has learned the Fracture is not a natural phenomenon — it was deliberately designed in 1963. */
+  fracture_origin_known: boolean;
+  /** The Conclave's internal factional disagreement (containment vs. disclosure) has been exposed to the player. */
+  conclave_split: boolean;
+  /** Professor Aldric has taken an active step (e.g. sharing the 1971 monograph) rather than passive counsel. */
+  aldric_acts: boolean;
 }
 
 /**
@@ -241,6 +293,13 @@ export interface ChapterExports {
   ines_status: InesStatus | null;
   /** Lira's relationship to the player at end of Ch.2. Null until Ch.2 ends. */
   lira_chapter_2_status: LiraChapter2Status | null;
+  // ── Chapter 3 exports ──────────────────────────────────────────────────────
+  /** Player's final position at the end of Chapter 3. Null until Ch.3 ends. */
+  chapter_3_stance: Chapter3Stance | null;
+  /** How widely the Fracture's true origin was shared at end of Ch.3. Null until Ch.3 ends. */
+  fracture_origin_shared: FractureOriginShared | null;
+  /** Caden Miral's status at end of Ch.3. Null until Ch.3 ends. */
+  caden_status: CadenStatus | null;
 }
 
 /**

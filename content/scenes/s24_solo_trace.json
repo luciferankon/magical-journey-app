@@ -1,0 +1,31 @@
+{
+  "id": "s24_solo_trace",
+  "text": "Every classification has an author.\n\nThis is what the archive index tells you: even a VOIDED designation requires a signatory, a countersignature, and a date. The administrative trail doesn't disappear — it just gets redirected. You spend two hours in the records room following a thread that branches three times and doubles back once, through deaccessioning logs and committee minutes and a cross-reference to a disciplinary file that has itself been partially redacted.\n\nAt the bottom of the third branch, in a margin note on a committee roster from 1964, a name.\n\n*Classification authorised: E. Voss. Committee Chair, Resonance Studies.*\n\nYou sit with this for a moment. E. Voss is not a common name at Aethermoor. You have heard it before — heard it said in passing, heard it in the context of legacy, of someone who came before and shaped the shape of things. You know someone at this school whose family name is Voss.\n\nThe realisation arrives the way large things do: quietly, without drama, in the exact way that makes it harder to dismiss.\n\nSera Voss's grandmother sealed the 1963 Resonance Commission files.\n\nYou think about the way Sera sits in the healing records archive every other Wednesday, working through something she doesn't talk about, with the specific focus of someone who already knows the answer and is building toward the evidence. You think about what it means that she is two pieces away from reaching the same truth from the other direction.\n\nYou put the notation in your notebook and close the records box and sit very still for a moment.",
+  "choices": [
+    {
+      "id": "s24_solo_continue",
+      "text": "You go to find the Commission files.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "fracture_origin_known"
+        },
+        {
+          "type": "set_flag",
+          "flag": "sera_truth_known"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        }
+      ],
+      "next": "s25_the_origin"
+    }
+  ]
+}

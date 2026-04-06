@@ -1,0 +1,23 @@
+{
+  "id": "s22a_after_reunion",
+  "text": "Three weeks have passed.\n\nTomás is different now, and it is not the kind of different that is simpler. The reunion didn't smooth anything — it just gave the pain a specific shape, which is not the same as resolving it. He still comes to the library annex in the evenings. He still works through whatever he was working through before. But there is a quality to his attention now, a particular kind of steadiness, like someone who has received a letter they expected to hurt and found it hurt differently than they imagined.\n\nHe finds you at the annex table on a Tuesday morning, and without preamble he sets down a folded piece of paper. The handwriting on the outside is not his.\n\n\"From her,\" he says. \"She asked me to give it to you.\"\n\nYou open it. One line, written in precise, economical script that suggests someone who was taught to write in a different country:\n\n*Find the 1963 Resonance Commission files. Don't tell Solis.*\n\nYou look up at Tomás. He shrugs, in the way of someone who has already asked every question available to him and received the same non-answer.\n\n\"She said you'd know what to do with it,\" he says. \"I don't know why she thinks that. But I trust her. Mostly. So.\"",
+  "choices": [
+    {
+      "id": "s22a_continue",
+      "text": "You fold the note and put it in your pocket.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 2
+        }
+      ],
+      "next": "s23_conclave_crack"
+    }
+  ]
+}

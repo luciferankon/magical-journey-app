@@ -75,6 +75,7 @@ export function createInitialState(
       lira_influence: 0,
       tomas_bond: 0,
       solis_standing: 0,
+      ines_contact: 0,
     },
 
     flags: {
@@ -92,6 +93,12 @@ export function createInitialState(
       knows_ines_alive: false,
       conclave_offered: false,
       tomas_knows: false,
+      // Chapter 3
+      sera_truth_known: false,
+      caden_aligned: false,
+      fracture_origin_known: false,
+      conclave_split: false,
+      aldric_acts: false,
     },
 
     chapterExports: {
@@ -103,6 +110,10 @@ export function createInitialState(
       chapter_2_solis_stance: null,
       ines_status: null,
       lira_chapter_2_status: null,
+      // Chapter 3
+      chapter_3_stance: null,
+      fracture_origin_shared: null,
+      caden_status: null,
     },
 
     progress: {

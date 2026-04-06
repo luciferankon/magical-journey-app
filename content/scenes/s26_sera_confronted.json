@@ -1,0 +1,27 @@
+{
+  "id": "s26_sera_confronted",
+  "text": "You find her in the Aqualyn common room at eleven at night, which is where she goes when she can't sleep and doesn't want to be alone with her own work, and you tell her.\n\nShe is not surprised. That is the first thing you notice: she is not surprised. She is, for a moment, very still — the stillness of someone who has been building a structure for two years and has just been handed the keystone.\n\n\"My grandmother's name is on that seal.\" Not a question.\n\n\"Yes.\"\n\nSera looks out the window. The courtyard is dark. The ley-line beneath it makes the stones warm even in late autumn; you can feel it through your shoes if you stand still.\n\n\"She died when I was nine,\" Sera says. \"She never told anyone what she'd worked on. Not my parents, not her colleagues, not the school. I asked, when I was older and knew enough to ask. My mother said she'd had a difficult late career. Personal circumstances.\"\n\nA pause. The weight of that phrase, again.\n\n\"She sealed it,\" Sera says. \"Which means she knew it was wrong. And she sealed it anyway.\" She looks at you. Her face is not angry — not exactly. The grief on it is old and specific and has finally found its correct shape. \"She could have done something with what she knew. She chose not to.\" Another pause. \"I'm going to have to decide what I think about that. I don't think I can do that quickly.\"\n\nShe looks back out the window.\n\n\"But I can do something with what *I* know. What we know. That's different.\"",
+  "choices": [
+    {
+      "id": "s26_sera_continue",
+      "text": "You sit with her until the common room empties.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "sera_truth_known"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
+      ],
+      "next": "s27_conclave_internal"
+    }
+  ]
+}

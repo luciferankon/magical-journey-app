@@ -18,6 +18,7 @@ const RELATIONSHIP_KEYS = [
   "lira_influence",
   "tomas_bond",
   "solis_standing",
+  "ines_contact",
 ] as const;
 
 export function StatPanel({ state, open, onClose }: StatPanelProps) {

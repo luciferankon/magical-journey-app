@@ -1,0 +1,23 @@
+{
+  "id": "s28_inside_move",
+  "text": "You have access. That's the thing. Either through Solis's residual regard — the standing you built before the relationship became complicated — or through Ines, who has been waiting for exactly this use of exactly this trust. Either way, you have a channel into the Conclave's deliberation that most people don't have.\n\nThe Archivist wants the Commission findings delivered inside the room. Not published, not circulated publicly — placed where the right people will see it before the vote concludes. That is a different kind of action than exposure. It is the kind of action that requires someone already trusted by the institution to carry something the institution would prefer not to see.\n\nYou use the next three days carefully. Messages through channels you understand now, routed in ways that will reach the Archivist's faction without passing through Solis's. It is precise and uncomfortable work — the kind of work that requires you to use your access as a tool and accept that using it this way will cost something.\n\nOn the third day, Veth passes you a note. Four words:\n\n*In the room. Received.*\n\nThe risk: if the vote fails anyway, if the Commission findings are not sufficient, you have shown your hand. They know where you stand. They know what you know. They know what you chose to do with it. That information will not be forgotten by people who work in years.\n\nYou sit with that and wait.",
+  "choices": [
+    {
+      "id": "s28_inside_continue",
+      "text": "You wait.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": -1
+        }
+      ],
+      "next": "s29_caden_and_sera"
+    }
+  ]
+}

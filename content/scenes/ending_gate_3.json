@@ -1,0 +1,114 @@
+{
+  "id": "ending_gate_3",
+  "text": "The chapter resolves into its shape. Some shapes are chosen. Some are made from choices accumulated over months, which is a different kind of choosing.",
+  "choices": [
+    {
+      "id": "ending_gate_3a",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          {
+            "type": "flag_set",
+            "flag": "fracture_origin_known"
+          },
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "relationship_gte",
+                "character": "ines_contact",
+                "value": 4
+              },
+              {
+                "type": "relationship_gte",
+                "character": "solis_standing",
+                "value": 3
+              },
+              {
+                "type": "flag_set",
+                "flag": "aldric_acts"
+              }
+            ]
+          },
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "relationship_gte",
+                "character": "tomas_bond",
+                "value": 5
+              },
+              {
+                "type": "relationship_gte",
+                "character": "ines_contact",
+                "value": 5
+              }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "ending_3a_reformer"
+    },
+    {
+      "id": "ending_gate_3b",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          {
+            "type": "trait_gte",
+            "trait": "courage",
+            "value": 6
+          },
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "flag_set",
+                "flag": "caden_aligned"
+              },
+              {
+                "type": "flag_set",
+                "flag": "sera_truth_known"
+              }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "ending_3b_insurgent"
+    },
+    {
+      "id": "ending_gate_3c",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          {
+            "type": "relationship_gte",
+            "character": "solis_standing",
+            "value": 5
+          },
+          {
+            "type": "flag_unset",
+            "flag": "caden_aligned"
+          },
+          {
+            "type": "flag_unset",
+            "flag": "sera_truth_known"
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "ending_3c_absorbed"
+    },
+    {
+      "id": "ending_gate_3d",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "ending_3d_isolated"
+    }
+  ]
+}

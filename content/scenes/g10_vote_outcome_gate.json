@@ -1,0 +1,64 @@
+{
+  "id": "g10_vote_outcome_gate",
+  "text": "Veth sets his notes on the table.",
+  "choices": [
+    {
+      "id": "g10_shifted",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          {
+            "type": "flag_set",
+            "flag": "fracture_origin_known"
+          },
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "relationship_gte",
+                "character": "ines_contact",
+                "value": 4
+              },
+              {
+                "type": "relationship_gte",
+                "character": "solis_standing",
+                "value": 3
+              },
+              {
+                "type": "flag_set",
+                "flag": "aldric_acts"
+              }
+            ]
+          },
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "flag_set",
+                "flag": "caden_aligned"
+              },
+              {
+                "type": "flag_set",
+                "flag": "sera_truth_known"
+              },
+              {
+                "type": "relationship_gte",
+                "character": "tomas_bond",
+                "value": 5
+              }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "s31_vote_shifted"
+    },
+    {
+      "id": "g10_passed",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "s31_vote_passed"
+    }
+  ]
+}

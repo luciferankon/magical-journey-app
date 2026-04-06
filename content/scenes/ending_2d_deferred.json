@@ -1,6 +1,31 @@
 {
   "id": "ending_2d_deferred",
-  "isEnding": true,
   "text": "Solis left with what she came for.\n\nYou understand this now, a few days later: she came for an assessment, an offer, and a read on you she could use at a time of her choosing. The conversation was never really about this week. It was about calibration. She knows something about you now — the exact shape of how far you'll go and when you stop — and she'll use that knowledge with the patience of someone who works in years, not semesters.\n\nTomás is still waiting. He knows more than he did. He doesn't know enough. He sits in the library annex some evenings and works through the records again, and you sit with him sometimes, and you don't tell him what you know because you're still deciding what knowing it means.\n\nYou know more than you did. It isn't enough. Not yet.\n\nSome chapters end in resolution. This one just ends.\n\nThe focusing anchor arrives in the post three weeks later. A small padded envelope, no sender address — redirected twice before it reached you, which means someone was being careful. Inside: a pale grey stone, flat and oval, that fits in your palm exactly. When you press it to the desk it hums, barely perceptible, the same frequency you felt under the flagstones that night in the courtyard.\n\nJust the stone, and the hum, and the waiting.",
-  "choices": []
+  "choices": [
+    {
+      "id": "continue_to_chapter_3",
+      "text": "Continue to Chapter Three.",
+      "consequences": [
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "walked"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "hidden"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "gone"
+        },
+        {
+          "type": "advance_chapter"
+        }
+      ],
+      "next": "s22d_after_deferred"
+    }
+  ]
 }

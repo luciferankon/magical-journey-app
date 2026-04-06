@@ -1,0 +1,23 @@
+{
+  "id": "s26_tomas_learns",
+  "text": "Telling Tomás is not like telling anyone else.\n\nHe listens the way he does everything — carefully, completely, in a way that makes you feel your words are being heard at a level below language. He doesn't interrupt. When you've finished he sits with it, and you sit with him sitting with it, and the library annex is very quiet.\n\nThen:\n\n\"She knew.\" Not a question. A statement that is also a form of grief arriving at its correct address. \"She's known for a while. She didn't tell me because she needed me to be safe.\" He's looking at the table. \"While she was doing what she was doing — whatever that is exactly, whatever staying inside that place costs — she needed to know I was somewhere that didn't know about it. That wasn't touched by it.\"\n\nA pause.\n\n\"I'm not sure I forgive her for that.\"\n\nAnother pause, harder and quieter:\n\n\"I'm not sure I don't.\"\n\nHe looks at you then, and the look has the specific quality of someone who has reached the end of what they can process alone.\n\n\"What do we do with it.\" Not a question either. A statement that contains a question. He is asking whether you know. He is asking whether you have a direction. He is saying, in the way people say things when they trust you, that whatever you say next will matter.",
+  "choices": [
+    {
+      "id": "s26_tomas_continue",
+      "text": "You tell him you're working on that.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        }
+      ],
+      "next": "s27_conclave_internal"
+    }
+  ]
+}

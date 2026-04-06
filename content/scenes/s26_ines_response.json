@@ -1,0 +1,23 @@
+{
+  "id": "s26_ines_response",
+  "text": "You write back through the channel that same evening.\n\nHer response arrives before midnight, which means she was close to her own channel when you sent yours — or she keeps it open, which is a form of waiting you recognise.\n\nThe message is longer than any she has sent before. It begins without preamble:\n\n*Good. You found it. I was beginning to wonder if the memo was enough — it isn't, not by itself, not if you want to do something with it that holds. The summary is what they circulated to the founding members. The original research logs are different. They're the actual data — the subject files, the resonance measurements, the records of deterioration. Physical copies, in the Conclave's secure archive, in a folder that has not been touched in forty years because everyone who knew what was in it is dead or doesn't want to know.\n\nI can get them out. I've been inside long enough and carefully enough that I have the access. What I don't have is a reason to use it — a reason large enough to justify the risk of breaking cover. Once I do this, I am done being invisible. Whatever happens next, they will know it was me.\n\nSo I need to know: is this going somewhere? Is what you've found going to be used? Or is this knowledge sitting in a room?\n\nI've been waiting three years for someone on the outside to be ready to receive what I found. Tell me you're ready.*\n\nYou read it twice. The question is clear. She is asking whether you have a direction. She is asking it in the plainest way she knows how.",
+  "choices": [
+    {
+      "id": "s26_ines_continue",
+      "text": "You write back: yes.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
+      ],
+      "next": "s27_conclave_internal"
+    }
+  ]
+}

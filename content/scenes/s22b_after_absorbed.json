@@ -1,0 +1,23 @@
+{
+  "id": "s22b_after_absorbed",
+  "text": "Three weeks of carrying Solis's logic.\n\nThe focusing anchor sits on your desk and hums, faintly, when you press your palm to it — a reassurance you chose to take at face value because the alternative requires admitting that the weight you felt when you accepted it was not the weight of responsibility but of something else. You have been telling yourself these are the same thing. You are less sure of this than you were.\n\nTomás asks questions with his face, mostly. He has not stopped looking at you with that particular expression — equal parts trust and uncertainty — ever since Solis left. You have given him what you can: safeguards, processes, the shape of official reassurance. You have not given him his sister's name.\n\nThis morning, the Conclave internal channel — which you now have access to, which felt like a resource and increasingly feels like a vantage — carries a new message. Unsigned. Not routed through any sender you recognise.\n\nSix words:\n\n*1963 Resonance Commission. Ask why it's sealed.*\n\nYou read it twice. The phrasing is not a question. It is an invitation formatted as a question, which is the phrasing of someone who knows exactly what they're doing and wants you to know that they know.\n\nYou sit with it and recognise: this is what it looks like when someone decides to find out if you're worth the risk.",
+  "choices": [
+    {
+      "id": "s22b_continue",
+      "text": "You close the channel and think.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
+      ],
+      "next": "s23_conclave_crack"
+    }
+  ]
+}

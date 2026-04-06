@@ -1,0 +1,18 @@
+{
+  "id": "s31_vote_passed",
+  "text": "\"The expansion passed,\" Veth says.\n\nNo preamble. No apology. He is a functionary and he is doing his job.\n\n\"The threshold will be lowered. Students from fourteen will be eligible for formal assessment and placement. The implementation timeline is eight months.\" He straightens his notes. \"The Commission findings were received by the deliberation. They were not sufficient to shift the required number of positions.\"\n\nHe pauses, which is the most feeling he has shown since arriving at Aethermoor.\n\n\"I don't know why I'm telling you the detail. I suppose it seems relevant.\" He stands. \"For what it's worth: it was closer than it should have been.\"\n\nHe leaves.\n\nYou sit in the library annex as the light flattens and the day ends.\n\nThe programme will expand. Students as young as fourteen will be assessed. That is real, and it is coming, and what you did was not enough to stop it. Not quite enough. You think about the gap between *not enough* and *nothing* and decide that it matters, even if it's hard to hold onto right now.\n\nThree days of silence from the channel. Then, from Ines:\n\n*We try again. Differently. Tell me what you have left.*\n\nYou sit with that question for a long time.",
+  "choices": [
+    {
+      "id": "s31_passed_continue",
+      "text": "Continue.",
+      "consequences": [
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        }
+      ],
+      "next": "ending_gate_3"
+    }
+  ]
+}

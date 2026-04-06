@@ -1,0 +1,27 @@
+{
+  "id": "s24_ines_contact",
+  "text": "She responds that evening. Faster than you expected — which means she was waiting for the question, or something close to it.\n\nThe message is brief and carries the specific weight of someone who has been very careful for a long time:\n\n*I can get you the summary memo. Not the full files — those are physically sealed and I can't move them without being noticed. But the memo that was circulated to the founding Conclave members in 1964, the one that summarised what the Commission found. I have a copy.\n\nMy conditions: you do not share this with Solis or with whoever has replaced her. And you tell Tomás what you find. That last one is not negotiable. He needs to know what his sister gave up and why. He's been waiting long enough.*\n\nYou read it twice. The conditions are not unreasonable. The second one is the one that costs — not because you don't want to tell Tomás, but because it means whatever is in that memo will pass from you to him and become something he has to carry, and you don't know yet what it will weigh.\n\nBut she's been waiting inside an institution she doesn't trust, for years, for someone on the outside to be ready to receive what she's found.\n\nShe's decided you're ready. That decision deserves to be honoured.\n\nThe memo arrives the following morning, in an envelope slid under your door, with no return address and a wax seal you don't recognise.",
+  "choices": [
+    {
+      "id": "s24_ines_continue",
+      "text": "You break the seal.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "fracture_origin_known"
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        }
+      ],
+      "next": "s25_the_origin"
+    }
+  ]
+}

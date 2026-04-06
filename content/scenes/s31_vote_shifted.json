@@ -1,0 +1,23 @@
+{
+  "id": "s31_vote_shifted",
+  "text": "\"The expansion proposal failed,\" Veth says. \"By two votes.\"\n\nHe says it without ceremony, which is either his natural register or a form of respect — you are not sure which, and it may be both.\n\n\"The Archivist's faction held. The Commission findings were circulated in the deliberation — I don't know by whom exactly, the routing was handled above my access level. Three members changed their positions before the final ballot.\"\n\nHe gathers his notes.\n\n\"The programme is not dissolved. The threshold is not changed from what it is now. What has happened is that there is a formal internal dissent on record — which means the next time the expansion is proposed, which it will be, there will be a precedent of internal opposition. That is not nothing.\" A pause. \"That is what the Archivist said to tell you, if it came out this way.\"\n\nHe leaves.\n\nYou sit with what you've done.\n\nThe smallest possible victory that is still a victory. The Fracture is still spreading. Students are still being assessed. The Conclave is intact and the absorption programme is intact and none of the underlying facts have changed. But the age threshold will not be lowered, and there is now a shape of dissent inside the institution that did not exist before, and that shape was made partly from what you did.\n\nThat evening, through the channel, a single word from Ines:\n\n*Good.*",
+  "choices": [
+    {
+      "id": "s31_shifted_continue",
+      "text": "Continue.",
+      "consequences": [
+        {
+          "type": "relationship_delta",
+          "character": "ines_contact",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
+      ],
+      "next": "ending_gate_3"
+    }
+  ]
+}
