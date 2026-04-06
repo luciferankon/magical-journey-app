@@ -6,8 +6,15 @@
       "id": "choose_glory_after_wisdom",
       "text": "\"I'll face the Gate.\"",
       "consequences": [
-        { "type": "set_flag", "flag": "chose_glory" },
-        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "chose_glory"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
       ],
       "next": "ancient_gate"
     },
@@ -15,8 +22,15 @@
       "id": "choose_home_after_wisdom",
       "text": "\"I'll go home.\"",
       "consequences": [
-        { "type": "set_flag", "flag": "chose_home" },
-        { "type": "trait_delta", "trait": "compassion", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "chose_home"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "compassion",
+          "delta": 1
+        }
       ],
       "next": "village_gate"
     }

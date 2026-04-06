@@ -12,9 +12,21 @@
       "id": "pull_sera_back",
       "text": "Stay back — pull Sera clear and call for the teachers.",
       "consequences": [
-        { "type": "trait_delta", "trait": "empathy", "delta": 2 },
-        { "type": "relationship_delta", "character": "sera_trust", "delta": 2 },
-        { "type": "trait_delta", "trait": "courage", "delta": -1 }
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": -1
+        }
       ],
       "next": "ending_gate"
     },
@@ -28,8 +40,15 @@
       "id": "do_nothing",
       "text": "Do nothing — watch what happens.",
       "consequences": [
-        { "type": "trait_delta", "trait": "courage", "delta": -2 },
-        { "type": "set_flag", "flag": "crisis_fled" }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": -2
+        },
+        {
+          "type": "set_flag",
+          "flag": "crisis_fled"
+        }
       ],
       "next": "ending_gate"
     }

@@ -5,21 +5,48 @@
     {
       "id": "improvisation_works",
       "text": "The unconventional approach lands — unorthodox, but the flame comes, bright and unexpected.",
-      "gate": { "type": "trait_gte", "trait": "cunning", "value": 4 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "cunning",
+        "value": 4
+      },
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 1 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 2 },
-        { "type": "set_flag", "flag": "class_success" }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "class_success"
+        }
       ],
       "next": "s06_corridor_incident"
     },
     {
       "id": "improvisation_collapses",
       "text": "The approach collapses halfway through. The thread frays. A small, embarrassing pop of light.",
-      "gate": { "type": "trait_lte", "trait": "cunning", "value": 3 },
+      "gate": {
+        "type": "trait_lte",
+        "trait": "cunning",
+        "value": 3
+      },
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": -1 },
-        { "type": "trait_delta", "trait": "cunning", "delta": -1 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": -1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": -1
+        }
       ],
       "next": "s06_corridor_incident"
     }

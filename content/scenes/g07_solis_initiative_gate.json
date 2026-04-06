@@ -8,12 +8,24 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "trait_gte", "key": "cunning", "value": 5 },
+          {
+            "type": "trait_gte",
+            "trait": "cunning",
+            "value": 5
+          },
           {
             "type": "and",
             "conditions": [
-              { "type": "relationship_gte", "key": "aldric_regard", "value": 3 },
-              { "type": "trait_gte", "key": "wisdom", "value": 4 }
+              {
+                "type": "relationship_gte",
+                "character": "aldric_regard",
+                "value": 3
+              },
+              {
+                "type": "trait_gte",
+                "trait": "wisdom",
+                "value": 4
+              }
             ]
           }
         ]

@@ -5,11 +5,26 @@
     {
       "id": "choose_glory",
       "text": "\"I serve glory. Show me the way forward.\"",
-      "gate": { "type": "trait_gte", "trait": "courage", "value": 1 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "courage",
+        "value": 1
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "chose_glory" },
-        { "type": "trait_delta", "trait": "courage", "delta": 1 },
-        { "type": "relationship_delta", "character": "fox", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "chose_glory"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "fox",
+          "delta": 1
+        }
       ],
       "next": "ancient_gate"
     },
@@ -17,8 +32,15 @@
       "id": "choose_home",
       "text": "\"I serve home. I have people waiting.\"",
       "consequences": [
-        { "type": "set_flag", "flag": "chose_home" },
-        { "type": "trait_delta", "trait": "compassion", "delta": 2 }
+        {
+          "type": "set_flag",
+          "flag": "chose_home"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "compassion",
+          "delta": 2
+        }
       ],
       "next": "village_gate"
     },
@@ -26,7 +48,11 @@
       "id": "ask_fox_more",
       "text": "\"Tell me more before I choose.\"",
       "consequences": [
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "fox_wisdom"
     },
@@ -39,8 +65,15 @@
         "value": 3
       },
       "consequences": [
-        { "type": "set_flag", "flag": "allied_with_fox" },
-        { "type": "relationship_delta", "character": "fox", "delta": 2 }
+        {
+          "type": "set_flag",
+          "flag": "allied_with_fox"
+        },
+        {
+          "type": "relationship_delta",
+          "character": "fox",
+          "delta": 2
+        }
       ],
       "next": "ancient_gate"
     }

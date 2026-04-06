@@ -12,8 +12,16 @@
       "id": "observe_first",
       "text": "Ask to go last — watch the others first.",
       "consequences": [
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": -1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": -1
+        }
       ],
       "next": "s06_corridor_incident"
     },

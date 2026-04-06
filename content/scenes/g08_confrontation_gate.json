@@ -8,13 +8,29 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "trait_gte", "key": "courage", "value": 6 },
-          { "type": "relationship_gte", "key": "tomas_bond", "value": 5 }
+          {
+            "type": "trait_gte",
+            "trait": "courage",
+            "value": 6
+          },
+          {
+            "type": "relationship_gte",
+            "character": "tomas_bond",
+            "value": 5
+          }
         ]
       },
       "consequences": [
-        { "type": "trait_delta", "key": "courage", "value": 1 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": -1 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": -1
+        }
       ],
       "next": "s21_negotiation"
     },
@@ -22,8 +38,16 @@
       "id": "g08_choice_fails",
       "text": "It didn't work.",
       "consequences": [
-        { "type": "trait_delta", "key": "courage", "value": -1 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": -1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s21_negotiation"
     }

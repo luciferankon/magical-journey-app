@@ -6,8 +6,16 @@
       "id": "c01_choice_a",
       "text": "Listen to what she's offering.",
       "consequences": [
-        { "type": "relationship_delta", "key": "lira_influence", "value": 1 },
-        { "type": "trait_delta", "key": "cunning", "value": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
       ],
       "next": "s10_archive_discovery"
     },
@@ -15,7 +23,11 @@
       "id": "c01_choice_b",
       "text": "Tell her you need time to think.",
       "consequences": [
-        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "s10_archive_discovery"
     }

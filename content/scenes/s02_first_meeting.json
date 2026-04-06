@@ -6,8 +6,16 @@
       "id": "turn_to_sera",
       "text": "Turn to Sera — she looks nervous too.",
       "consequences": [
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 },
-        { "type": "relationship_delta", "character": "sera_trust", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 1
+        }
       ],
       "next": "s03_sorting_ceremony"
     },
@@ -15,8 +23,16 @@
       "id": "face_caden",
       "text": "Hold Caden's look. Don't look away first.",
       "consequences": [
-        { "type": "trait_delta", "trait": "courage", "delta": 1 },
-        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": 1
+        }
       ],
       "next": "s03_sorting_ceremony"
     },
@@ -24,8 +40,16 @@
       "id": "step_past_both",
       "text": "Step past both of them — take in the school first.",
       "consequences": [
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
       ],
       "next": "s03_sorting_ceremony"
     }

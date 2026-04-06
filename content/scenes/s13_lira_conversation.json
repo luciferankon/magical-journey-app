@@ -6,7 +6,11 @@
       "id": "s13_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "relationship_delta", "key": "lira_influence", "value": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 1
+        }
       ],
       "next": "c03_lira_response"
     }

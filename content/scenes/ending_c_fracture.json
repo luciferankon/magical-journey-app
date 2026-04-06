@@ -6,10 +6,24 @@
       "id": "continue_to_chapter_2",
       "text": "Continue to Chapter Two.",
       "consequences": [
-        { "type": "set_chapter_export", "field": "crisis_outcome", "value": "failed" },
-        { "type": "set_chapter_export", "field": "chapter_1_reputation", "value": "low" },
-        { "type": "set_chapter_export", "field": "lira_status", "value": "owns_you" },
-        { "type": "advance_chapter" }
+        {
+          "type": "set_chapter_export",
+          "field": "crisis_outcome",
+          "value": "failed"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_1_reputation",
+          "value": "low"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_status",
+          "value": "owns_you"
+        },
+        {
+          "type": "advance_chapter"
+        }
       ],
       "next": "s09c_fracture_morning"
     }

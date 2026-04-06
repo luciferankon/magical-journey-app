@@ -8,12 +8,23 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "flag_set", "flag": "crisis_intervened" },
+          {
+            "type": "flag_set",
+            "flag": "crisis_intervened"
+          },
           {
             "type": "or",
             "conditions": [
-              { "type": "trait_gte", "trait": "courage", "value": 6 },
-              { "type": "relationship_gte", "character": "tomas_bond", "value": 4 }
+              {
+                "type": "trait_gte",
+                "trait": "courage",
+                "value": 6
+              },
+              {
+                "type": "relationship_gte",
+                "character": "tomas_bond",
+                "value": 4
+              }
             ]
           }
         ]
@@ -27,13 +38,27 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "flag_set", "flag": "crisis_fled" },
+          {
+            "type": "flag_set",
+            "flag": "crisis_fled"
+          },
           {
             "type": "and",
             "conditions": [
-              { "type": "flag_unset", "flag": "crisis_intervened" },
-              { "type": "trait_lte", "trait": "courage", "value": 3 },
-              { "type": "relationship_lte", "character": "tomas_bond", "value": 2 }
+              {
+                "type": "flag_unset",
+                "flag": "crisis_intervened"
+              },
+              {
+                "type": "trait_lte",
+                "trait": "courage",
+                "value": 3
+              },
+              {
+                "type": "relationship_lte",
+                "character": "tomas_bond",
+                "value": 2
+              }
             ]
           }
         ]

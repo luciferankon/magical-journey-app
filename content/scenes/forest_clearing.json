@@ -6,8 +6,16 @@
       "id": "approach_fox",
       "text": "Approach the fox slowly.",
       "consequences": [
-        { "type": "relationship_delta", "character": "fox", "delta": 2 },
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "fox",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
       ],
       "next": "fox_dialogue"
     },
@@ -15,18 +23,36 @@
       "id": "open_chest",
       "text": "Go straight for the chest.",
       "consequences": [
-        { "type": "relationship_delta", "character": "fox", "delta": -1 },
-        { "type": "set_flag", "flag": "opened_chest_early" }
+        {
+          "type": "relationship_delta",
+          "character": "fox",
+          "delta": -1
+        },
+        {
+          "type": "set_flag",
+          "flag": "opened_chest_early"
+        }
       ],
       "next": "chest_scene"
     },
     {
       "id": "speak_to_fox_wise",
       "text": "Speak the old wood-greeting you once read.",
-      "gate": { "type": "trait_gte", "trait": "wisdom", "value": 1 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "wisdom",
+        "value": 1
+      },
       "consequences": [
-        { "type": "relationship_delta", "character": "fox", "delta": 3 },
-        { "type": "set_flag", "flag": "used_wood_greeting" }
+        {
+          "type": "relationship_delta",
+          "character": "fox",
+          "delta": 3
+        },
+        {
+          "type": "set_flag",
+          "flag": "used_wood_greeting"
+        }
       ],
       "next": "fox_dialogue"
     }

@@ -6,8 +6,15 @@
       "id": "s12_speaks_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "trait_delta", "key": "cunning", "value": 1 },
-        { "type": "set_flag", "key": "met_solis" }
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        },
+        {
+          "type": "set_flag",
+          "flag": "met_solis"
+        }
       ],
       "next": "s13_lira_conversation"
     }

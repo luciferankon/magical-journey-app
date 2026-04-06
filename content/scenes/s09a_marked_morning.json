@@ -6,8 +6,16 @@
       "id": "s09a_continue",
       "text": "Continue into the morning.",
       "consequences": [
-        { "type": "relationship_delta", "key": "aldric_regard", "value": 1 },
-        { "type": "trait_delta", "key": "ambition", "value": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        }
       ],
       "next": "s10_archive_discovery"
     }

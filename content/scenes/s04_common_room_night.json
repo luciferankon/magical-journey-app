@@ -6,8 +6,16 @@
       "id": "talk_to_sera",
       "text": "Go to Sera — she looks like she could use the company.",
       "consequences": [
-        { "type": "relationship_delta", "character": "sera_trust", "delta": 2 },
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "sera_trust",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
       ],
       "next": "s05_class_morning"
     },
@@ -15,8 +23,16 @@
       "id": "approach_tomas",
       "text": "Sit near Tomás — you want to know what he's reading.",
       "consequences": [
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "s05_class_morning"
     },
@@ -24,8 +40,16 @@
       "id": "introduce_to_lira",
       "text": "Introduce yourself to Lira — seniors know things.",
       "consequences": [
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
       ],
       "next": "s05_class_morning"
     }

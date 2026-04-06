@@ -5,22 +5,52 @@
     {
       "id": "plan_succeeds",
       "text": "The anchor holds. Between the two of you, the Fracture thread pulls free — slow, excruciating, but it comes.",
-      "gate": { "type": "relationship_gte", "character": "tomas_bond", "value": 4 },
+      "gate": {
+        "type": "relationship_gte",
+        "character": "tomas_bond",
+        "value": 4
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "crisis_intervened" },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 2 },
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 3 },
-        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "crisis_intervened"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 3
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
       ],
       "next": "ending_gate"
     },
     {
       "id": "plan_fails",
       "text": "You try — you both try — but the coordination isn't there. The trust isn't deep enough yet. The thread holds and the dark spreads.",
-      "gate": { "type": "relationship_lte", "character": "tomas_bond", "value": 3 },
+      "gate": {
+        "type": "relationship_lte",
+        "character": "tomas_bond",
+        "value": 3
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "crisis_intervened" },
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": -1 }
+        {
+          "type": "set_flag",
+          "flag": "crisis_intervened"
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": -1
+        }
       ],
       "next": "ending_gate"
     }

@@ -6,8 +6,16 @@
       "id": "c03_choice_a",
       "text": "\"Tell me who's arriving.\"",
       "consequences": [
-        { "type": "trait_delta", "key": "cunning", "value": 1 },
-        { "type": "relationship_delta", "key": "lira_influence", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 1
+        }
       ],
       "next": "s14_solis_identified"
     },
@@ -15,7 +23,11 @@
       "id": "c03_choice_b",
       "text": "\"Why are you telling me this?\"",
       "consequences": [
-        { "type": "trait_delta", "key": "wisdom", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "s14_solis_identified"
     },
@@ -23,8 +35,16 @@
       "id": "c03_choice_c",
       "text": "\"I'm not interested in whatever this is.\"",
       "consequences": [
-        { "type": "trait_delta", "key": "courage", "value": 1 },
-        { "type": "relationship_delta", "key": "lira_influence", "value": -1 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": -1
+        }
       ],
       "next": "s14_solis_identified"
     },
@@ -33,11 +53,19 @@
       "text": "\"I already know about the Fracture incidents. And the archive.\"",
       "gate": {
         "type": "flag_unset",
-        "key": "crisis_fled"
+        "flag": "crisis_fled"
       },
       "consequences": [
-        { "type": "trait_delta", "key": "cunning", "value": 2 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s14_solis_identified"
     }

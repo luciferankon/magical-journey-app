@@ -6,7 +6,11 @@
       "id": "commit_fully",
       "text": "\"I'm in. We do this together, quietly.\"",
       "consequences": [
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 }
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 2
+        }
       ],
       "next": "s08_chapter_crisis"
     },
@@ -14,8 +18,16 @@
       "id": "agree_with_limit",
       "text": "\"I'll help. But if it gets dangerous, we go to Aldric.\"",
       "consequences": [
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 1 },
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 1
+        }
       ],
       "next": "s08_chapter_crisis"
     }

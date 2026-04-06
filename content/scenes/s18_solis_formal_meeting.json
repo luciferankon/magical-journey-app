@@ -6,8 +6,14 @@
       "id": "s18_continue",
       "text": "Answer her.",
       "consequences": [
-        { "type": "set_flag", "key": "met_solis" },
-        { "type": "set_flag", "key": "conclave_offered" }
+        {
+          "type": "set_flag",
+          "flag": "met_solis"
+        },
+        {
+          "type": "set_flag",
+          "flag": "conclave_offered"
+        }
       ],
       "next": "c05_solis_meeting_response"
     }

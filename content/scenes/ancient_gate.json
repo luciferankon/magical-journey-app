@@ -5,20 +5,42 @@
     {
       "id": "answer_courage",
       "text": "\"I know fear — and I choose to act anyway.\"",
-      "gate": { "type": "trait_gte", "trait": "courage", "value": 2 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "courage",
+        "value": 2
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "passed_gate" },
-        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "passed_gate"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
       ],
       "next": "ending_glory"
     },
     {
       "id": "answer_wisdom",
       "text": "\"I know that I do not know — and that is my strength.\"",
-      "gate": { "type": "trait_gte", "trait": "wisdom", "value": 2 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "wisdom",
+        "value": 2
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "passed_gate" },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "passed_gate"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "ending_glory"
     },
@@ -28,12 +50,22 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "flag_set", "flag": "has_compass" }
+          {
+            "type": "flag_set",
+            "flag": "has_compass"
+          }
         ]
       },
       "consequences": [
-        { "type": "set_flag", "flag": "passed_gate" },
-        { "type": "relationship_delta", "character": "keeper", "delta": 3 }
+        {
+          "type": "set_flag",
+          "flag": "passed_gate"
+        },
+        {
+          "type": "relationship_delta",
+          "character": "keeper",
+          "delta": 3
+        }
       ],
       "next": "ending_glory"
     },
@@ -41,7 +73,10 @@
       "id": "refuse_keeper",
       "text": "Say nothing and turn away.",
       "consequences": [
-        { "type": "set_flag", "flag": "refused_keeper" }
+        {
+          "type": "set_flag",
+          "flag": "refused_keeper"
+        }
       ],
       "next": "ending_quiet"
     }

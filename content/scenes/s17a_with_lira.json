@@ -6,8 +6,16 @@
       "id": "s17a_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "trait_delta", "key": "cunning", "value": 1 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s18_solis_formal_meeting"
     }

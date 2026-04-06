@@ -5,21 +5,48 @@
     {
       "id": "thread_holds",
       "text": "The thread holds. A steady flame, clean and controlled.",
-      "gate": { "type": "trait_gte", "trait": "courage", "value": 4 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "courage",
+        "value": 4
+      },
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
-        { "type": "set_flag", "flag": "class_success" },
-        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 2
+        },
+        {
+          "type": "set_flag",
+          "flag": "class_success"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
       ],
       "next": "s06_corridor_incident"
     },
     {
       "id": "thread_snaps",
       "text": "The thread slips. A flash of warmth, then nothing — the flame collapses before it forms.",
-      "gate": { "type": "trait_lte", "trait": "courage", "value": 3 },
+      "gate": {
+        "type": "trait_lte",
+        "trait": "courage",
+        "value": 3
+      },
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": -1 },
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": -1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
       ],
       "next": "s06_corridor_incident"
     }

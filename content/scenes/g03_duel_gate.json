@@ -8,15 +8,37 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "trait_gte", "trait": "courage", "value": 5 },
-          { "type": "flag_set", "flag": "class_success" }
+          {
+            "type": "trait_gte",
+            "trait": "courage",
+            "value": 5
+          },
+          {
+            "type": "flag_set",
+            "flag": "class_success"
+          }
         ]
       },
       "consequences": [
-        { "type": "set_flag", "flag": "dueled_caden" },
-        { "type": "trait_delta", "trait": "courage", "delta": 2 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": -8 },
-        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 }
+        {
+          "type": "set_flag",
+          "flag": "dueled_caden"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": -8
+        },
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": -1
+        }
       ],
       "next": "s08_chapter_crisis"
     },
@@ -26,15 +48,37 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "trait_lte", "trait": "courage", "value": 4 },
-          { "type": "flag_unset", "flag": "class_success" }
+          {
+            "type": "trait_lte",
+            "trait": "courage",
+            "value": 4
+          },
+          {
+            "type": "flag_unset",
+            "flag": "class_success"
+          }
         ]
       },
       "consequences": [
-        { "type": "set_flag", "flag": "dueled_caden" },
-        { "type": "trait_delta", "trait": "courage", "delta": -1 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 3 },
-        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "dueled_caden"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": -1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 3
+        },
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": 1
+        }
       ],
       "next": "s08_chapter_crisis"
     }

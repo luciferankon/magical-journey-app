@@ -8,21 +8,46 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "flag_set", "key": "tomas_knows" },
+          {
+            "type": "flag_set",
+            "flag": "tomas_knows"
+          },
           {
             "type": "or",
             "conditions": [
-              { "type": "relationship_gte", "key": "tomas_bond", "value": 5 },
-              { "type": "trait_gte", "key": "courage", "value": 6 }
+              {
+                "type": "relationship_gte",
+                "character": "tomas_bond",
+                "value": 5
+              },
+              {
+                "type": "trait_gte",
+                "trait": "courage",
+                "value": 6
+              }
             ]
           }
         ]
       },
       "consequences": [
-        { "type": "set_chapter_export", "key": "chapter_2_solis_stance", "value": "confronted" },
-        { "type": "set_chapter_export", "key": "ines_status", "value": "found" },
-        { "type": "set_chapter_export", "key": "lira_chapter_2_status", "value": "ally" },
-        { "type": "advance_chapter" }
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "confronted"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "found"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "ally"
+        },
+        {
+          "type": "advance_chapter"
+        }
       ],
       "next": "ending_2a_reunion"
     },
@@ -32,15 +57,36 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "relationship_gte", "key": "solis_standing", "value": 4 },
-          { "type": "flag_unset", "key": "tomas_knows" }
+          {
+            "type": "relationship_gte",
+            "character": "solis_standing",
+            "value": 4
+          },
+          {
+            "type": "flag_unset",
+            "flag": "tomas_knows"
+          }
         ]
       },
       "consequences": [
-        { "type": "set_chapter_export", "key": "chapter_2_solis_stance", "value": "joined" },
-        { "type": "set_chapter_export", "key": "ines_status", "value": "hidden" },
-        { "type": "set_chapter_export", "key": "lira_chapter_2_status", "value": "ally" },
-        { "type": "advance_chapter" }
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "joined"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "hidden"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "ally"
+        },
+        {
+          "type": "advance_chapter"
+        }
       ],
       "next": "ending_2b_absorbed"
     },
@@ -50,22 +96,51 @@
       "gate": {
         "type": "and",
         "conditions": [
-          { "type": "flag_set", "key": "tomas_knows" },
+          {
+            "type": "flag_set",
+            "flag": "tomas_knows"
+          },
           {
             "type": "or",
             "conditions": [
-              { "type": "trait_gte", "key": "courage", "value": 5 },
-              { "type": "trait_gte", "key": "cunning", "value": 5 }
+              {
+                "type": "trait_gte",
+                "trait": "courage",
+                "value": 5
+              },
+              {
+                "type": "trait_gte",
+                "trait": "cunning",
+                "value": 5
+              }
             ]
           },
-          { "type": "relationship_lte", "key": "solis_standing", "value": 2 }
+          {
+            "type": "relationship_lte",
+            "character": "solis_standing",
+            "value": 2
+          }
         ]
       },
       "consequences": [
-        { "type": "set_chapter_export", "key": "chapter_2_solis_stance", "value": "confronted" },
-        { "type": "set_chapter_export", "key": "ines_status", "value": "exposed" },
-        { "type": "set_chapter_export", "key": "lira_chapter_2_status", "value": "enemy" },
-        { "type": "advance_chapter" }
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "confronted"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "exposed"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "enemy"
+        },
+        {
+          "type": "advance_chapter"
+        }
       ],
       "next": "ending_2c_exposed"
     },
@@ -73,10 +148,24 @@
       "id": "ending_gate_2d",
       "text": "Continue.",
       "consequences": [
-        { "type": "set_chapter_export", "key": "chapter_2_solis_stance", "value": "walked" },
-        { "type": "set_chapter_export", "key": "ines_status", "value": "hidden" },
-        { "type": "set_chapter_export", "key": "lira_chapter_2_status", "value": "neutral" },
-        { "type": "advance_chapter" }
+        {
+          "type": "set_chapter_export",
+          "field": "chapter_2_solis_stance",
+          "value": "walked"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "ines_status",
+          "value": "hidden"
+        },
+        {
+          "type": "set_chapter_export",
+          "field": "lira_chapter_2_status",
+          "value": "neutral"
+        },
+        {
+          "type": "advance_chapter"
+        }
       ],
       "next": "ending_2d_deferred"
     }

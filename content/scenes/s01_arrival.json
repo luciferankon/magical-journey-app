@@ -6,7 +6,11 @@
       "id": "walk_straight_through",
       "text": "Walk straight through without breaking stride.",
       "consequences": [
-        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        }
       ],
       "next": "s02_first_meeting"
     },
@@ -14,7 +18,11 @@
       "id": "stop_and_take_it_in",
       "text": "Stop on the platform. Take it in properly before moving.",
       "consequences": [
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "s02_first_meeting"
     },
@@ -22,7 +30,11 @@
       "id": "fall_in_alongside",
       "text": "Fall in alongside another student who looks like they know where they're going.",
       "consequences": [
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
       ],
       "next": "s02_first_meeting"
     }

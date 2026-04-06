@@ -6,9 +6,20 @@
       "id": "s17c_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "relationship_delta", "key": "tomas_bond", "value": 2 },
-        { "type": "trait_delta", "key": "courage", "value": 1 },
-        { "type": "set_flag", "key": "tomas_knows" }
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "set_flag",
+          "flag": "tomas_knows"
+        }
       ],
       "next": "s18_solis_formal_meeting"
     }

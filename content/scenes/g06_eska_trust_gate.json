@@ -8,8 +8,16 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "trait_gte", "key": "empathy", "value": 5 },
-          { "type": "relationship_gte", "key": "sera_trust", "value": 3 }
+          {
+            "type": "trait_gte",
+            "trait": "empathy",
+            "value": 5
+          },
+          {
+            "type": "relationship_gte",
+            "character": "sera_trust",
+            "value": 3
+          }
         ]
       },
       "next": "s12_eska_speaks"

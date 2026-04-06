@@ -6,8 +6,15 @@
       "id": "take_compass",
       "text": "Take the compass.",
       "consequences": [
-        { "type": "set_flag", "flag": "has_compass" },
-        { "type": "trait_delta", "trait": "curiosity", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "has_compass"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "curiosity",
+          "delta": 1
+        }
       ],
       "next": "fox_dialogue"
     },
@@ -15,7 +22,11 @@
       "id": "leave_compass",
       "text": "Leave it. Some things are not meant to be carried.",
       "consequences": [
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "fox_dialogue"
     }

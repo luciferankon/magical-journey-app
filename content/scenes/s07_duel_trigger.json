@@ -12,10 +12,25 @@
       "id": "back_down",
       "text": "Back down — this isn't worth it. Not yet.",
       "consequences": [
-        { "type": "trait_delta", "trait": "courage", "delta": -1 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 },
-        { "type": "relationship_delta", "character": "caden_rivalry", "delta": 1 },
-        { "type": "set_flag", "flag": "sided_with_lira" }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": -1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": 1
+        },
+        {
+          "type": "set_flag",
+          "flag": "sided_with_lira"
+        }
       ],
       "next": "s08_chapter_crisis"
     }

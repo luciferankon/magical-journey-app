@@ -5,25 +5,67 @@
     {
       "id": "counter_weave_succeeds",
       "text": "The dark retreats. The student gasps. The thread holds.",
-      "gate": { "type": "trait_gte", "trait": "courage", "value": 6 },
+      "gate": {
+        "type": "trait_gte",
+        "trait": "courage",
+        "value": 6
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "crisis_intervened" },
-        { "type": "trait_delta", "trait": "courage", "delta": 3 },
-        { "type": "trait_delta", "trait": "ambition", "delta": 1 },
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
-        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -2 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 2 }
+        {
+          "type": "set_flag",
+          "flag": "crisis_intervened"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 3
+        },
+        {
+          "type": "trait_delta",
+          "trait": "ambition",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "caden_rivalry",
+          "delta": -2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 2
+        }
       ],
       "next": "ending_gate"
     },
     {
       "id": "counter_weave_falters",
       "text": "The thread doesn't hold. You tried — everyone saw you try — but the Fracture is older and deeper than anything you know how to oppose.",
-      "gate": { "type": "trait_lte", "trait": "courage", "value": 5 },
+      "gate": {
+        "type": "trait_lte",
+        "trait": "courage",
+        "value": 5
+      },
       "consequences": [
-        { "type": "set_flag", "flag": "crisis_intervened" },
-        { "type": "trait_delta", "trait": "courage", "delta": 1 },
-        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "crisis_intervened"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "empathy",
+          "delta": 1
+        }
       ],
       "next": "ending_gate"
     }

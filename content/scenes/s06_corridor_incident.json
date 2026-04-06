@@ -6,10 +6,25 @@
       "id": "confront_lira",
       "text": "Step forward — confront her directly.",
       "consequences": [
-        { "type": "set_flag", "flag": "witnessed_fracture" },
-        { "type": "trait_delta", "trait": "courage", "delta": 2 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 3 },
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "witnessed_fracture"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 3
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 1
+        }
       ],
       "next": "s07_duel_trigger"
     },
@@ -17,10 +32,25 @@
       "id": "pull_tomas_away",
       "text": "Pull Tomás away — say nothing to anyone, not yet.",
       "consequences": [
-        { "type": "set_flag", "flag": "witnessed_fracture" },
-        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": 2 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": 1 }
+        {
+          "type": "set_flag",
+          "flag": "witnessed_fracture"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": 1
+        }
       ],
       "next": "s07b_silent_evening"
     },
@@ -28,12 +58,34 @@
       "id": "report_to_aldric",
       "text": "Report it to Professor Aldric immediately.",
       "consequences": [
-        { "type": "set_flag", "flag": "witnessed_fracture" },
-        { "type": "set_flag", "flag": "reported_lira" },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 },
-        { "type": "relationship_delta", "character": "lira_influence", "delta": -3 },
-        { "type": "relationship_delta", "character": "tomas_bond", "delta": -1 }
+        {
+          "type": "set_flag",
+          "flag": "witnessed_fracture"
+        },
+        {
+          "type": "set_flag",
+          "flag": "reported_lira"
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "lira_influence",
+          "delta": -3
+        },
+        {
+          "type": "relationship_delta",
+          "character": "tomas_bond",
+          "delta": -1
+        }
       ],
       "next": "s07c_aldric_meeting"
     }

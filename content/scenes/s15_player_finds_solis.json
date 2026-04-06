@@ -6,8 +6,16 @@
       "id": "s15_pf_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "relationship_delta", "key": "solis_standing", "value": 2 },
-        { "type": "trait_delta", "key": "cunning", "value": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 2
+        },
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 1
+        }
       ],
       "next": "s16_choose_approach"
     }

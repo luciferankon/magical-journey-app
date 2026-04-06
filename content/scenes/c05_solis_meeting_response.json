@@ -6,8 +6,16 @@
       "id": "c05_choice_a",
       "text": "Tell her exactly what you saw — all of it.",
       "consequences": [
-        { "type": "trait_delta", "key": "courage", "value": 1 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 2 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 2
+        }
       ],
       "next": "s19_solis_explains"
     },
@@ -15,8 +23,16 @@
       "id": "c05_choice_b",
       "text": "Tell her part of it — enough to show you're not naïve.",
       "consequences": [
-        { "type": "trait_delta", "key": "cunning", "value": 2 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "cunning",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s19_solis_explains"
     },
@@ -24,8 +40,16 @@
       "id": "c05_choice_c",
       "text": "Ask her why she's really here.",
       "consequences": [
-        { "type": "trait_delta", "key": "wisdom", "value": 1 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s19_solis_explains"
     },
@@ -35,13 +59,27 @@
       "gate": {
         "type": "or",
         "conditions": [
-          { "type": "flag_set", "key": "tomas_knows" },
-          { "type": "flag_set", "key": "knows_ines_alive" }
+          {
+            "type": "flag_set",
+            "flag": "tomas_knows"
+          },
+          {
+            "type": "flag_set",
+            "flag": "knows_ines_alive"
+          }
         ]
       },
       "consequences": [
-        { "type": "trait_delta", "key": "courage", "value": 2 },
-        { "type": "relationship_delta", "key": "solis_standing", "value": 3 }
+        {
+          "type": "trait_delta",
+          "trait": "courage",
+          "delta": 2
+        },
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 3
+        }
       ],
       "next": "s19_solis_explains"
     }

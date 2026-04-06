@@ -6,7 +6,11 @@
       "id": "s15_sf_continue",
       "text": "Continue.",
       "consequences": [
-        { "type": "relationship_delta", "key": "solis_standing", "value": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "solis_standing",
+          "delta": 1
+        }
       ],
       "next": "s16_choose_approach"
     }

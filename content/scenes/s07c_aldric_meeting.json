@@ -6,7 +6,11 @@
       "id": "agree_to_stay_quiet",
       "text": "\"Yes. I can do that.\"",
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 2 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 2
+        }
       ],
       "next": "s08_chapter_crisis"
     },
@@ -14,8 +18,16 @@
       "id": "agree_but_want_to_know",
       "text": "\"I'll try. But I want to know what you find.\"",
       "consequences": [
-        { "type": "relationship_delta", "character": "aldric_regard", "delta": 1 },
-        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+        {
+          "type": "relationship_delta",
+          "character": "aldric_regard",
+          "delta": 1
+        },
+        {
+          "type": "trait_delta",
+          "trait": "wisdom",
+          "delta": 1
+        }
       ],
       "next": "s08_chapter_crisis"
     }
