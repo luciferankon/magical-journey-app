@@ -1,6 +1,6 @@
 "use client";
 
-import type { PlayerState } from "@/lib/state";
+import type { PlayerState, RelationshipKey } from "@/lib/state";
 import { TraitBar } from "./TraitBar";
 import { RelationshipBar } from "./RelationshipBar";
 
@@ -11,11 +11,12 @@ interface StatPanelProps {
 }
 
 const TRAIT_KEYS = ["courage", "cunning", "empathy", "ambition", "wisdom"] as const;
-const RELATIONSHIP_KEYS = [
+const RELATIONSHIP_KEYS: readonly RelationshipKey[] = [
   "sera_trust",
   "caden_rivalry",
   "aldric_regard",
   "lira_influence",
+  "lira_trust",
   "tomas_bond",
   "solis_standing",
   "ines_contact",

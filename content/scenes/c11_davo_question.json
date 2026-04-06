@@ -1,0 +1,61 @@
+{
+  "id": "c11_davo_question",
+  "text": "Caden looks at the window for another minute. Then he looks at you.\n\nHe hasn't asked the question yet. He is holding it in the way people hold questions they're not sure they want the answer to. Davo's story is part of the documentation you're carrying. Davo is also his brother. Those two facts are sitting on opposite sides of a line that you haven't decided where to draw yet.\n\nHe is waiting for you to decide where to draw it. You are not sure if that's trust or abdication or both.",
+  "choices": [
+    {
+      "id": "c11_use_case",
+      "text": "Davo's case is part of the disclosure. We use it — with his knowledge, if possible.",
+      "gate": {
+        "type": "flag_set",
+        "flag": "caden_aligned"
+      },
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 2 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -2 },
+        { "type": "set_flag", "flag": "davo_truth_known" }
+      ],
+      "next": "s43_the_governance_day"
+    },
+    {
+      "id": "c11_leave_out",
+      "text": "Davo stays out of it. Caden gets his brother back without the story being about him.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "empathy", "delta": 2 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 }
+      ],
+      "next": "s43_the_governance_day"
+    },
+    {
+      "id": "c11_ask_davo",
+      "text": "Find out if Davo will testify voluntarily — his voice means more than ours about him.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "flag_set", "flag": "davo_encountered" },
+          {
+            "type": "or",
+            "conditions": [
+              { "type": "trait_gte", "trait": "courage", "value": 6 },
+              { "type": "trait_gte", "trait": "cunning", "value": 6 }
+            ]
+          }
+        ]
+      },
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 },
+        { "type": "set_flag", "flag": "davo_truth_known" },
+        { "type": "set_chapter_export", "field": "davo_outcome", "value": "testified" }
+      ],
+      "next": "s43_the_governance_day"
+    },
+    {
+      "id": "c11_ask_caden",
+      "text": "Ask Caden what he wants. This is his brother.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "empathy", "delta": 1 }
+      ],
+      "next": "s43_the_governance_day"
+    }
+  ]
+}

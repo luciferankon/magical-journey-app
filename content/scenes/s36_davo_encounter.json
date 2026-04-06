@@ -1,0 +1,15 @@
+{
+  "id": "s36_davo_encounter",
+  "text": "The intake corridor smells of chalk and the particular institutional floor cleaner Aethermoor buys in bulk. Davo Miral is standing with his back to you when you reach the bottom of the stairs, writing a routing note on his tablet.\n\nHe turns at your footsteps. He looks at Caden. Something happens in his expression that is not cold and not apologetic — something real, briefly, that gets contained very quickly. \"Caden.\"\n\n\"Davo.\" Caden's voice is level in the way that requires active effort to maintain.\n\nA beat. Then Davo looks at you. \"They told me you were the one who found the Commission files.\" His voice is quiet, which is worse than if it had been cold. \"I need you to stop.\"\n\n\"The intake sessions.\"\n\n\"The inquiry. The files. All of it. What you're doing will harm people.\"\n\n\"What the Conclave is doing—\"\n\n\"Is not a destruction,\" he says. \"I know what it looks like. I made my choice knowing what it looked like.\" He looks back at Caden, and for a moment the thing in his expression that is not cold and not apologetic becomes a question he cannot quite ask. \"Are you—\"\n\n\"I'm fine,\" Caden says. \"Don't.\"\n\nDavo nods once, very precisely. He picks up his tablet. He walks away without looking back.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "set_flag", "flag": "davo_encountered" },
+        { "type": "relationship_delta", "character": "caden_rivalry", "delta": -1 }
+      ],
+      "next": "s37_veth_summons"
+    }
+  ]
+}

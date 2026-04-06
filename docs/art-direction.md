@@ -737,6 +737,268 @@ SFX:
 
 ---
 
-*Art direction complete. Ready for `/state-designer` and `/ui-builder` to implement against this spec.*
+## Chapter 4 Additions — *The Weight of the Conclave*
 
-*Last updated: 2026-03-31*
+---
+
+### Background Art Briefs (Chapter 4)
+
+### BG_10 — Intake Courtyard, Processing Day (S35_THE_ARRIVALS)
+```
+Mood:        Unsettling normalcy — bureaucratic cheerfulness over something wrong
+Time:        Morning, overcast — flat grey-white light, no warmth
+Composition: View from a high window looking down into the courtyard below.
+             The ground-level scene appears small, ordered, efficient.
+             A queue of young students (12–14, silhouettes/low detail) filing past
+             a single man with an assessor's badge working a tablet.
+             Administrative staff in foreground-right are smiling.
+             The queue moves in a way that feels too smooth.
+Palette:     Cool grey stone (#9AA0B0), muted parchment uniforms, flat overcast sky
+             (#C8CCD8). No warm tones. The assessor's badge catches the only gold.
+             The players' view is from inside — warm interior framing (dark edge
+             vignette) against the cold courtyard.
+Details:     The window sill in the foreground establishes the viewer's remove.
+             Caden's shoulder barely visible left-edge of frame — implied, not shown.
+             No magical elements visible. The Fracture doesn't announce itself here.
+Aspect:      16:9, composition emphasises vertical distance from viewer to courtyard
+```
+
+### BG_11 — South Gate Exterior (S39_LIRA_RETURNS)
+```
+Mood:        Ambiguous threshold — outside is not safety, inside is not home
+Time:        Late afternoon, golden hour, slightly hazy
+Composition: Player POV facing south gate from just outside. Aethermoor's walls
+             and towers visible through the gate behind you — warmly lit, slightly
+             distant. A low stone wall runs left. Open road to right.
+             Lira stands in three-quarter view, back partly to the gate.
+             Practical civilian clothing — no uniform, no Academy insignia.
+Palette:     Warm late-sun gold on stone walls and road (#D4A44C), hazy atmospheric
+             perspective on towers, cooler foreground shadow where Lira stands.
+             Her clothing: desaturated, functional — deliberately not glamorous.
+Details:     The gate itself is visible but slightly open — not closed against her,
+             just not for her right now. Wind-moved grass on the roadside.
+             No crowd, no other people. The isolation is legible.
+Aspect:      16:9, portrait safe zone centre (Lira) and right 30%
+```
+
+### BG_12 — Public Archives Building, Seminar Room (S40_ARCHIVIST_IN_PERSON)
+```
+Mood:        Unexpectedly ordinary — a neutral room that holds an extraordinary meeting
+Time:        Afternoon, natural light from tall windows, no dramatic lighting
+Composition: Medium interior shot. A seminar table occupies foreground-to-mid.
+             Tall windows left — institutional, not Gothic, slightly utilitarian.
+             Bookshelves along back wall in neat order (public archive, not arcane).
+             A whiteboard with nothing on it. Institutional chairs.
+             The Archivist sits at far end of table — small figure, large table.
+Palette:     Neutral daytime interior — warm cream walls (#D8CFBA), cool grey carpet,
+             natural window light (#C8D0D8), warm wood table (#8A6040).
+             No Fracture purple. No Academy gold. Deliberately de-magicked.
+             The one anomaly: a worn leather folder on the table — deep burgundy.
+Details:     The very ordinariness of the room is significant. This is not the
+             Academy. This is not the Conclave. This is a room the institution
+             forgot to watch. The windows look onto a public street — small figures
+             visible outside, oblivious.
+Aspect:      16:9, portrait safe zone far end of table (The Archivist), right 35%
+```
+
+### BG_13 — Library Annex, Governance Day (S43_THE_GOVERNANCE_DAY)
+```
+Mood:        Suspended time — waiting with no information, nothing to do but endure
+Time:        Cycling from morning to late afternoon within the scene (use static
+             lighting calibrated to mid-afternoon — the longest hour)
+Composition: A smaller, quieter adjunct to the main library. Lower ceilings.
+             A window looking onto a courtyard — the wrong courtyard (not the
+             Conclave's). Two worn sofas and a bench. A low table with phones on it.
+             Nobody is using the table. Books on shelves but none open.
+Palette:     Muted warm amber (#B8924C) — library lamp light, less vivid than BG_07.
+             Afternoon light through window slowly going golden.
+             Slightly desaturated vs the main library — less safe-feeling.
+Details:     The phones on the table are face-up. One has a screen-on notification
+             indicator visible (low detail — just implied). Dust motes in window light.
+             A half-finished mug of coffee — Tomás's, off to one side.
+Aspect:      16:9, portrait safe zone right 35%, window visible left
+```
+
+---
+
+### Character Art Direction (Chapter 4)
+
+### CHAR_06 — The Archivist (NPC_06, Conclave Internal)
+
+```
+Age:          Late 60s
+Ethnicity:    Ambiguous — Northern or Central European features, deliberately
+              unplaceable. Gender presentation: neutral-scholarly.
+Build:        Small, slightly stooped, economical in movement
+Hair:         White-silver, close-cropped, neat
+Eyes:         Grey-green, precise — look directly at the subject. Never at anything
+              else. Full attention is their default mode.
+Costume:      Academic civilian — a dark grey suit (slightly worn at the elbows),
+              white shirt, no tie. Reading glasses on a chain around their neck.
+              No Conclave insignia. No Academy uniform. They dress as a scholar
+              of no particular institution.
+Colour story: Desaturated palette — grey, soft white, dark charcoal. The absence
+              of colour is intentional. They have no Order, no allegiance visible
+              on their surface. Lighting is even, clinical, unflattering and
+              unromantic. They should not look powerful. They should look precise.
+Expressions:
+  - Neutral:     Hands folded, direct gaze, neutral expression. Evaluating.
+                 Not warm, not cold — categorising. Most common state.
+  - Engaged:     A specific quality of attention — leans slightly forward, gaze
+                 sharpens, a slight tightening around the eyes. Seen when the
+                 player says something accurate.
+  - Weighted:    Used for the heaviest disclosures. Eyes down briefly, then back
+                 up. The expression of someone who has said something true that
+                 cost them something to say.
+  - Decided:     Jaw set. Slight nod. The expression after a decision has been
+                 made that they will not revisit. Used in the final Archivist scene.
+Portrait frame: No Order border. Plain silver-grey frame — minimal.
+Relationship:   Does not appear in the stat panel (no relationship key tracked).
+                Only appears in portrait during S40_ARCHIVIST_IN_PERSON.
+Asset note:     One background portrait needed. Four expression states. No
+                animated elements.
+```
+
+### CHAR_07 — Davo Miral (NPC_07, Conclave Assessor)
+
+```
+Age:          Mid 20s (a few years older than Caden)
+Ethnicity:    Mixed — Black British / East European (same heritage as Caden;
+              family resemblance must be legible but not identical)
+Build:        Similar frame to Caden — athletic — but carried differently.
+              Caden's body is alert and reactive. Davo's is settled, controlled.
+              The same structure, differently inhabited.
+Hair:         Short-cropped natural, slightly longer on top than Caden's.
+              Neatly maintained — professional setting shapes it.
+Eyes:         Amber-brown (identical to Caden — this is the tell).
+Costume:      Conclave assessor uniform — dark navy, fitted, functional.
+              An assessor's badge on the left chest: rectangular, gold-edged,
+              with a small rune indicator. No Academy insignia.
+              Sleeves not pushed up (Caden pushes his sleeves up; Davo doesn't).
+Colour story: Dark navy and pale gold, against warm complexion. Lighting is
+              neutral, slightly cold — the lighting of institutional spaces.
+              When he appears in the intake courtyard, he is lit from above
+              (overhead institutional light), which flattens him slightly —
+              intentional; he should look like part of the system.
+Expressions:
+  - Working:     The face of someone doing a familiar task with full attention.
+                 No warmth, no coldness. Professional absorption. Used in S35.
+  - Contained:   The expression when he sees Caden. Something real is present
+                 but held at a specific distance. Not cold. Not soft. Contained.
+                 This is his most important expression — players must be able to
+                 read "this is genuine feeling being managed" not "this is nothing."
+  - Direct:      Used when he addresses the player about the Commission files.
+                 Full attention, low volume, entirely serious. Not threatening.
+                 The expression of someone who believes what they are saying.
+  - Resigned:    The moment before he walks away. A very brief expression —
+                 a decision already made, the cost acknowledged.
+Portrait frame: Conclave border — dark navy with thin gold rule. Not an Academy frame.
+Relationship:   Does not appear in stat panel (no dedicated relationship key).
+                Tracked via flags (davo_encountered, davo_truth_known).
+Asset note:     Two scenes require his portrait: S35 (seen from window — may use a
+                reduced/background treatment rather than full bust) and S36 (full
+                portrait, Contained + Direct + Resigned expressions needed).
+                S42 is narrated by Caden — Davo does not appear in portrait there.
+```
+
+---
+
+### Music Additions (Chapter 4)
+
+**New location tracks:**
+
+| Location | Track Name | Instrumentation | Mood |
+|---|---|---|---|
+| Intake courtyard (processing) | *Assessment Day* | Sparse piano, metronomic string pizzicato | Routine menace — efficient, wrong |
+| South gate exterior | *The Outside* | Solo acoustic guitar, wind texture, open fifths | Threshold, unresolved, neither here nor there |
+| Public archives seminar room | *Article Nineteen* | Two instruments only: cello and piano. No reverb. | Dry, private, significant in its understatement |
+| Library annex (waiting) | *Holding* | Same base as *Quiet Archive* but slower, less resolved | Suspended time. The music doesn't progress. |
+
+**Chapter 4 ending music variants:**
+
+```
+Ending 4a (Threshold):
+  Track: *The Full Account* — strings resolving upward, warmth emerging slowly.
+         Piano carries a melody that has appeared as fragments across Ch2–4.
+         Here it completes for the first time. Major key. Not triumphant — earned.
+
+Ending 4b (Exposure):
+  Track: *Can't Stop Now* — momentum track. Builds across 90s from sparse to full.
+         Uses Lira's violin harmonic signature woven into a larger texture.
+         Feels like something that was coiled finally uncoiling.
+
+Ending 4c (Architect):
+  Track: *The Hum* — minimal. A sustained low note (the focusing anchor's
+         implied frequency) under sparse piano. Unresolved. Comfortable in
+         a way that should make the player slightly uneasy.
+
+Ending 4d (Catalyst):
+  Track: *Moving* — short (60s), direct, no fade-out. Ends on a single
+         piano note, held, then silence. The chapter is over. Chapter 5 begins.
+```
+
+---
+
+### Sound Effect Additions (Chapter 4)
+
+**NPC signature cues (2s, on portrait entrance):**
+
+```
+  The Archivist:  Paper settling on a hard surface. Precise. Final.
+  Davo Miral:     Echo of Caden's ember snap — same family, different timbre.
+                  Lower pitch, less reactive. Fading ember rather than snap.
+```
+
+**New UI / scene sound events:**
+
+```
+  governance_session_starts:  Distant formal bell, once. Interior echo.
+  governance_holding_message: Single soft notification chime — muted, cautious.
+  governance_session_ends:    Brief silence, then the indicator tone goes quiet.
+  archivist_folder_opens:     Leather creak + paper rustle. Deliberate. Not quick.
+```
+
+---
+
+### Ending Card Palette Additions (Chapter 4)
+
+The existing ending card spec (§4e) uses "ending-specific accent color" for the background gradient. Chapter 4 ending variants:
+
+```json
+{
+  "ending_4a_threshold": {
+    "gradient_from":   "#0D0F1A",
+    "gradient_to":     "#1A2A1A",
+    "accent":          "#C9A84C",
+    "title":           "The Threshold",
+    "flavour_line":    "Everything that was true is still true. There is just more of it now."
+  },
+  "ending_4b_exposure": {
+    "gradient_from":   "#0D0F1A",
+    "gradient_to":     "#1A0A2A",
+    "accent":          "#A855F7",
+    "title":           "Exposure",
+    "flavour_line":    "We can't stop it now even if we wanted to."
+  },
+  "ending_4c_architect": {
+    "gradient_from":   "#0D0F1A",
+    "gradient_to":     "#0A1A2A",
+    "accent":          "#4A5A8C",
+    "title":           "The Architect",
+    "flavour_line":    "The hum has not stopped. You are not entirely certain the feeling is yours."
+  },
+  "ending_4d_catalyst": {
+    "gradient_from":   "#0D0F1A",
+    "gradient_to":     "#1A1200",
+    "accent":          "#C9A84C",
+    "title":           "Catalyst",
+    "flavour_line":    "You are moving."
+  }
+}
+```
+
+---
+
+*Chapter 4 art direction appended. New assets required: CHAR_06 (4 expressions), CHAR_07 (4 expressions, 2 scene contexts), BG_10–BG_13 (4 backgrounds + dialogue-mode variants), 4 music tracks, 6 SFX.*
+
+*Last updated: 2026-04-06*

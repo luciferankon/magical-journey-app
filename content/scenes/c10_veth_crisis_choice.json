@@ -1,0 +1,54 @@
+{
+  "id": "c10_veth_crisis_choice",
+  "text": "Forty-eight hours.\n\nVeth will walk into a governance meeting and either have an answer or not have one. What the governance body actually wants is not information about communications — it is a demonstration that the irregular information network has been contained. If it looks contained, Veth walks out. If it doesn't, the next question is about what Veth knows and who told him.\n\nYou have forty-eight hours, the outlines of what was in those communications, and several different angles on the problem. None of them is clean.",
+  "choices": [
+    {
+      "id": "c10_build_cover",
+      "text": "Help Veth build a cover — there's a plausible explanation for the communications.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          { "type": "trait_gte", "trait": "cunning", "value": 5 },
+          { "type": "trait_gte", "trait": "wisdom", "value": 5 }
+        ]
+      },
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 },
+        { "type": "set_flag", "flag": "veth_protected" }
+      ],
+      "next": "s38_cover_built"
+    },
+    {
+      "id": "c10_archivist_moves",
+      "text": "Get the Archivist to move first — file their counter before they're named.",
+      "gate": {
+        "type": "relationship_gte",
+        "character": "ines_contact",
+        "value": 5
+      },
+      "consequences": [
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 1 },
+        { "type": "trait_delta", "trait": "courage", "delta": 2 }
+      ],
+      "next": "s38_archivist_moves"
+    },
+    {
+      "id": "c10_find_lira",
+      "text": "Find Lira — she knows the internal accountability process. She might know a way out.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "lira_trust", "delta": 2 },
+        { "type": "set_flag", "flag": "lira_returned" }
+      ],
+      "next": "s39_lira_returns"
+    },
+    {
+      "id": "c10_hold",
+      "text": "Tell Veth to hold and say nothing. Buy time.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 },
+        { "type": "set_flag", "flag": "veth_protected" }
+      ],
+      "next": "s38_cover_built"
+    }
+  ]
+}

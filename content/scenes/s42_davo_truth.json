@@ -1,0 +1,14 @@
+{
+  "id": "s42_davo_truth",
+  "text": "Caden had one more conversation. Not you — he went alone, which you understood without discussing it.\n\nHe comes back at night. He sits in the chair by the window for a while before he says anything.\n\n\"He's not a prisoner,\" he says eventually. \"He made his choice four years ago. He said he'd make it again.\"\n\nYou wait.\n\n\"He asked me to understand it as a reorganisation. The Conclave's work. Not a destruction — a restructuring of priority. He has words for it.\" Caden stops. \"The words are right. That's the thing. The words are all technically accurate and they describe something that is wrong in a way the words were designed not to convey.\"\n\n\"What else?\"\n\n\"He said he's sorry he couldn't explain it when it happened.\" A pause. \"He said he's not sorry he did it.\"\n\nThe room is quiet for a while.\n\n\"I don't know what to do with that,\" Caden says. He's not asking you. He's not performing the not-asking. He is genuinely in possession of a piece of information he cannot resolve, and he is telling you so because you are the person in the room and he has apparently decided you are the person he tells things to now.\n\nYou don't have an answer for it. The documentation on the table is not an answer for it. Nothing you are about to do in the next forty-eight hours will be an answer for it.\n\n\"I know,\" you say.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "set_chapter_export", "field": "davo_outcome", "value": "reached" }
+      ],
+      "next": "c11_davo_question"
+    }
+  ]
+}

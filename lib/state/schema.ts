@@ -9,7 +9,7 @@
  * migrations.ts.
  */
 
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 5;
 
 // ── Enumerations ──────────────────────────────────────────────────────────────
 
@@ -34,6 +34,7 @@ export type TraitKey = "courage" | "cunning" | "empathy" | "ambition" | "wisdom"
  * Chapter 1: sera_trust, caden_rivalry, aldric_regard, lira_influence, tomas_bond
  * Chapter 2: solis_standing
  * Chapter 3: ines_contact
+ * Chapter 4: lira_trust
  */
 export type RelationshipKey =
   | "sera_trust"      // Trust with Sera Voss (Aqualyn roommate)
@@ -42,7 +43,8 @@ export type RelationshipKey =
   | "lira_influence"  // Lira Thane's leverage / influence over the player
   | "tomas_bond"      // Emotional closeness with Tomás Reeve
   | "solis_standing"  // Maren Solis's (Conclave examiner) assessment of the player
-  | "ines_contact";   // Ines Reeve's cautious trust / contact with the player
+  | "ines_contact"    // Ines Reeve's cautious trust / contact with the player
+  | "lira_trust";     // Earned trust with Lira after her return (distinct from lira_influence)
 
 /**
  * Boolean story flags set by CONSEQUENCE nodes.
@@ -52,6 +54,7 @@ export type RelationshipKey =
  * Chapter 1 flags: witnessed_fracture → house_assigned
  * Chapter 2 flags: met_solis → tomas_knows
  * Chapter 3 flags: sera_truth_known → aldric_acts
+ * Chapter 4 flags: davo_encountered, davo_truth_known, veth_protected, archivist_revealed, lira_returned
  */
 export type FlagKey =
   // ── Chapter 1 ──────────────────────────────────────────────────────────────
@@ -73,7 +76,13 @@ export type FlagKey =
   | "caden_aligned"       // Caden has chosen a side alongside the player
   | "fracture_origin_known" // Player has learned the Fracture is not natural — it was designed
   | "conclave_split"      // The Conclave's internal disagreement has been exposed to the player
-  | "aldric_acts";        // Aldric has taken an active step (not just passive counsel)
+  | "aldric_acts"         // Aldric has taken an active step (not just passive counsel)
+  // ── Chapter 4 ──────────────────────────────────────────────────────────────
+  | "davo_encountered"    // Player met Davo Miral (Caden's absorbed brother) in person
+  | "davo_truth_known"    // Caden understands what happened to Davo; player used his case in the strategy
+  | "veth_protected"      // Player acted to shield Veth from the Conclave's governance summons
+  | "archivist_revealed"  // The Archivist appeared in person to the player for the first and only time
+  | "lira_returned";      // Lira Thane made contact in Chapter 4 — outside the school, outside the Conclave
 
 /**
  * How the player resolved the Chapter 1 courtyard crisis.
@@ -145,6 +154,40 @@ export type FractureOriginShared = "public" | "conclave_only" | "kept_secret";
  * - unaware:       Caden was not brought into the truth
  */
 export type CadenStatus = "ally" | "rival_knowing" | "unaware";
+
+/**
+ * How the player's position resolved at the end of Chapter 4.
+ * Exported at end of Chapter 4; used to seed Chapter 5 state.
+ * - threshold:  Governance session broke; reform path succeeded; documentation in hand
+ * - exposure:   Session held but external coalition is ready; public disclosure imminent
+ * - architect:  Player consolidated power inside the Conclave; everything hinges on intent
+ * - catalyst:   No clean resolution; player holds all the pieces; Chapter 5 is the act
+ */
+export type Chapter4Stance = "threshold" | "exposure" | "architect" | "catalyst";
+
+/**
+ * Veth's status at the end of Chapter 4.
+ * - protected:   Player shielded Veth from the governance summons; he survived the session
+ * - broken:      Veth revealed the Archivist under pressure (alternative outcome)
+ * - transferred: Veth was transferred away after the session — he knew the cost going in
+ */
+export type VethStatus = "protected" | "broken" | "transferred";
+
+/**
+ * Davo Miral's narrative outcome in Chapter 4.
+ * - reached:        Player (and/or Caden) made meaningful contact with Davo
+ * - lost:           Davo remained inside the Conclave's operation without real contact
+ * - testified:      Davo agreed to speak for himself as part of the disclosure strategy
+ */
+export type DavoOutcome = "reached" | "lost" | "testified";
+
+/**
+ * Lira Thane's status at the end of Chapter 4.
+ * - ally:    Lira is actively working with the player's coalition
+ * - gone:    Lira left the area or was moved before the governance session
+ * - watched: Lira is present but under Conclave surveillance; limited capacity to act
+ */
+export type LiraStatusCh4 = "ally" | "gone" | "watched";
 
 // ── Sub-schemas ───────────────────────────────────────────────────────────────
 
@@ -222,6 +265,14 @@ export interface Relationships {
    * Added in Chapter 3. Range: 0–10. Default: 0.
    */
   ines_contact: number;
+  /**
+   * Earned trust between the player and Lira Thane after her return in Chapter 4.
+   * Distinct from lira_influence (which tracked her leverage over the player).
+   * lira_trust tracks what remains when the power dynamic dissolved.
+   * Initialised from lira_influence in the V3→V4 migration (>= 3 → 2, else 0).
+   * Added in Chapter 4. Range: 0–10. Default: 0.
+   */
+  lira_trust: number;
 }
 
 /**
@@ -269,6 +320,17 @@ export interface Flags {
   conclave_split: boolean;
   /** Professor Aldric has taken an active step (e.g. sharing the 1971 monograph) rather than passive counsel. */
   aldric_acts: boolean;
+  // ── Chapter 4 ──────────────────────────────────────────────────────────────
+  /** Player met Davo Miral — Caden's older brother, absorbed by the Conclave four years ago — in person. */
+  davo_encountered: boolean;
+  /** Caden understands what happened to his brother; player incorporated Davo's case into their strategy. */
+  davo_truth_known: boolean;
+  /** Player acted to protect Veth from the Conclave's governance summons (C10 options A or D). */
+  veth_protected: boolean;
+  /** The Archivist appeared in person to the player (S40_ARCHIVIST_IN_PERSON). First and only direct appearance. */
+  archivist_revealed: boolean;
+  /** Lira Thane made contact in Chapter 4 — returned to the area, outside the Conclave and outside the school. */
+  lira_returned: boolean;
 }
 
 /**
@@ -300,6 +362,15 @@ export interface ChapterExports {
   fracture_origin_shared: FractureOriginShared | null;
   /** Caden Miral's status at end of Ch.3. Null until Ch.3 ends. */
   caden_status: CadenStatus | null;
+  // ── Chapter 4 exports ──────────────────────────────────────────────────────
+  /** Player's final position at the end of Chapter 4. Null until Ch.4 ends. */
+  chapter_4_stance: Chapter4Stance | null;
+  /** Veth's status at the end of Chapter 4. Null until Ch.4 ends. */
+  veth_status: VethStatus | null;
+  /** Davo Miral's narrative outcome in Chapter 4. Null until Ch.4 ends. */
+  davo_outcome: DavoOutcome | null;
+  /** Lira Thane's status at the end of Chapter 4. Null until Ch.4 ends. */
+  lira_status_ch4: LiraStatusCh4 | null;
 }
 
 /**

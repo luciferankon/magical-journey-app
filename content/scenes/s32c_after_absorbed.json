@@ -1,0 +1,15 @@
+{
+  "id": "s32c_after_absorbed",
+  "text": "Three weeks as junior Conclave liaison, and you have developed a specific competence: the ability to read the assessment schedule and know what it means.\n\nYou know which names represent students the Conclave has already flagged. You know which sessions are genuine assessments and which are foregone conclusions. You know Veth's handwriting on a routing note, which is how correspondence about more sensitive matters arrives — not through the official system, but folded into the back of the weekly schedule like something that has always been there.\n\nThe expansion was always coming. You knew this. You told yourself you would moderate it from inside — that access is leverage, that information is protection. You have been refining this argument for three weeks.\n\nThe first cohort of younger students arrives this week. You review the assessment schedule. The name Davo Miral appears as assessor, not subject: he will be running the intake sessions.\n\nYou open his file. You have access to his file. That is what being inside means.\n\nWhat you read is thorough, professional, and profoundly strange — the record of someone who has been processed so completely that the processing itself is no longer visible as processing.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "ambition", "delta": 1 },
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+      ],
+      "next": "s35_the_arrivals"
+    }
+  ]
+}

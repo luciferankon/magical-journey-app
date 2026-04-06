@@ -1,0 +1,35 @@
+{
+  "id": "g11_archivist_reveal_gate",
+  "text": "Something is shifting in the shape of things.\n\nThe pieces you have assembled — documents, contacts, relationships, the specific trust of specific people — are about to determine what is possible. Not as metaphor. As mechanism. The Conclave's governance meeting is three days out. Certain doors are still open. Others have closed while you were looking elsewhere.",
+  "choices": [
+    {
+      "id": "g11_revealed",
+      "text": "Continue.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "relationship_gte",
+            "character": "ines_contact",
+            "value": 5
+          },
+          {
+            "type": "and",
+            "conditions": [
+              { "type": "flag_set", "flag": "lira_returned" },
+              { "type": "relationship_gte", "character": "lira_trust", "value": 4 }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "s40_archivist_in_person"
+    },
+    {
+      "id": "g11_without",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "s41_without_the_archivist"
+    }
+  ]
+}

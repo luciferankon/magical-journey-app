@@ -1,6 +1,17 @@
 {
   "id": "ending_3d_isolated",
-  "isEnding": true,
   "text": "The vote passed. You know the truth. And you are standing in a room full of information that is not enough.\n\nNot captured — you have not joined them. Not a reformer — you did not shift enough. Not an insurgent — you have not yet found the coalition or the angle or the piece that would make going public viable rather than just loud. You are someone who knows the origin of a sixty-year institutional lie, who has the evidence to support it, who has not yet found the right place to stand.\n\nThat is a specific and uncomfortable place to be. It is also not the worst place. The worst place is not knowing.\n\nYou know.\n\nThe Commission findings are real. The propagation is real. The children who have been assessed and placed and contained for sixty years because of something the founders caused and chose to manage rather than confess — that is real. The fact that you cannot yet do something sufficient with that knowledge does not make the knowledge wrong.\n\nThree days after the vote, a message arrives through the channel:\n\n*Still here. Still waiting. Are you?*\n\nIt is the most companionable thing Ines has ever sent you. The warmth in it is unmistakable — and it is the warmth of someone who has been waiting for a long time and knows exactly what waiting costs and is asking, as plainly as she knows how, whether you are going to keep going.\n\nYou write back: *Yes.*\n\nYou don't know yet what yes means. But you know what no would cost.",
-  "choices": []
+  "choices": [
+    {
+      "id": "continue_to_chapter_4",
+      "text": "Continue to Chapter Four.",
+      "consequences": [
+        { "type": "set_chapter_export", "field": "chapter_3_stance", "value": "isolated" },
+        { "type": "set_chapter_export", "field": "fracture_origin_shared", "value": "kept_secret" },
+        { "type": "set_chapter_export", "field": "caden_status", "value": "unaware" },
+        { "type": "advance_chapter" }
+      ],
+      "next": "s32d_after_isolated"
+    }
+  ]
 }

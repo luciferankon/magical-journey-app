@@ -1,0 +1,14 @@
+{
+  "id": "s32a_after_reformer",
+  "text": "Three weeks since the vote. The internal dissent is on record. The Archivist's faction held. The expansion proposal failed by two votes in a deliberation you were not in, and you have been telling yourself, since then, that this is progress.\n\nThen the message from Ines arrives. Shorter than usual, which is how you've learned to read her urgency.\n\n\"The expansion is happening. They found a workaround. New assessment teams — outside Aethermoor's faculty jurisdiction. The sessions won't appear in the school's scheduling system.\" A pause in the text, the kind produced by someone choosing their next words very carefully. \"They've sent someone from inside operations to lead the first cohort.\"\n\nShe doesn't name him. The name arrives an hour later, through a different channel: Caden, in the corridor outside the library, holding a notice from the intake office. He is very still. He holds the paper out without saying anything.\n\nThe name on the schedule is Davo Miral.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "cunning", "delta": 1 }
+      ],
+      "next": "s35_the_arrivals"
+    }
+  ]
+}

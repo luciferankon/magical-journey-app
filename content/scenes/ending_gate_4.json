@@ -1,0 +1,77 @@
+{
+  "id": "ending_gate_4",
+  "text": "Chapter four resolves into its shape. Some things end. Some things have only just begun. The documentation is real and it is yours.",
+  "choices": [
+    {
+      "id": "ending_gate_4a",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "flag_set", "flag": "archivist_revealed" },
+          { "type": "relationship_gte", "character": "ines_contact", "value": 6 }
+        ]
+      },
+      "consequences": [
+        { "type": "set_chapter_export", "field": "chapter_4_stance", "value": "threshold" },
+        { "type": "set_chapter_export", "field": "lira_status_ch4", "value": "gone" }
+      ],
+      "next": "ending_4a_threshold"
+    },
+    {
+      "id": "ending_gate_4b",
+      "text": "Continue.",
+      "gate": {
+        "type": "or",
+        "conditions": [
+          {
+            "type": "and",
+            "conditions": [
+              { "type": "flag_set", "flag": "caden_aligned" },
+              { "type": "flag_set", "flag": "davo_truth_known" },
+              { "type": "flag_set", "flag": "lira_returned" }
+            ]
+          },
+          {
+            "type": "and",
+            "conditions": [
+              { "type": "flag_set", "flag": "sera_truth_known" },
+              { "type": "trait_gte", "trait": "courage", "value": 7 },
+              { "type": "flag_set", "flag": "lira_returned" }
+            ]
+          }
+        ]
+      },
+      "consequences": [
+        { "type": "set_chapter_export", "field": "chapter_4_stance", "value": "exposure" },
+        { "type": "set_chapter_export", "field": "lira_status_ch4", "value": "ally" }
+      ],
+      "next": "ending_4b_exposure"
+    },
+    {
+      "id": "ending_gate_4c",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "relationship_gte", "character": "solis_standing", "value": 6 },
+          { "type": "flag_unset", "flag": "archivist_revealed" }
+        ]
+      },
+      "consequences": [
+        { "type": "set_chapter_export", "field": "chapter_4_stance", "value": "architect" },
+        { "type": "set_chapter_export", "field": "lira_status_ch4", "value": "watched" }
+      ],
+      "next": "ending_4c_architect"
+    },
+    {
+      "id": "ending_gate_4d",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "set_chapter_export", "field": "chapter_4_stance", "value": "catalyst" },
+        { "type": "set_chapter_export", "field": "lira_status_ch4", "value": "gone" }
+      ],
+      "next": "ending_4d_catalyst"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "s38_cover_built",
+  "text": "The cover buys forty-eight hours. Then a week.\n\nThe meeting gets delayed, not cancelled — procedural grounds, a conflict in the central governance scheduling system, an entirely mundane reason that Veth produces from somewhere and that nobody wants to push on because pushing means asking harder questions. You don't ask how he found the delay. You note that he found it, and you use the week.\n\nOn the fourth day, Ines sends a message through the channel that still works.\n\nShe found a charter clause — article nineteen, paragraph four, last invoked in 1978 — that provides for external review of any summons issued against a faculty liaison. External review means the summons requires independent verification before it can proceed. The verification process takes, at minimum, two weeks.\n\nBut invoking the clause requires the external reviewer to identify themselves.\n\nInes is not saying what she's asking. She is asking it anyway, without saying it, because she knows you will understand: *Should I pass this to them? They'd have to come forward to use it. I need to know if we're ready for that.*\n\nYou stare at the message for a long time.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 1 }
+      ],
+      "next": "g11_archivist_reveal_gate"
+    }
+  ]
+}

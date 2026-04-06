@@ -1,0 +1,12 @@
+{
+  "id": "s35_the_arrivals",
+  "text": "The courtyard below is full of movement — young students, twelve or thirteen by the look of them, arranged into a loose queue by two administrative staff who are being cheerful about it. The students are not cheerful. They have been told they have a special appointment. They have not been told what the appointment is for.\n\nThe man working his way down the queue has a badge. He moves efficiently, making notes on a tablet after each student, and he is good at appearing unhurried. You watch him for thirty seconds before you understand why something in the way he moves feels wrong. He is too complete. Every gesture is accounted for.\n\nHe looks up — not scanning, but directly, as if he already knew where to look.\n\nYou see his face. Caden, beside you, makes no sound at all.\n\nDavo Miral looks up at the window where you are standing, processes what he sees, and looks back down at his tablet. He does not stop working. He does not send a message. He does not indicate, by any visible means, that anything has changed.\n\nHe continues working.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "c09_first_sight_choice"
+    }
+  ]
+}

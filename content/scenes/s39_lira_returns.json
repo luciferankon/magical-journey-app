@@ -1,0 +1,14 @@
+{
+  "id": "s39_lira_returns",
+  "text": "She is outside the south gate, which is technically off-campus, technically outside Aethermoor's jurisdiction, technically a location that requires no clearance to occupy. She is wearing different clothes than you've ever seen her in — practical, unremarkable, the clothes of someone who has been living somewhere without a wardrobe.\n\nShe looks changed. Not smaller — the specific quality of the change is the opposite of diminishment. She looks like someone who has been living with a decision for long enough that the decision is no longer the most interesting thing about her.\n\n\"You can't come in,\" you say.\n\n\"I know.\" She glances at the gate briefly, the way you'd glance at a door that is locked from the inside and has always been locked from the inside. \"That's not why I'm here.\"\n\nYou wait.\n\n\"I can get Veth to a procedural technicality,\" she says. \"There's a process for challenging the governance summons from outside faculty jurisdiction. I know how it works because I helped write the manual, which the current governance board has never read.\" She pauses. \"But I need something from you first.\"\n\n\"What.\"\n\n\"Tell me what you found in the 1963 files,\" she says. \"All of it. Not the version you've been summarising to protect people — the actual contents. The research. The names.\" She meets your eyes. \"I need to know what we're actually fighting about.\"",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "wisdom", "delta": 1 }
+      ],
+      "next": "g11_archivist_reveal_gate"
+    }
+  ]
+}

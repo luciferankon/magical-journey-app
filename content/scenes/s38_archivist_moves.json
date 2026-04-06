@@ -1,0 +1,15 @@
+{
+  "id": "s38_archivist_moves",
+  "text": "The filing arrives at 6:47 in the morning, before the governance body has finished its first session of the day.\n\nInes sends you the timestamp. She does not send the text — that is in a restricted channel she doesn't have access to — but she sends the number and you understand from the number that it happened exactly when she said it would, which means it was not a last-minute decision. Someone planned this carefully.\n\nThe formal counter-complaint. Article nineteen, paragraph four. External review of the summons against Veth, citing the reviewer's identity. The identity is: a Conclave member who has been conducting unauthorised internal research for twenty-two years, whose records pre-date the current governance structure, and who is invoking a right that has existed in the charter since before any of the current senior members were appointed.\n\nThe governance meeting is not cancelled.\n\nIt becomes, in the dry language of institutional process, a *matter of expanded scope*. An additional session has been called. Senior members only. Three days' notice.\n\nIn seventy-two hours, a formal decision will be made inside a room you will not be in. What you built across the last four months will be in that room. Whether it holds depends on something you can no longer directly control.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 1 }
+      ],
+      "next": "g11_archivist_reveal_gate"
+    }
+  ]
+}

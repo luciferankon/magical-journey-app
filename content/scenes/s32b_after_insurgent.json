@@ -1,0 +1,14 @@
+{
+  "id": "s32b_after_insurgent",
+  "text": "The plan has a shape. It does not yet have a mechanism.\n\nYou have the Commission summary — a document that would be, released correctly, the kind of evidence an institution cannot qualify or dismiss. You have Sera's classification records, her grandmother's name on a VOIDED seal that predates the current Conclave leadership. You have the outlines of what happened to students who were assessed and placed. What you do not have is a way to release this in a form the Conclave cannot suppress.\n\nCaden has been working on it. He found someone at Lyndmere who moves information through channels the Conclave doesn't monitor. He was supposed to have an answer by Thursday. Then he went quiet. Two days of quiet, which you have learned to distinguish from his normal silences.\n\nWhen he comes back, his face has changed.\n\nHe doesn't explain. He holds out his phone — a photograph, slightly blurred, taken from an upper window. A courtyard, and in the courtyard, a man you don't recognise wearing an assessor's badge, moving through a line of young students with the efficiency of someone who has done this many times.\n\n\"That's my brother,\" Caden says.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "trait_delta", "trait": "courage", "delta": 1 }
+      ],
+      "next": "s35_the_arrivals"
+    }
+  ]
+}

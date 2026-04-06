@@ -1,0 +1,34 @@
+{
+  "id": "g12_governance_outcome_gate",
+  "text": "At four-forty-one, the session ends.\n\nYou don't know this because anyone tells you. You know it because Ines's indicator in the messaging system changes from *in a meeting* to nothing, and a minute later Veth's does the same.\n\nThe shape of what happened is about to resolve. What you built — who knew what, who was in that room in what form, how much documentation the Archivist's testimony added to what you already had — is determining the outcome right now, in the six minutes before anyone sends a message.",
+  "choices": [
+    {
+      "id": "g12_breaks",
+      "text": "Continue.",
+      "gate": {
+        "type": "and",
+        "conditions": [
+          { "type": "flag_set", "flag": "archivist_revealed" },
+          { "type": "relationship_gte", "character": "ines_contact", "value": 6 },
+          { "type": "flag_set", "flag": "fracture_origin_known" },
+          {
+            "type": "or",
+            "conditions": [
+              { "type": "flag_set", "flag": "caden_aligned" },
+              { "type": "flag_set", "flag": "sera_truth_known" },
+              { "type": "relationship_gte", "character": "tomas_bond", "value": 6 }
+            ]
+          }
+        ]
+      },
+      "consequences": [],
+      "next": "s44_session_breaks"
+    },
+    {
+      "id": "g12_holds",
+      "text": "Continue.",
+      "consequences": [],
+      "next": "s44_session_holds"
+    }
+  ]
+}

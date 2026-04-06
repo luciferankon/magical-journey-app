@@ -1,0 +1,16 @@
+{
+  "id": "s44_session_breaks",
+  "text": "The first message is from Veth. Two words: *it held.*\n\nThe second message is from Ines, four minutes later, and it is longer.\n\nThree senior governance members have submitted formal resignations. Not terminations — resignations, which matters because it is their own recognition that what was documented in the session is not recoverable from. The expansion programme is suspended pending independent review, which is being assigned to an external body the current governance structure does not control. The charter amendment process — closed for forty years — is formally open.\n\nThe Conclave still exists. The institution with its hierarchy and its assessors and its focusing anchors is still standing.\n\nBut it is structurally different from what it was yesterday, and the difference is on record, and the Commission's findings are formally acknowledged inside the institution that spent thirty years acknowledging nothing. The Archivist's testimony is in the governance minutes. The minutes cannot be redacted without a vote that three members have already resigned rather than take.\n\nInes's message ends: *You have the full documentation package. I added the testimony. What you do with it now is Chapter 5.* A pause before the next line, which you can tell because she sent it separately. *I will be here.*\n\nThe Archivist sends one message. Eight words: *You have the full documentation. What's it for?*\n\nYou don't answer yet. But you know you have an answer.",
+  "choices": [
+    {
+      "id": "continue",
+      "text": "Continue.",
+      "consequences": [
+        { "type": "relationship_delta", "character": "ines_contact", "delta": 1 },
+        { "type": "trait_delta", "trait": "courage", "delta": 1 },
+        { "type": "set_chapter_export", "field": "veth_status", "value": "protected" }
+      ],
+      "next": "ending_gate_4"
+    }
+  ]
+}
