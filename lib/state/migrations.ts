@@ -55,7 +55,13 @@ export function migrate(raw: unknown): PlayerState {
     state = migrateToV1();
   }
 
-  // Future: if (savedVersion < 2) { state = migrateToV2(state); }
+  if (savedVersion < 2) {
+    // V1 → V2: Added solis_standing relationship, four chapter-2 flags
+    // (met_solis, knows_ines_alive, conclave_offered, tomas_knows), and three
+    // chapter-2 chapterExports fields (chapter_2_solis_stance, ines_status,
+    // lira_chapter_2_status). All new fields default to 0 / false / null.
+    state = migrateToV2(state);
+  }
 
   return state;
 }
@@ -66,6 +72,44 @@ export function migrate(raw: unknown): PlayerState {
  */
 function migrateToV1(): PlayerState {
   return createInitialState();
+}
+
+/**
+ * V1 → V2: Chapter 2 schema additions.
+ * - relationships.solis_standing: new meter, defaults to 0
+ * - flags.met_solis, knows_ines_alive, conclave_offered, tomas_knows: new flags, default false
+ * - chapterExports.chapter_2_solis_stance, ines_status, lira_chapter_2_status: new exports, default null
+ *
+ * All chapter-1 fields are preserved exactly as they were.
+ */
+function migrateToV2(prev: PlayerState): PlayerState {
+  // Cast through unknown to safely read fields that exist in V2 schema but may
+  // be absent in a V1 save. The ?? null / ?? 0 / ?? false defaults handle absence.
+  const r = prev.relationships as unknown as Record<string, unknown>;
+  const f = prev.flags as unknown as Record<string, unknown>;
+  const e = prev.chapterExports as unknown as Record<string, unknown>;
+
+  return {
+    ...prev,
+    meta: { ...prev.meta, schemaVersion: 2 },
+    relationships: {
+      ...prev.relationships,
+      solis_standing: typeof r.solis_standing === "number" ? r.solis_standing : 0,
+    },
+    flags: {
+      ...prev.flags,
+      met_solis: typeof f.met_solis === "boolean" ? f.met_solis : false,
+      knows_ines_alive: typeof f.knows_ines_alive === "boolean" ? f.knows_ines_alive : false,
+      conclave_offered: typeof f.conclave_offered === "boolean" ? f.conclave_offered : false,
+      tomas_knows: typeof f.tomas_knows === "boolean" ? f.tomas_knows : false,
+    },
+    chapterExports: {
+      ...prev.chapterExports,
+      chapter_2_solis_stance: (e.chapter_2_solis_stance ?? null) as PlayerState["chapterExports"]["chapter_2_solis_stance"],
+      ines_status: (e.ines_status ?? null) as PlayerState["chapterExports"]["ines_status"],
+      lira_chapter_2_status: (e.lira_chapter_2_status ?? null) as PlayerState["chapterExports"]["lira_chapter_2_status"],
+    },
+  };
 }
 
 /**

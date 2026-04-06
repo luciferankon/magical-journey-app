@@ -74,9 +74,11 @@ export function createInitialState(
       aldric_regard: 0,
       lira_influence: 0,
       tomas_bond: 0,
+      solis_standing: 0,
     },
 
     flags: {
+      // Chapter 1
       witnessed_fracture: false,
       dueled_caden: false,
       reported_lira: false,
@@ -85,12 +87,22 @@ export function createInitialState(
       crisis_intervened: false,
       crisis_fled: false,
       house_assigned: false,
+      // Chapter 2
+      met_solis: false,
+      knows_ines_alive: false,
+      conclave_offered: false,
+      tomas_knows: false,
     },
 
     chapterExports: {
+      // Chapter 1
       crisis_outcome: null,
       chapter_1_reputation: null,
       lira_status: null,
+      // Chapter 2
+      chapter_2_solis_stance: null,
+      ines_status: null,
+      lira_chapter_2_status: null,
     },
 
     progress: {

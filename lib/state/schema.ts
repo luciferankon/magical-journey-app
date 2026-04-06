@@ -9,7 +9,7 @@
  * migrations.ts.
  */
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 
 // ── Enumerations ──────────────────────────────────────────────────────────────
 
@@ -29,22 +29,29 @@ export type House = "ignis" | "aqualyn" | "terram" | "ventus";
 export type TraitKey = "courage" | "cunning" | "empathy" | "ambition" | "wisdom";
 
 /**
- * The five named NPCs whose relationship meters are tracked in Chapter 1.
+ * The named NPCs whose relationship meters are tracked.
  * Each key represents a distinct interpersonal dynamic.
+ * Chapter 1: sera_trust, caden_rivalry, aldric_regard, lira_influence, tomas_bond
+ * Chapter 2: solis_standing
  */
 export type RelationshipKey =
   | "sera_trust"      // Trust with Sera Voss (Aqualyn roommate)
   | "caden_rivalry"   // Competitive tension with Caden Miral (Ignis rival)
   | "aldric_regard"   // Professional regard from Professor Aldric
   | "lira_influence"  // Lira Thane's leverage / influence over the player
-  | "tomas_bond";     // Emotional closeness with Tomás Reeve
+  | "tomas_bond"      // Emotional closeness with Tomás Reeve
+  | "solis_standing"; // Maren Solis's (Conclave examiner) assessment of the player
 
 /**
  * Boolean story flags set by CONSEQUENCE nodes.
  * Flags must be read after they are set (i.e., they are set on first encounter,
  * not assumed). All default to false.
+ *
+ * Chapter 1 flags: witnessed_fracture → house_assigned
+ * Chapter 2 flags: met_solis → tomas_knows
  */
 export type FlagKey =
+  // ── Chapter 1 ──────────────────────────────────────────────────────────────
   | "witnessed_fracture"  // Player saw Lira perform forbidden Fracture Weave
   | "dueled_caden"        // Player participated in a duel with Caden
   | "reported_lira"       // Player reported Lira to Professor Aldric
@@ -52,7 +59,12 @@ export type FlagKey =
   | "class_success"       // Player succeeded in the Elemental Casting class attempt
   | "crisis_intervened"   // Player actively helped during the courtyard crisis
   | "crisis_fled"         // Player fled or was passive during the courtyard crisis
-  | "house_assigned";     // Sorting Ceremony has resolved; identity.house is valid
+  | "house_assigned"      // Sorting Ceremony has resolved; identity.house is valid
+  // ── Chapter 2 ──────────────────────────────────────────────────────────────
+  | "met_solis"           // Player has had at least one direct encounter with Maren Solis
+  | "knows_ines_alive"    // Player learned that Tomás's sister Ines is alive and inside the Conclave
+  | "conclave_offered"    // The Conclave (via Solis) has made a formal or implicit offer to the player
+  | "tomas_knows";        // Tomás has been told the full truth about Ines's whereabouts
 
 /**
  * How the player resolved the Chapter 1 courtyard crisis.
@@ -72,6 +84,32 @@ export type ChapterReputation = "high" | "low";
  * - owns_you:  She witnessed your failure and holds leverage over you
  */
 export type LiraStatus = "watching" | "unaware" | "owns_you";
+
+/**
+ * How the player ultimately positioned themselves with Maren Solis / the Conclave.
+ * Exported at end of Chapter 2; used to seed Chapter 3 state.
+ * - confronted: Player challenged or exposed the Conclave
+ * - joined:     Player accepted the Conclave's logic and offer
+ * - brokered:   Player negotiated a specific outcome (Ines reunion) without full alignment
+ * - walked:     Player left without resolving the situation
+ */
+export type Chapter2SolisStance = "confronted" | "joined" | "brokered" | "walked";
+
+/**
+ * Status of Ines Reeve (Tomás's sister) at the end of Chapter 2.
+ * - found:    Tomás made direct contact; the reunion happened
+ * - hidden:   Location known to the player but not revealed to Tomás
+ * - exposed:  Her existence and Conclave involvement became public knowledge
+ */
+export type InesStatus = "found" | "hidden" | "exposed";
+
+/**
+ * Lira Thane's relationship to the player at the end of Chapter 2.
+ * - ally:   Lira and the player are aligned (openly or tacitly)
+ * - enemy:  Lira has turned against the player
+ * - gone:   Lira has been removed from the school or disappeared
+ */
+export type LiraChapter2Status = "ally" | "enemy" | "gone";
 
 // ── Sub-schemas ───────────────────────────────────────────────────────────────
 
@@ -119,6 +157,7 @@ export interface Traits {
  * - rivalry         → competitive tension (higher = more intense, not negative)
  * - regard          → respect/esteem from an authority figure
  * - influence       → external party's leverage over the player (not player's over NPC)
+ * - standing        → a third party's assessment of the player (their opinion of you)
  *
  * Meters accumulate across chapters. Do not reset between chapters.
  */
@@ -136,6 +175,12 @@ export interface Relationships {
   lira_influence: number;
   /** Emotional closeness and trust with Tomás Reeve (Terram). Range: 0–10. Default: 0. */
   tomas_bond: number;
+  /**
+   * Maren Solis's (Conclave External Examiner) assessment of the player.
+   * High = she rates the player highly as a potential recruit / asset.
+   * Added in Chapter 2. Range: 0–10. Default: 0.
+   */
+  solis_standing: number;
 }
 
 /**
@@ -146,6 +191,7 @@ export interface Relationships {
  * Do not assume a flag is set based on trait or relationship values alone.
  */
 export interface Flags {
+  // ── Chapter 1 ──────────────────────────────────────────────────────────────
   /** Player observed Lira Thane performing a forbidden Fracture Weave in the corridor. */
   witnessed_fracture: boolean;
   /** Player entered into a formal duel with Caden Miral. */
@@ -162,21 +208,39 @@ export interface Flags {
   crisis_fled: boolean;
   /** Sorting Ceremony (S03) has completed; identity.house is now valid. */
   house_assigned: boolean;
+  // ── Chapter 2 ──────────────────────────────────────────────────────────────
+  /** Player has had at least one direct encounter with Maren Solis (Conclave examiner). */
+  met_solis: boolean;
+  /** Player learned that Tomás's sister Ines is alive and working inside the Conclave. */
+  knows_ines_alive: boolean;
+  /** The Conclave (via Solis) has made a formal or implicit offer to the player. */
+  conclave_offered: boolean;
+  /** Tomás has been told the full truth about his sister's whereabouts and status. */
+  tomas_knows: boolean;
 }
 
 /**
- * Fields exported at the end of a chapter to seed the next chapter's starting state.
- * All values are null until the chapter ending node resolves.
+ * Fields exported at the end of each chapter to seed the next chapter's starting state.
+ * All values are null until the relevant chapter ending node resolves.
  *
- * Downstream consumers (Chapter 2 engine) must treat null as "chapter not completed".
+ * Downstream consumers must treat null as "chapter not yet completed".
+ * Fields from earlier chapters remain set when later chapters complete.
  */
 export interface ChapterExports {
-  /** How the player resolved the Chapter 1 courtyard crisis. Null until chapter ends. */
+  // ── Chapter 1 exports ──────────────────────────────────────────────────────
+  /** How the player resolved the Chapter 1 courtyard crisis. Null until Ch.1 ends. */
   crisis_outcome: CrisisOutcome | null;
-  /** Player's overall reputation at the end of Chapter 1. Null until chapter ends. */
+  /** Player's overall reputation at the end of Chapter 1. Null until Ch.1 ends. */
   chapter_1_reputation: ChapterReputation | null;
-  /** Lira Thane's disposition toward the player at chapter end. Null until chapter ends. */
+  /** Lira Thane's disposition toward the player at end of Ch.1. Null until Ch.1 ends. */
   lira_status: LiraStatus | null;
+  // ── Chapter 2 exports ──────────────────────────────────────────────────────
+  /** Player's final stance toward Solis / the Conclave. Null until Ch.2 ends. */
+  chapter_2_solis_stance: Chapter2SolisStance | null;
+  /** Status of Ines Reeve at end of Ch.2. Null until Ch.2 ends. */
+  ines_status: InesStatus | null;
+  /** Lira's relationship to the player at end of Ch.2. Null until Ch.2 ends. */
+  lira_chapter_2_status: LiraChapter2Status | null;
 }
 
 /**

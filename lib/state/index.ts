@@ -22,6 +22,9 @@ export type {
   CrisisOutcome,
   ChapterReputation,
   LiraStatus,
+  Chapter2SolisStance,
+  InesStatus,
+  LiraChapter2Status,
 } from "./schema";
 export { SCHEMA_VERSION } from "./schema";
 
